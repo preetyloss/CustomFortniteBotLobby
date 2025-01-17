@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "colors": "^1.4.0",
+    "discord.js": "^14.16.3",
+    "dotenv": "^16.4.7",
+    "fnbr": "^4.1.0",
+    "nconf": "^0.12.1"
+  }
+}

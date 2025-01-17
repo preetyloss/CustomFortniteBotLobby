@@ -1,0 +1,24 @@
+export interface CurveKey {
+    KeyTime: number;
+    KeyValue: number;
+}
+/**
+ * Represents a curve table used for STW power level calculations
+ * @private
+ */
+declare class CurveTable {
+    /**
+     * The curve table's keys
+     */
+    keys: [number, number][];
+    /**
+     * @param data The curve table's data
+     */
+    constructor(data: CurveKey[]);
+    /**
+     * Read a value from the curve table
+     * @param key The key
+     */
+    eval(key: number): number;
+}
+export default CurveTable;

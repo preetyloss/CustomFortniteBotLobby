@@ -1,0 +1,33 @@
+{
+    "DarkDus": {
+        "version": "1.3.1-5",
+        "creator": "Mr_Julus"
+    },
+    "client": {
+        "status": {
+            "default": "✅ [DarkDus] - Fortnite Bot Lobby",
+            "inUse": "❌ Fortnite Bot is busy"
+        },
+        "outfit": {
+            "backpack": "BID_004_BlackKnight",
+            "skin": "CID_035_Athena_Commando_M_Medieval"
+        },
+        "default": {
+            "level": "999"
+        },
+        "prefix": "bot@",
+        "leave_party_time_seconds": 120,
+        "reload_bot_time_seconds": 600
+    },
+    "logs": {
+        "defaultText": "white",
+        "systemMessage": "green",
+        "partyInfo": "yellow",
+        "clientInfo": "blue",
+        "commandInfo": "cyan"
+    },
+    "optional": {
+        "help_command": "disabled",
+        "or help_command": "enabled"
+    }
+}
