@@ -16,7 +16,7 @@ Change .env with your webhook url
 - `/logout` : Logout the client
 - `/start` : Start the client
 > Invite the Discord Bot
-``` https://discord.com/oauth2/authorize?client_id=1330154900562116659&permissions=8&integration_type=0&scope=bot``
+https://discord.com/oauth2/authorize?client_id=1330154900562116659&permissions=8&integration_type=0&scope=bot
 
 ## Fortnite Client Commands
 ### Outfit
