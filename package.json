@@ -1,9 +1,28 @@
 {
+  "name": "darkdus",
+  "version": "1.3.5",
+  "description": "A custom Fortnite bot for Discord",
+  "main": "index.js",
+  "scripts": {
+    "start": "node discordBot/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint .",
+    "build": "tsc"
+  },
   "dependencies": {
     "colors": "^1.4.0",
     "discord.js": "^14.16.3",
     "dotenv": "^16.4.7",
     "fnbr": "^4.1.0",
     "nconf": "^0.12.1"
-  }
+  },
+  "devDependencies": {
+    "eslint": "^8.45.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DarkDus/CustomFortniteBot.git"
+  },
+  "author": "Mr_Julus",
+  "license": "MIT"
 }
