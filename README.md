@@ -10,7 +10,7 @@ Made by Mr_Julus
 Change .env with your webhook url
 
 ## Discord Bot Commands
-```js node ./discordBot/index.js```
+```node ./discordBot/index.js```
 - `/help` : Display help information
 - `/login <authorizationCode>` : Login the client
 - `/logout` : Logout the client
