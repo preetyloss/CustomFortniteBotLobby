@@ -10,12 +10,13 @@ Made by Mr_Julus
 Change .env with your webhook url
 
 ## Discord Bot Commands
+```js node ./discordBot/index.js```
 - `/help` : Display help information
 - `/login <authorizationCode>` : Login the client
 - `/logout` : Logout the client
 - `/start` : Start the client
 > Invite the Discord Bot
-``` NOT AVAIBLE FOR THE MOMENT...```
+``` https://discord.com/oauth2/authorize?client_id=1330154900562116659&permissions=8&integration_type=0&scope=bot``
 
 ## Fortnite Client Commands
 ### Outfit
