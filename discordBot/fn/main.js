@@ -1,17 +1,8 @@
-///////////////////////////////////////////////////////////
-///////                                             ///////
-///////     Dark Dus                                ///////
-///////     A Custom Fortnite Bot                   ///////
-///////     Version 1.3.5                           ///////
-///////                                             ///////
-///////////////////////////////////////////////////////////
-
 const { Client } = require('fnbr');
-const handleCommand = require('./utils/party.js');
-const showError = require('./utils/sys/showError.js');
-const showInfo = require('./utils/sys/showInfo.js');
-const show = require('./utils/sys/show.js')
-const initClient = require('./client/initClient.js');
+const handleCommand = require('../../utils/party.js');
+const showError = require('../../utils/sys/showError.js');
+const showInfo = require('../../utils/sys/showInfo.js');
+const initClient = require('../../client/initClient.js');
 const nconf = require('nconf');
 const dotenv = require('dotenv');
 dotenv.config();
@@ -40,15 +31,9 @@ async function sleep(seconds) {
     return new Promise((resolve) => setTimeout(resolve, seconds * 1000));
 }
 
-// TRY TO LOGIN AND INIT THE CLIENT
-async function loginAndInitClient() {
+// TRY TO INIT THE CLIENT
+async function InitFortniteClient() {
     try {
-        await client.login();
-        console.clear();
-        await show('--------------------------------------------');
-        await showInfo(`Logged in as ${client.user.self.displayName}`, 'sysMessage');
-        await showInfo('Dark Dus A Custom Fortnite Bot - made by Mr_Julus \n', 'sysMessage');
-        await show('------------------- LOGS -------------------');
         await initClient(client);
         await updateStatus(client);
         await showInfo('The reload timer has started!', 'clientInfo');
@@ -118,21 +103,8 @@ async function startReloadTimer() {
     await reload_bot();
 }
 
-(async () => {
-    try {
-        auth = {
-            deviceAuth: {
-                "accountId":nconf.get('CLIENT_ACCOUNTID'),
-                "deviceId":nconf.get('CLIENT_DEVICEID'),
-                "secret":nconf.get('CLIENT_SECRET')
-            }
-        };
-
-        client = new Client({ auth });
-    } catch (e) {
-        showError('With the deviceAuth.js file : ' + e);
-    }
-    await loginAndInitClient()
+async function CustomFortniteBot (client) {
+    await InitFortniteClient()
 
     // IF THE BOT RECEIVE A FRIEND REQUEST => ACCEPT IT
     client.on('friend:request', async (pendingFriend) => {
@@ -222,4 +194,6 @@ async function startReloadTimer() {
     // IF A PLAYER SEND A MESSAGE
     client.on('party:member:message', handleCommand);
     client.on('friend:message', handleCommand);
-})();
+}
+
+module.exports = CustomFortniteBot;

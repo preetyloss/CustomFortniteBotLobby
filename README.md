@@ -1,5 +1,5 @@
 # Dark Dus - A Custom Fortnite Bot
-> Dark Dus -  version 1.3.1-5
+> Dark Dus -  version 1.3.5
 Made by Mr_Julus
 
 > You need to have an authorizationCode
@@ -8,6 +8,14 @@ Made by Mr_Julus
 
 ## Discord Webhook (Send logs with webhook url)
 Change .env with your webhook url
+
+## Discord Bot Commands
+- `/help` : Display help information
+- `/login <authorizationCode>` : Login the client
+- `/logout` : Logout the client
+- `/start` : Start the client
+> Invite the Discord Bot
+``` NOT AVAIBLE FOR THE MOMENT...```
 
 ## Fortnite Client Commands
 ### Outfit
@@ -46,21 +54,12 @@ Change .env with your webhook url
 - Custom commands.
 
 ## New Features
-- Add a custom prefix for the Fortnite commands.
+- A Discord bot that allows running and stopping the client on Discord.
 - Reload time: after an amount of time, the client restarts.
+- Add a custom prefix for the Fortnite commands.
 
 ## Features that come soon (I hope)
 - Custom matchmaking to get a party with only bots.
-- A Discord bot that allows running and stopping the client on Discord.
-
-## Discord Bot Commands (comming soon)
-- `/help` : Display help information
-- `/login` : Login the client
-- `/logout` : Logout the client
-- `/settings` : Get settings file
-- `/start` : Start the client
-> Invite the Discord Bot
-``` NOT AVAIBLE FOR THE MOMENT...```
 
 ## Requirements
 ```text
@@ -72,3 +71,6 @@ axios
 fs
 nconf
 ```
+
+## Contributors
+Mr_Julus (@mr-julus)
