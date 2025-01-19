@@ -1,0 +1,2 @@
+## NOTE :
+- I found a repository that allows you to create a matchmaking, I still have to modify some elements to adapt it for Dark Dus, but you can find a simple version here : https://github.com/DarkDus/SimpleMatchmaking

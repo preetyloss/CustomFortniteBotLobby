@@ -1,10 +1,13 @@
 # Dark Dus - A Custom Fortnite Bot
-> Dark Dus -  version 1.3.5
+> Dark Dus -  version 1.3.6
 Made by Mr_Julus
 
 > You need to have an authorizationCode
 ```(https://www.epicgames.com/id/logout?redirectUrl=https%3A//www.epicgames.com/id/login%3FredirectUrl%3Dhttps%253A%252F%252Fwww.epicgames.com%252Fid%252Fapi%252Fredirect%253FclientId%253D3f69e56c7649492c8cc29f1af08a8a12%2526responseType%253Dcode)```
 -> then run : node ./client/createDeviceAuth.js
+
+## NOTE :
+- I found a repository that allows you to create a matchmaking, I still have to modify some elements to adapt it for Dark Dus, but you can find a simple version here : https://github.com/DarkDus/SimpleMatchmaking
 
 ## Discord Webhook (Send logs with webhook url)
 Change .env with your webhook url

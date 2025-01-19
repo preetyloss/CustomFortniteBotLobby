@@ -1,7 +1,7 @@
 {
   "name": "darkdus",
-  "version": "1.3.5",
-  "description": "A custom Fortnite bot for Discord",
+  "version": "1.3.6",
+  "description": "A Custom Fortnite Bot",
   "main": "index.js",
   "scripts": {
     "discordbot": "node discordBot/index.js",
