@@ -14,6 +14,7 @@ const WebhookClientWrapper = require('../utils/webhookClient');
 const webhookClient = new WebhookClientWrapper();
 require('colors');
 const fetchVersion = require('../utils/version');
+const handleCommands = requre('../events/handleCommands')
 const handlePartyUpdated = require('../events/partyUpdated');
 const handlePartyMemberUpdated = require('../events/partyMemberUpdated');
 const handleFriendRequest = require('../events/friendRequest');
@@ -98,15 +99,6 @@ async function sleep(seconds) {
 
     let isMatchmakingActive = false;
 
-    const commandFiles = fs.readdirSync(path.join(__dirname, '..', 'commands')).filter(file => file.endsWith('.js'));
-    const sendWebhook = (msg) => webhookClient.send(`\`\`\`diff\n${msg}\`\`\``);
-
-    for (const file of commandFiles) {
-      const command = require(path.join(__dirname, '..', 'commands', file));
-      botClient.on('friend:message', msg => command(msg, botClient));
-      botClient.on('party:member:message', msg => command(msg, botClient));
-    }
-
     botClient.on('party:updated', (updatedParty) => handlePartyUpdated(botClient, updatedParty, webhookClient, logEnabled));
     botClient.on('party:member:updated', (member) => handlePartyMemberUpdated(botClient, member));
     botClient.on('friend:request', (request) => handleFriendRequest(botClient, request, webhookClient));
@@ -114,6 +106,8 @@ async function sleep(seconds) {
     botClient.on('party:joinrequest', (receivedRequest) => handlePartyJoinRequest(botClient, receivedRequest));
     botClient.on('party:member:joined', (join) => handlePartyMemberJoined(botClient, join, eid, cid, managePartySize, bot_invite_status, bot_invite_onlinetype, bot_use_status, bot_use_onlinetype, bot_join_message, bot_leave_time, sendWebhook));
     botClient.on('party:member:left', (member) => handlePartyMemberLeft(botClient, member, sendWebhook, managePartySize));
+    botClient.on('party:member:message', msg => handleCommands(msg, botClient))
+    botClient.on('friend:message', msg => handleCommands(msg, botClient))
 
     if (reload) {
       setTimeout(() => reconnectClient(botClient, webhookClient, initClient), reload_time * 1000);

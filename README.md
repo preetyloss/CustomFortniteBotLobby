@@ -1,5 +1,5 @@
 # Dark Dus - A Custom Fortnite Bot Lobby
-> Dark Dus -  version 2.0.0
+> Dark Dus -  version 2.1
 Made by Mr_Julus
 
 > You need to have an authorizationCode
@@ -13,6 +13,7 @@ Change .env with your webhook url
 The discord bot isn't avaible for the moment...
 
 ## New Features
+- Upgrade the system of custom commands
 - Admin commands
 - Custom matchmaking to get a party with only bots.
 - Reload time: after an amount of time, the client restarts.
