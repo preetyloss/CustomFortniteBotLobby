@@ -1,0 +1,38 @@
+1.2.9 :
+- Add a changelog file
+- Edit the bot, so when the bot is in a party, he decline any invitation
+- Update the file README 
+- Optimize index.js file by removing => require('fs')
+
+1.2.9-5 :
+- Fix bug commands (bot@backpack and bot@outift), there were an error with the default backpack/outifit
+- Create a simple for test features
+
+1.2.9-7 :
+- Fix some global things to structure the script
+
+1.3 :
+- Fix bugs related to api when the player use the command (bot@outfit, bot@pickaxe or bot@backpack)
+
+1.3.01 :
+- add a lign in the README file : "Features that come soon"
+
+1.3.02 :
+- edit of env.example to prepare for the next features
+- edit .gitignore
+
+1.3.03 :
+- add a custom prefix for the commands
+
+1.3.1 :
+- add reload time, after an amound of time, the client restart
+
+1.3.1-5 :
+- Fix a bug related to the party timer, if the player leaves the party before the timer finished, there was a confusing
+
+1.3.5 :
+- Add a Discord bot that allows running and stopping the client on Discord.
+
+1.3.6 :
+- Add elements related to the Fortnite matchmaking
+- Remove discord bot temporary

@@ -1,0 +1,7 @@
+colors
+discord.js
+dotenv
+fnbr
+axios
+fs
+nconf
