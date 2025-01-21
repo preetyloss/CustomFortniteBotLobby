@@ -10,7 +10,7 @@ Made by Mr_Julus
 Change .env with your webhook url
 
 ## Features coming soon...
-The discord bot isn't avaible for the moment...
+- A discord bot that allows to start, logout and more
 
 ## New Features
 - Upgrade the system of custom commands
