@@ -15,8 +15,9 @@ const handleHelpCommand = async (message, botClient) => {
       
       if (command === 'help') {
         let access = 'commands:' + command;
+        const admins = nconf.get('client:command_admin:admins') || ['oumar_boss'];
         if (nconf.get(access) === 'admin_only') {
-          if (message.author.id !== nconf.get('owner')) {
+          if (!admins.includes(message.author.id)) {
             showError(`${usedClient} : You don't have permission to use this command.`);
             return;
           }
