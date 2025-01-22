@@ -43,3 +43,6 @@
 
 2.2 :
 - Fix bugs related to the admins custom command
+
+2.3 :
+- Add a feature to ban a player from use the bot

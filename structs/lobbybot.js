@@ -1,5 +1,5 @@
 const { 
-  bot_invite_status, cid, bid, level, banner, bot_invite_onlinetype, bot_use_status, bot_use_onlinetype, bot_join_message, bot_leave_time, eid, reload_time, reload 
+  bot_invite_status, cid, bot_invite_onlinetype, bot_use_status, bot_use_onlinetype, bot_join_message, bot_leave_time, eid, reload_time, reload 
 } = require('./config');
 const axiosInstance = require('axios').default;
 const system = require('os');

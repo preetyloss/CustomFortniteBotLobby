@@ -1,6 +1,11 @@
 const showInfo = require('../utils/logs/showInfo');
 
 const handlePartyInvite = async (botClient, request) => {
+  const bannedPlayer = nconf.get('client:banned_player') || [];
+  if (bannedPlayer.includes(request.displayName)) {
+    showInfo(`${request.displayName} try to invite the bot but he is banned...`)
+    return
+  }
   const party = botClient.party;  
   showInfo(`Received a party invite from ${request.displayName} ${request.id}`, 'party');
   if (party.size === 1) {

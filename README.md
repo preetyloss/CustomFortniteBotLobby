@@ -1,5 +1,5 @@
 # Dark Dus - A Custom Fortnite Bot Lobby
-> Dark Dus -  version 2.2
+> Dark Dus -  version 2.3
 Made by Mr_Julus
 
 > You need to have an authorizationCode
@@ -9,15 +9,24 @@ Made by Mr_Julus
 ## Discord Webhook (Send logs with webhook url)
 Change .env with your webhook url
 
-## Features coming soon...
-- A discord bot that allows to start, logout and more
-
 ## New Features
+- Add a Discord Bot with customs commands
 - Upgrade the system of custom commands
 - Admin commands
 - Custom matchmaking to get a party with only bots.
-- Reload time: after an amount of time, the client restarts.
-- Add a custom prefix for the Fortnite commands.
+
+## Discord Bot Commands
+- [✅] `/restart all` : Restart all bots
+- [✅] `/restart <accountID>` : Restart a specific bot
+- [✅] `/showBots` : Show all bots avaible
+- [✅] `/logout <accountID>` : Log out a specific bot
+- [✅] `/logout all` : Log out all bots
+- [✅] `/remove admin <username>` : Remove an admin
+- [✅] `/remove bot <accountID>` : Remove a bot
+- [✅] `/add admin <username>` : Add an admin
+- [✅] `/add bot <accountID> <deviceID> <secret>` : Add a bot
+- [✅] `/ban <username>` : Ban an username
+- [✅] `/unban <username>` : Unban an username
 
 ## Fortnite Client Commands
 ### Outfit

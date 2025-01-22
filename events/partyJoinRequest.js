@@ -2,6 +2,11 @@ const showError = require('../utils/logs/showError');
 const showInfo = require('../utils/logs/showInfo');
 
 const handlePartyJoinRequest = async (botClient, receivedRequest) => {
+  const bannedPlayer = nconf.get('client:banned_player') || [];
+  if (bannedPlayer.includes(receivedRequest.displayName)) {
+    showInfo(`${receivedRequest.displayName} try to join the bot but he is banned...`)
+    return
+  }
   showInfo('Join request received.', 'party');
   try {
     await receivedRequest.accept();

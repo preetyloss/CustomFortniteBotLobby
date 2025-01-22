@@ -1,19 +1,25 @@
 {
-  "DarkDus": {
-    "version": "1.3.6",
-    "creator": "Mr_Julus"
-  },
-  "fortnite": {
-    "add_users": true,
-    "join_users": true,
-    "leave_after_success": true,
-    "reload": true,
-    "send_webhook": true
-  },
-  "client": {
+    "DarkDus": {
+        "version": "2.3",
+        "creator": "Mr_Julus"
+    },
+    "fortnite": {
+        "add_users": true,
+        "join_users": true,
+        "leave_after_success": true,
+        "reload": true,
+        "send_webhook": true
+    },
+    "discord": {
+        "discord_status_type": "WATCHING",
+        "discord_status": "DarkDus v2.2",
+        "run_discord_client": true
+    },
+    "client": {
         "command_admin": {
             "admins": [
-                "Mr_Julus"
+                "Mr_Julus",
+                "oumar_boos"
             ]
         },
         "status": {
@@ -31,11 +37,14 @@
             "emote": "EID_HipHop01",
             "banner": "InfluencerBanner22"
         },
+        "banned_player": [
+            "anyone"
+        ],
         "prefix": "bot@",
         "leave_party_time_seconds": 10,
         "reload_bot_time_seconds": 30,
         "join_message": "You have 3 minutes to ready up and get in a lobby filled with bots! | dsc.gg/iron-web10"
-},
+    },
     "logs": {
         "defaultText": "white",
         "systemMessage": "green",

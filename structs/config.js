@@ -22,5 +22,8 @@ module.exports = {
   reload: nconf.get('fortnite:reload'),
   reload_time: nconf.get('client:reload_bot_time_seconds'),
   send_webhook: nconf.get('fornite:send_webhook'),
-  webhook_url: nconf.get('DISCORD_WEBHOOK_URL')
+  webhook_url: nconf.get('DISCORD_WEBHOOK_URL'),
+  discord_status_type: nconf.get('discord:discord_status_type'),
+  discord_status: nconf.get('discord:discord_status'),
+  run_discord_client: nconf.get('discord:run_discord_client')
 };
