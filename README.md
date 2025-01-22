@@ -1,5 +1,5 @@
 # Dark Dus - A Custom Fortnite Bot Lobby
-> Dark Dus -  version 2.1
+> Dark Dus -  version 2.2
 Made by Mr_Julus
 
 > You need to have an authorizationCode
