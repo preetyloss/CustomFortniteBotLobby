@@ -10,23 +10,10 @@ Made by Mr_Julus
 Change .env with your webhook url
 
 ## New Features
-- Add a Discord Bot with customs commands
+- Add a features to ban user from use the bot
 - Upgrade the system of custom commands
 - Admin commands
 - Custom matchmaking to get a party with only bots.
-
-## Discord Bot Commands
-- [✅] `/restart all` : Restart all bots
-- [✅] `/restart <accountID>` : Restart a specific bot
-- [✅] `/showBots` : Show all bots avaible
-- [✅] `/logout <accountID>` : Log out a specific bot
-- [✅] `/logout all` : Log out all bots
-- [✅] `/remove admin <username>` : Remove an admin
-- [✅] `/remove bot <accountID>` : Remove a bot
-- [✅] `/add admin <username>` : Add an admin
-- [✅] `/add bot <accountID> <deviceID> <secret>` : Add a bot
-- [✅] `/ban <username>` : Ban an username
-- [✅] `/unban <username>` : Unban an username
 
 ## Fortnite Client Commands
 ### Outfit
