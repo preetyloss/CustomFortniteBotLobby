@@ -127,6 +127,9 @@ const showInfo = async (m, type) => {
                 console.error("[ERR] WEBHOOK ", error);
             }
         }
+    } else if (type === 'green') {
+        const greenMessage = '>>> ' + m;
+        console.log(greenMessage[systemMessageColor]);
     }
 };
 

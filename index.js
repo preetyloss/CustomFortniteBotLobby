@@ -3,7 +3,6 @@ const nconf = require('nconf').argv().env().file({ file: './config/config.json' 
 const express = require("express");
 const { spawn } = require("child_process");
 const WebhookClientWrapper = require('./utils/webhookClient');
-
 const updatePlaylists = require('./structs/playlist-updater');
 const axios = require("axios");
 
@@ -34,11 +33,13 @@ const executeScript = (scriptName, scriptArgs = []) => {
 
   script.stderr.on("data", (data) => {
     console.log(`Error --> ${data}`);
+    process.exit(1);
   });
 
   script.on("close", (code) => {
     if (code === 0) {
       console.log(`Lobbybot finished with code ${code}`);
+      process.exit(1);
     }
   });
 };

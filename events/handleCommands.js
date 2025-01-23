@@ -19,7 +19,7 @@ const commands = {
 
 const handleCommands = async (message, botClient) => {
   const usedClient = botClient.user.self.displayName;
-  showInfo(`${message.sender.displayName}: ${message.content}`, 'party');
+  showInfo(`${message.author.displayName}: ${message.content}`, 'party');
 
   const commandMatch = message.content.match(/^bot@(\w+)/);
   if (commandMatch) {

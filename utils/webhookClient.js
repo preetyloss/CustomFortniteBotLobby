@@ -3,6 +3,7 @@ const nconf = require('nconf');
 const showInfo = require('./logs/showInfo');
 const showError = require('./logs/showError');
 const { send_webhook } = require('./../structs/config');
+
 class WebhookClientWrapper {
     constructor() {
         this.webhookEnabled = (send_webhook);

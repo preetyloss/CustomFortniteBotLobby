@@ -32,7 +32,7 @@ const managePartySize = async (botClient, bot_invite_status, bot_invite_onlinety
       botClient.party.me.setReadiness(statusDetails[3]);
     }
     if (botClient.party.size > 1 && statusDetails[4]) {
-      botClient.party.chat.send(`${statusDetails[4]}\n Support server: dsc.gg/pulsarfn`);
+      botClient.party.chat.send(`${statusDetails[4]}`);
     }
   }
 };
