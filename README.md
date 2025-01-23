@@ -1,5 +1,6 @@
 # Dark Dus - A Custom Fortnite Bot Lobby
-Dark Dus is a simple Custom Fortnite Bot Lobby Chapiter 6 - Saison 1
+Dark Dus is a simple Custom Fortnite Bot Lobby
+Chapiter 6 - Saison 1
 > Dark Dus -  version 2.4
 Made by Mr_Julus
 
@@ -74,6 +75,10 @@ axios
 fs
 nconf
 ```
+
+## NOTE
+- Fortnite is a trademarks or registered trademark of Epic Games, Inc. in the United States of America and elsewhere.
+- DarkDus is not affiliated with, or sponsored or endorsed by, Epic Games, Inc
 
 ## Contributors
 Mr_Julus (@mr-julus)
