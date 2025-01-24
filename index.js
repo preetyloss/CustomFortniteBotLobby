@@ -4,6 +4,7 @@ const express = require("express");
 const { spawn } = require("child_process");
 const WebhookClientWrapper = require('./utils/webhookClient');
 const updatePlaylists = require('./structs/playlist-updater');
+const initDarkDus = require('./structs/darkdus/init')
 const axios = require("axios");
 
 const app = express();
@@ -19,7 +20,12 @@ try {
 
 updatePlaylists();
 
-const executeScript = (scriptName, scriptArgs = []) => {
+const executeScript = async (scriptName, scriptArgs = []) => {
+  const initialized = await initDarkDus();
+  if (!initialized) {
+    console.warn('DarkDus initialization skipped.');
+    return;
+  }
   const script = spawn("node", [scriptName, ...scriptArgs]);
 
   script.stdout.on("data", (data) => {

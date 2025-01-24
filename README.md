@@ -2,7 +2,7 @@
 Dark Dus is a simple Custom Fortnite Bot Lobby
 > Chapiter 6 - Saison 1
 
-> Dark Dus -  version 2.4
+> Dark Dus -  version 2.4.2
 Made by Mr_Julus
 
 > You need to have an authorizationCode
@@ -13,6 +13,7 @@ Made by Mr_Julus
 Change .env with your webhook url
 
 ## New Features
+- Add a DarkDus's version checker
 - Add discord bot with a lot of features
 - Add a features to ban user from use the bot
 - Upgrade the system of custom commands
