@@ -1,6 +1,5 @@
 const { WebhookClient } = require('discord.js');
 const nconf = require('nconf');
-const showInfo = require('./logs/showInfo');
 const showError = require('./logs/showError');
 const { send_webhook } = require('./../structs/config');
 
@@ -11,14 +10,12 @@ class WebhookClientWrapper {
 
         if (this.webhookEnabled) {
             if (!url) {
-                showError('[DISCORD] Webhook URL is not defined.', 'sysMessage');
+                console.log('[DISCORD] Webhook URL is not defined.');
                 this.webhookEnabled = false;
             } else {
-                showInfo('[DISCORD] Webhook is enabled', 'sysMessage');
+                console.log('[DISCORD] Webhook is enabled');
                 this.webhookClient = new WebhookClient({ url });
             }
-        } else {
-            showInfo('[DISCORD] Webhook is disabled', 'sysMessage');
         }
     }
 

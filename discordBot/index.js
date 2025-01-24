@@ -24,9 +24,9 @@ function initializeDiscordBot() {
 
   dclient.commands = new Map();
 
-  dclient.once('ready', () => {
+  dclient.once('ready', async () => {
     showInfo(`[DISCORD] Bot online as ${dclient.user.tag}!`, 'green');
-    dclient.user.setActivity(discord_status, { type: discord_status_type });
+    dclient.user.setActivity("discord_status", { type: "WATCHING" });
 
     const commands = [];
     const commandsPath = path.join(__dirname, './commands');

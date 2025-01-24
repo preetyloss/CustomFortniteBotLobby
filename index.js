@@ -5,6 +5,7 @@ const { spawn } = require("child_process");
 const WebhookClientWrapper = require('./utils/webhookClient');
 const updatePlaylists = require('./structs/playlist-updater');
 const initDarkDus = require('./structs/darkdus/init')
+const showInfo = require('./utils/logs/showInfo')
 const axios = require("axios");
 
 const app = express();
@@ -12,7 +13,7 @@ const port = 8080;
 
 let webhookClient;
 try {
-  webhookClient = new WebhookClientWrapper();  
+  webhookClient = new WebhookClientWrapper();
 } catch (error) {
   console.log('Error initializing webhook client: ', error);
   process.exit(1);  
@@ -23,8 +24,9 @@ updatePlaylists();
 const executeScript = async (scriptName, scriptArgs = []) => {
   const initialized = await initDarkDus();
   if (!initialized) {
-    console.warn('DarkDus initialization skipped.');
-    return;
+    showInfo('[WARNING]: DarkDus\'s version could not be verified..., always use the latest version of DarkDus!', 'green');
+  } else {
+    showInfo('DarkDus successfully init', 'green')
   }
   const script = spawn("node", [scriptName, ...scriptArgs]);
 
@@ -53,5 +55,5 @@ const executeScript = async (scriptName, scriptArgs = []) => {
 executeScript("structs/lobbybot.js");
 
 app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
+  showInfo(`Server running on port ${port}`, 'green');
 });

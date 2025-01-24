@@ -2,7 +2,7 @@
 Dark Dus is a simple Custom Fortnite Bot Lobby
 > Chapiter 6 - Saison 1
 
-> Dark Dus -  version 2.4.2
+> Dark Dus -  version 2.4.5
 Made by Mr_Julus
 
 > You need to have an authorizationCode
