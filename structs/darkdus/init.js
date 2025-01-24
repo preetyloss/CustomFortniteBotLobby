@@ -2,7 +2,7 @@ const https = require('https');
 const fs = require('fs');
 const path = require('path');
 
-const actualVersion = 'https://raw.githubusercontent.com/DarkDus/CustomFortniteBotLobby/client/version.json';
+const actualVersion = 'https://raw.githubusercontent.com/DarkDus/CustomFortniteBotLobby/main/client/version.json';
 const localFilePath = path.resolve(__dirname, '../../client/version.json');
 
 function fetchRemoteFile(url) {
