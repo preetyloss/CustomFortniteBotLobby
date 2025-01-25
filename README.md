@@ -5,9 +5,10 @@ DarkDus is a Fortnite lobby bot that is designed to help you manage your Fortnit
 
 DarkDus is a free and open-source project, and you are welcome to contribute to the project.
 
-> Chapiter 6 - Saison 1
+Chapiter 6 - Saison 1
 
 > Dark Dus -  version 2.5
+
 Made by Mr_Julus
 
 > You need to have an authorizationCode
@@ -16,6 +17,7 @@ Made by Mr_Julus
 
 ## Branches :
 => main (version 2.5) -- Default
+
 => DarkDus-v1 (version 1.3.6) -- Obsolete
 
 ## Discord Webhook (Send logs with webhook url)
