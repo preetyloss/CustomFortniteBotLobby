@@ -16,9 +16,9 @@ Made by Mr_Julus
 -> then run : node ./client/createDeviceAuth.js
 
 ## Branches :
-=> main (version 2.5) -- Default
+=> main (version 2.5) [Default]
 
-=> DarkDus-v1 (version 1.3.6) -- Obsolete
+=> DarkDus-v1 (version 1.3.6) [Obsolete]
 
 ## Discord Webhook (Send logs with webhook url)
 Change .env with your webhook url
