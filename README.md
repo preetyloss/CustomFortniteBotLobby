@@ -66,6 +66,7 @@ Change .env with your webhook url
 - [✅] A status that changes if there are players with the bot or not.
 - [✅] Matchmaking system
 - [✅] Auto Leave the party when party members are in match
+- And more...
 
 ## Requirements
 ```text
