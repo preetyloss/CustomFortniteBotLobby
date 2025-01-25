@@ -16,6 +16,7 @@ Made by Mr_Julus
 
 ## Branches :
 => main (version 2.5) -- Default
+=> DarkDus-v1 (version 1.3.6) -- Obsolete
 
 ## Discord Webhook (Send logs with webhook url)
 Change .env with your webhook url
