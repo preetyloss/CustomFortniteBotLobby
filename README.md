@@ -7,7 +7,7 @@ DarkDus is a free and open-source project, and you are welcome to contribute to 
 
 Chapiter 6 - Saison 1
 
-> Dark Dus -  version 2.5.2
+> Dark Dus -  version 2.5.3
 
 Made by Mr_Julus
 
@@ -24,11 +24,9 @@ Made by Mr_Julus
 Change .env with your webhook url
 
 ## New Features
+- Add a verification if all device info is present
 - Add stopTimer custom command
-- Add a DarkDus's version checker
 - Add discord bot with a lot of features
-- Add a features to ban user from use the bot
-- Upgrade the system of custom commands
 
 ## Discord Bot Commands
 - [✅] `/restart` : Restart the bot

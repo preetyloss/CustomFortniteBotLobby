@@ -26,7 +26,6 @@ const handlePartyMemberLeft = require('../events/partyMemberLeft');
 const managePartySize = require('../client/utils/managePartySize');
 const reconnectClient = require('../client/utils/reconnectClient');
 const initializeDiscordBot = require('../discordBot/index');
-const { brotliCompress } = require('zlib');
 const logEnabled = true;
 let timerstatus = false;
 

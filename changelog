@@ -66,3 +66,6 @@
 
 2.5.2 :
 - Fix bugs related to the news features and to the matchmaking
+
+2.5.3 :
+- Add a verification if all device info is present

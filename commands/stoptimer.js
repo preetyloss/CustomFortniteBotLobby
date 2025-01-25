@@ -8,7 +8,7 @@ const handleStopTimerCommand = async (message, botClient) => {
   const commandMatch = message.content.match(/^bot@(\w+)/);
   if (commandMatch) {
       const command = commandMatch[1];
-      const stopTimer = nconf.get('optional:stopTimer_is_use');
+      const stopTimer = nconf.get('others:stopTimer_is_use');
       
       if (command === 'stopTimer') {
         let access = 'commands:' + command;
@@ -19,7 +19,7 @@ const handleStopTimerCommand = async (message, botClient) => {
             return;
           }
           if (stopTimer === 'no') {
-            nconf.set('optional:stopTimer_is_use', 'yes');
+            nconf.set('others:stopTimer_is_use', 'yes');
             nconf.save((err) => {
               if (err) {
                 showError(`${usedClient} : Failed to save configuration.`);
@@ -33,7 +33,7 @@ const handleStopTimerCommand = async (message, botClient) => {
           }
         } else {
           if (stopTimer === 'no') {
-            nconf.set('optional:stopTimer_is_use', 'yes');
+            nconf.set('others:stopTimer_is_use', 'yes');
             nconf.save((err) => {
               if (err) {
                 showError(`${usedClient} : Failed to save configuration.`);

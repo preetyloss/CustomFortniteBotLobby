@@ -5,7 +5,7 @@ const config = nconf.file({ file: './config.json' });
 
 const sendWebhook = (msg) => webhookClient.send(`\`\`\`diff\n${msg}\`\`\``);
 const resetStopTimerCommand = async () => {
-  nconf.set('optional:stopTimer_is_use', 'no');
+  nconf.set('others:stopTimer_is_use', 'no');
   nconf.save((err) => {
     if (err) {
       showError(`${usedClient} : Failed to save configuration.`);
@@ -15,7 +15,7 @@ const resetStopTimerCommand = async () => {
 }
 
 const handleLeaveTimer = async (botClient, timerstatus) => {
-  if (nconf.get('optional:stopTimer_is_use') === 'yes') {
+  if (nconf.get('others:stopTimer_is_use') === 'yes') {
     return;
   }
   const party = botClient.party;  
