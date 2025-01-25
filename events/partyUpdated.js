@@ -2,7 +2,7 @@ const { Enums } = require('fnbr');
 const { allowedPlaylists, websocketHeaders } = require('../utils/constants');
 const WebSocket = require('ws');
 const showError = require('../utils/logs/showError');
-const clientIsBanned = requie('../client/utils/clientIsBanned');
+const clientIsBanned = require('../client/utils/clientIsBanned');
 const axiosInstance = require('axios').default;
 
 async function handleMatchmakingError(request, response) {
@@ -30,17 +30,16 @@ const handlePartyUpdated = async (botClient, updatedParty, webhookClient, logEna
 
   switch (partyState) {
     case "BattleRoyalePreloading": {
-      const loadout = {
-        "LobbyState": {
-          "hasPreloadedAthena": true
-        }
-      };
       
       const requestData = {
         delete: [],
         revision: 2,
         update: {
-          'Default:LobbyState_j': loadout
+          'Default:LobbyState_j': {
+            LobbyState: {
+              hasPreloadedAthena: true
+            }
+          }
         }
       };
       

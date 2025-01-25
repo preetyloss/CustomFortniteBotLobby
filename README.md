@@ -7,7 +7,7 @@ DarkDus is a free and open-source project, and you are welcome to contribute to 
 
 Chapiter 6 - Saison 1
 
-> Dark Dus -  version 2.5
+> Dark Dus -  version 2.5.2
 
 Made by Mr_Julus
 
@@ -16,7 +16,7 @@ Made by Mr_Julus
 -> then run : node ./client/createDeviceAuth.js
 
 ## Branches :
-=> [Default] main (version 2.5) 
+=> [Default] main (version 2.5.2) 
 
 => [Obsolete] DarkDus-v1 (version 1.3.6) 
 
