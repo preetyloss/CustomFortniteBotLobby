@@ -1,4 +1,4 @@
-# Dark Dus - A Custom Fortnite Bot
+# Dark Dus - A Custom Fortnite Bot [ARCHIVED]
 > Dark Dus -  version 1.3.6
 Made by Mr_Julus
 
