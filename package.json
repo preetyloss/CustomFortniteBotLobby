@@ -5,11 +5,17 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["javascipt", "bot", "fornite", "botlobby"],
+  "keywords": [
+    "javascipt",
+    "bot",
+    "fornite",
+    "botlobby"
+  ],
   "author": "Mr_Julus",
   "license": "MIT License",
   "description": "A Custom Fortnite Bot Lobby",
   "dependencies": {
+    "@discordjs/rest": "^2.4.2",
     "axios": "^1.7.9",
     "child_process": "^1.0.2",
     "colors": "^1.4.0",
