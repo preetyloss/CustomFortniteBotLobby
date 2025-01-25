@@ -64,4 +64,4 @@ nconf
 ```
 
 ## Contributors
-Mr_Julus (@mr-julus)
+Mr_Julus (@MrJulus)
