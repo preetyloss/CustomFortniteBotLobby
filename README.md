@@ -16,7 +16,7 @@ Made by Mr_Julus
 -> then run : node ./client/createDeviceAuth.js
 
 ## Branches :
-=> [Default] main (version 2.5.2) 
+=> [Default] main (version 2.5.3) 
 
 => [Obsolete] DarkDus-v1 (version 1.3.6) 
 
