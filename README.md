@@ -6,64 +6,51 @@ Made by Mr_Julus
 ```(https://www.epicgames.com/id/logout?redirectUrl=https%3A//www.epicgames.com/id/login%3FredirectUrl%3Dhttps%253A%252F%252Fwww.epicgames.com%252Fid%252Fapi%252Fredirect%253FclientId%253D3f69e56c7649492c8cc29f1af08a8a12%2526responseType%253Dcode)```
 -> then run : node ./client/createDeviceAuth.js
 
-## NOTE :
-- I found a repository that allows you to create a matchmaking, I still have to modify some elements to adapt it for Dark Dus, but you can find a simple version here : https://github.com/DarkDus/SimpleMatchmaking
-
 ## Discord Webhook (Send logs with webhook url)
 Change .env with your webhook url
 
-## Discord Bot Commands
-```node ./discordBot/index.js```
-- `/help` : Display help information
-- `/login <authorizationCode>` : Login the client
-- `/logout` : Logout the client
-- `/start` : Start the client
-> Invite the Discord Bot
-https://discord.com/oauth2/authorize?client_id=1330154900562116659&permissions=8&integration_type=0&scope=bot
+## NOTE :
+The discord bot doesn't support matchmaking for the moment...
 
 ## Fortnite Client Commands
 ### Outfit
-- `bot@outfit <newSkin>` : Change the bot's skin.
-- `bot@pickaxe <newPickaxe>` : Change the bot's pickaxe.
-- `bot@backpack <newBackpack>` : Change the bot's backpack.
+- [✅] `bot@outfit <newSkin>` : Change the bot's skin.
+- [✅] `bot@pickaxe <newPickaxe>` : Change the bot's pickaxe.
+- [✅] `bot@backpack <newBackpack>` : Change the bot's backpack.
 
-### Party/Friends
-- `bot@changeGamemode <gamemode>` : Change the current game mode.
-- `bot@kick <username>` : Kick a player from the party.
-- `bot@promote <username>` : Promote a player to party leader.
-- `bot@ready` : Set the bot's status to ready.
-- `bot@inviteFriend <username>` : Invite a friend to the party.
-- `bot@addFriend <username>` : Add a friend.
+### Party/Friends 
+- [✅] `bot@changeGamemode <gamemode>` : Change the current game mode.
+- [✅] `bot@kick <username>` : Kick a player from the party.
+- [✅] `bot@promote <username>` : Promote a player to party leader.
+- [✅] `bot@inviteFriend <username>` : Invite a friend to the party.
+- [✅] `bot@addFriend <username>` : Add a friend.
 
 ### Client
-- `bot@emote <emote>` : Make the bot perform an emote.
-- `bot@stopEmote` : Stop the current emote.
-- `bot@level <level>` : Set the bot's level.
-- `bot@battlepass <purchased> <level>` : Set the bot's battle pass status and level.
+- [✅] `bot@emote <emote>` : Make the bot perform an emote.
+- [✅] `bot@stopEmote` : Stop the current emote.
+- [✅] `bot@level <level>` : Set the bot's level.
+- [✅] `bot@battlepass <purchased> <level>` : Set the bot's battle pass status and level.
 
 ### Others
-- `bot@changeStatus <newStatus>` : Change the bot's status.
-- `bot@logout` : Log out the bot.
-- `bot@version` : Display the bot's version.
-- `bot@help` : Display help information (not available).
+- [✅] `bot@setStatus <newStatus>` : Change the bot's status.
+- [✅] `bot@logout` : Log out the bot.
+- [✅] `bot@help` : Display help information (not available).
 
 ## Features
-- Automatically accepts friend requests.
-- A status that changes if there are players with the bot or not.
-- When the timer is finished, the bot leaves the party.
-- Automatically accepts join requests.
-- Automatically accepts invite requests.
-- You can set a default outfit (pickaxe, backpack, and skin).
-- You can set a default level.
-- Custom commands.
+- [✅] Custom commands.
+- [✅] When a timer is finished, the bot reload
+- [✅] When the timer is finished, the bot leaves the party.
+- [✅] Automatically accepts friend requests.
+- [✅] Automatically accepts invite requests.
+- [✅] Automatically accepts join requests
+- [✅] A status that changes if there are players with the bot or not.
+- [✅] Matchmaking system
+- [✅] Auto Leave the party when party members are in match
 
 ## New Features
-- A Discord bot that allows running and stopping the client on Discord.
+- Custom matchmaking to get a party with only bots.
 - Reload time: after an amount of time, the client restarts.
 - Add a custom prefix for the Fortnite commands.
-
-## Features that come soon (I hope)
-- Custom matchmaking to get a party with only bots.
 
 ## Requirements
 ```text

@@ -11,3 +11,6 @@
 
 # Dev Tests
 /DEV/
+
+# The discord bot doesn't support matchmaking for the moment...
+/discordBot/
