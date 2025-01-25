@@ -51,7 +51,7 @@ Change .env with your webhook url
 - [✅] `bot@battlepass <purchased> <level>` : Set the bot's battle pass status and level.
 
 ### Others
-- [❌] `bot@stopTimer` : Stop the party timer
+- [✅] `bot@stopTimer` : Stop the party timer
 - [✅] `bot@setStatus <newStatus>` : Change the bot's status.
 - [✅] `bot@logout` : Log out the bot.
 - [✅] `bot@help` : Display help information (not available).
