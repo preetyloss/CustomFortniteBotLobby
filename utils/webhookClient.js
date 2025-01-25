@@ -1,21 +1,35 @@
 const { WebhookClient } = require('discord.js');
 const nconf = require('nconf');
+const showInfo = require('./logs/showInfo');
 const showError = require('./logs/showError');
-const { send_webhook } = require('./../structs/config');
+const e = require('express');
 
 class WebhookClientWrapper {
     constructor() {
-        this.webhookEnabled = (send_webhook);
+        this.webhookEnabled = nconf.get('discord:send_webhook');
         const url = process.env.DISCORD_WEBHOOK;
 
-        if (this.webhookEnabled) {
-            if (!url) {
-                console.log('[DISCORD] Webhook URL is not defined.');
-                this.webhookEnabled = false;
-            } else {
-                console.log('[DISCORD] Webhook is enabled');
-                this.webhookClient = new WebhookClient({ url });
-            }
+        if (!this.webhookEnabled) {
+            this.status = 0;
+            return;
+        }
+
+        if (!url) {
+            this.status = -1;
+            return;
+        }
+
+        this.webhookClient = new WebhookClient({ url });
+        this.status = 1;
+    }
+
+    getStatus() {
+        if (this.status === 1) {
+            showInfo('Webhook enabled', 'sysMessage');
+        } else if (this.status === -1) {
+            showInfo('Webhook URL not defined', 'sysMessage');
+        } else {
+            showInfo('Webhook disabled', 'sysMessage');
         }
     }
 
@@ -23,10 +37,8 @@ class WebhookClientWrapper {
         if (this.webhookEnabled && this.webhookClient) {
             return this.webhookClient.send(message)
                 .catch(err => showError('Error sending webhook:', err));
-        } else {
-            
         }
     }
 }
 
-module.exports = WebhookClientWrapper; 
+module.exports = WebhookClientWrapper;

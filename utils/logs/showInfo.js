@@ -7,31 +7,39 @@ const dotenv = require('dotenv');
 
 dotenv.config();
 
-nconf.env()
-const webhookUrl = nconf.get('DISCORD_WEBHOOK')
+nconf.env();
+const webhookUrl = nconf.get('DISCORD_WEBHOOK');
 
 let systemMessageColor, partyInfoColor, clientInfoColor, commandInfoColor, defaultTextColor;
+let colorsInitialized = false;
 
-initColors().then(({ 
-    systemMessageColor: sysColor, 
-    partyInfoColor: partyColor,  
-    clientInfoColor: clientColor,
-    commandInfoColor: commandColor,
-    defaultTextColor: defColor
-}) => {
-    systemMessageColor = sysColor;
-    partyInfoColor = partyColor;
-    clientInfoColor = clientColor;
-    commandInfoColor = commandColor;
-    defaultTextColor = defColor;
-});
+const initializeColors = async () => {
+    if (colorsInitialized) return;
+    try {
+        const colors = await initColors();
+        systemMessageColor = colors.systemMessageColor || 'green';
+        partyInfoColor = colors.partyInfoColor || 'yellow';
+        clientInfoColor = colors.clientInfoColor || 'cyan';
+        commandInfoColor = colors.commandInfoColor || 'magenta';
+        defaultTextColor = colors.defaultTextColor || 'white';
+        colorsInitialized = true;
+    } catch (error) {
+        console.error('[ERR] Failed to initialize colors:', error);
+        systemMessageColor = 'green';
+        partyInfoColor = 'yellow';
+        clientInfoColor = 'cyan';
+        commandInfoColor = 'magenta';
+        defaultTextColor = 'white';
+    }
+};
 
 const showInfo = async (m, type) => {
+    await initializeColors();
     const MessageContent = '[INFO] ' + m;
 
     if (!type) {
-        if (!webhookUrl || webhookUrl === "") {
-            console.log(MessageContent[defaultTextColor]);
+        if (!webhookUrl) {
+            console.log(MessageContent[defaultTextColor] || MessageContent);
         } else {
             const embed = {
                 title: "[DarkDus]",
@@ -46,19 +54,19 @@ const showInfo = async (m, type) => {
 
             try {
                 await axios.post(webhookUrl, payload);
-                show(MessageContent[defaultTextColor]);
+                show(MessageContent[defaultTextColor] || MessageContent);
             } catch (error) {
                 console.error("[ERR] WEBHOOK ", error);
             }
         }
-    } else if (type === 'sysMessage') {
+    } else if (type === 'sysMessage' || type === 'green') {
         const sysMessageContent = '>>> ' + m;
-        console.log(sysMessageContent[systemMessageColor]);
+        console.log(sysMessageContent[systemMessageColor] || sysMessageContent);
 
     } else if (type === 'party') {
         const partyMessageContent = '[PARTY] ' + m;
         if (!webhookUrl) {
-            console.log(partyMessageContent[partyInfoColor]);
+            console.log(partyMessageContent[partyInfoColor] || partyMessageContent);
         } else {
             const embed = {
                 title: "[DarkDus]",
@@ -74,7 +82,7 @@ const showInfo = async (m, type) => {
 
             try {
                 await axios.post(webhookUrl, payload);
-                show(partyMessageContent[partyInfoColor]);
+                show(partyMessageContent[partyInfoColor] || partyMessageContent);
             } catch (error) {
                 console.error("[ERR] WEBHOOK ", error);
             }
@@ -82,7 +90,7 @@ const showInfo = async (m, type) => {
     } else if (type === 'clientInfo') {
         const clientInfoMessageContent = '[CLIENT] ' + m;
         if (!webhookUrl) {
-            console.log(clientInfoMessageContent[clientInfoColor]);
+            console.log(clientInfoMessageContent[clientInfoColor] || clientInfoMessageContent);
         } else {
             const embed = {
                 title: "[DarkDus]",
@@ -98,7 +106,7 @@ const showInfo = async (m, type) => {
 
             try {
                 await axios.post(webhookUrl, payload);
-                show(clientInfoMessageContent[clientInfoColor]);
+                show(clientInfoMessageContent[clientInfoColor] || clientInfoMessageContent);
             } catch (error) {
                 console.error("[ERR] WEBHOOK ", error);
             }
@@ -106,7 +114,7 @@ const showInfo = async (m, type) => {
     } else if (type === 'commandInfo') {
         const commandInfoMessageContent = '[COMMANDS] ' + m;
         if (!webhookUrl) {
-            console.log(commandInfoMessageContent[commandInfoColor]);
+            console.log(commandInfoMessageContent[commandInfoColor] || commandInfoMessageContent);
         } else {
             const embed = {
                 title: "[DarkDus]",
@@ -122,14 +130,11 @@ const showInfo = async (m, type) => {
 
             try {
                 await axios.post(webhookUrl, payload);
-                show(commandInfoMessageContent[commandInfoColor]);
+                show(commandInfoMessageContent[commandInfoColor] || commandInfoMessageContent);
             } catch (error) {
                 console.error("[ERR] WEBHOOK ", error);
             }
         }
-    } else if (type === 'green') {
-        const greenMessage = '>>> ' + m;
-        console.log(greenMessage[systemMessageColor]);
     }
 };
 

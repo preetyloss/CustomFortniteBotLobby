@@ -55,3 +55,11 @@
 
 2.4.5 :
 - Fix bugs
+
+2.4.6 :
+- Fix a bug related to WebhookClientWrapper function
+
+2.5 :
+- Add loading menu
+- Add a stop timer party
+- Fix some bugs

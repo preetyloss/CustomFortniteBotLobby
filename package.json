@@ -1,14 +1,14 @@
 {
   "name": "darkdus",
-  "version": "2.4.5",
+  "version": "2.5",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
+  "keywords": ["javascipt", "bot", "fornite", "botlobby"],
+  "author": "Mr_Julus",
+  "license": "MIT License",
+  "description": "A Custom Fortnite Bot Lobby",
   "dependencies": {
     "axios": "^1.7.9",
     "child_process": "^1.0.2",

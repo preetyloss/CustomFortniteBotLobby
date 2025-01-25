@@ -1,9 +1,10 @@
 const { Enums } = require('fnbr');
 const { allowedPlaylists, websocketHeaders } = require('../utils/constants');
 const WebSocket = require('ws');
+const showError = require('../utils/logs/showError');
+const clientIsBanned = requie('../client/utils/clientIsBanned');
 const axiosInstance = require('axios').default;
 
-// Gestion des erreurs de matchmaking
 async function handleMatchmakingError(request, response) {
     let errorData = '';
     response.on('data', (chunk) => errorData += chunk);
@@ -96,6 +97,11 @@ const handlePartyUpdated = async (botClient, updatedParty, webhookClient, logEna
 
         if (ticketResponse.status !== 200) {
           webhookClient.send(`\`\`\`diff\n- [Matchmaking] Error while obtaining ticket\`\`\``);
+          if (ticketResponse.errorMessage === "Banned from matchmaking" && ticketResponse.errorCode === "'errors.com.epicgames.fortnite.player_banned_from_sub_game',") {
+            clientIsBanned(botClient)
+            webhookClient.send(`\`\`\`diff\n- [Matchmaking] Player is banned from matchmaking for ${ticketResponse.banDaysRemaining} Days\`\`\``);
+            showError(`Player is banned from matchmaking for ${ticketResponse.banDaysRemaining} Days`);
+          }
           botClient.party.me.setReadiness(false);
           return console.log(ticketResponse);
         }

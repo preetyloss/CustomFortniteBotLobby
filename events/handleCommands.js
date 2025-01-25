@@ -15,6 +15,7 @@ const commands = {
   promote: require('../commands/promote'),
   setstatus: require('../commands/setstatus'),
   stopemote: require('../commands/stopemote'),
+  stoptimer: require('../commands/stoptimer'),
 };
 
 const handleCommands = async (message, botClient) => {

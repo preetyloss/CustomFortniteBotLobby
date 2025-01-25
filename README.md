@@ -2,7 +2,7 @@
 Dark Dus is a simple Custom Fortnite Bot Lobby
 > Chapiter 6 - Saison 1
 
-> Dark Dus -  version 2.4.5
+> Dark Dus -  version 2.5
 Made by Mr_Julus
 
 > You need to have an authorizationCode
@@ -13,12 +13,11 @@ Made by Mr_Julus
 Change .env with your webhook url
 
 ## New Features
+- Add stopTimer custom command
 - Add a DarkDus's version checker
 - Add discord bot with a lot of features
 - Add a features to ban user from use the bot
 - Upgrade the system of custom commands
-- Admin commands
-- Custom matchmaking to get a party with only bots.
 
 ## Discord Bot Commands
 - [✅] `/restart` : Restart the bot
@@ -52,6 +51,7 @@ Change .env with your webhook url
 - [✅] `bot@battlepass <purchased> <level>` : Set the bot's battle pass status and level.
 
 ### Others
+- [❌] `bot@stopTimer` : Stop the party timer
 - [✅] `bot@setStatus <newStatus>` : Change the bot's status.
 - [✅] `bot@logout` : Log out the bot.
 - [✅] `bot@help` : Display help information (not available).

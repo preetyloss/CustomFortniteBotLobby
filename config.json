@@ -1,6 +1,6 @@
 {
   "DarkDus": {
-    "version": "2.4.5",
+    "version": "2.5",
     "creator": "Mr_Julus"
   },
   "fortnite": {
@@ -8,11 +8,14 @@
     "join_users": true,
     "leave_after_success": true,
     "reload": true,
-    "send_webhook": true
+    "xmpp": {
+      "debug": true
+    }
   },
   "discord": {
     "discord_status_type": "WATCHING",
-    "discord_status": "DarkDus v2.4.5",
+    "discord_status": "DarkDus v2.5",
+    "send_webhook": true,
     "run_discord_client": true
   },
   "client": {
@@ -54,6 +57,7 @@
   },
   "commands": {
     "addFriend": "admin_only",
+    "stopTimer": "admin_only",
     "backpack": "everyone",
     "battlepass": "everyone",
     "changeGamemode": "everyone",
@@ -71,7 +75,7 @@
   },
   "optional": {
     "help_command": "disabled",
-    "or help_command": "enabled"
+    "stopTimer_is_use": "no"
   },
   "system": {
     "bot_loading_message": "Bot is loading!",

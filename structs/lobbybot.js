@@ -1,5 +1,5 @@
 const { 
-  bot_invite_status, cid, bot_invite_onlinetype, bot_use_status, bot_use_onlinetype, bot_join_message, bot_leave_time, eid, reload_time, reload 
+  bot_invite_status, cid, bot_invite_onlinetype, bot_use_status, bot_use_onlinetype, bot_join_message, bot_leave_time, eid, reload_time, reload, xmpp_Debug
 } = require('./config');
 const axiosInstance = require('axios').default;
 const system = require('os');
@@ -24,9 +24,9 @@ const handlePartyJoinRequest = require('../events/partyJoinRequest');
 const handlePartyMemberJoined = require('../events/partyMemberJoined');
 const handlePartyMemberLeft = require('../events/partyMemberLeft');
 const managePartySize = require('../client/utils/managePartySize');
-const handleLeaveTimer = require('../client/utils/handleLeaveTimer');
 const reconnectClient = require('../client/utils/reconnectClient');
-const initializeDiscordBot = require('../discordBot/index')
+const initializeDiscordBot = require('../discordBot/index');
+const { brotliCompress } = require('zlib');
 const logEnabled = true;
 let timerstatus = false;
 
@@ -54,6 +54,7 @@ async function sleep(seconds) {
 
   if (!accountId || !deviceId || !secret) {
     showError("Account information (ACCOUNT_ID, DEVICE_ID, SECRET) is missing or incomplete.");
+    showError('If you haven\'t bot information yet, you can get it with the command : node ./client/createDeviceAuth.js')
     process.exit(1);
   }
 
@@ -67,7 +68,7 @@ async function sleep(seconds) {
       },
     },
     debug: console.log,
-    xmppDebug: true,
+    xmppDebug: xmpp_Debug || false,
     platform: 'WIN',
     partyConfig: {
       chatEnabled: true,
