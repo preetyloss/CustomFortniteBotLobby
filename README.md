@@ -95,4 +95,4 @@ nconf
 > DarkDus is not affiliated with, or sponsored or endorsed by, Epic Games, Inc
 
 ## Contributors
-Mr_Julus (@mr-julus)
+Mr_Julus (@MrJulus)
