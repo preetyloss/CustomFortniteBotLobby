@@ -71,7 +71,10 @@
 - Add a verification if all device info is present
 
 2.5.4 :
-- Fix a bugs related to the version of undici (unsuccessful...)
+- Fix a bug related to the version of undici (unsuccessful...)
 
 2.5.4-5 :
 - Edit /show_bots => /show_bot
+
+2.5.5 :
+- Fix a bug related to the deviceAuth info checker

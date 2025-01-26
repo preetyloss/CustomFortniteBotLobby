@@ -44,7 +44,7 @@ async function InitWelcomMessage() {
         console.log('\x1b[31m%s\x1b[0m', resultTestDeviceAuth);
         console.log('\x1b[31m%s\x1b[0m', 'You can get Device Info by executing the command : \n node ./client/createDeviceAuth.js');
         console.log('\x1b[36m%s\x1b[0m', '------------------------------------------------------');
-        return
+        process.exit(1);
     }
 }
 

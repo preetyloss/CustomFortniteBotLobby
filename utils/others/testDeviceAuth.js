@@ -16,5 +16,6 @@ module.exports = async () => {
     
     if (missingFields.length > 0) {
         return `Missing ${missingFields.join(' & ')}`;
-    } 
+    }
+    return true
 };
