@@ -71,4 +71,4 @@
 - Add a verification if all device info is present
 
 2.5.4 :
-- Fix a bugs related to the version of undici
+- Fix a bugs related to the version of undici (unsuccessful...)

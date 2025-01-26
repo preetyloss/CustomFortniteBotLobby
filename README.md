@@ -56,7 +56,7 @@ Change .env with your webhook url
 ### Client
 - [✅] `bot@emote <emote>` : Make the bot perform an emote.
 - [✅] `bot@stopEmote` : Stop the current emote.
-- [✅] `bot@level <level>` : Set the bot's level.
+- [✅] `bot@level <level>` : Set the bot's level. (Level max: 2,147,483,647)
 - [✅] `bot@battlepass <purchased> <level>` : Set the bot's battle pass status and level.
 
 ### Others
