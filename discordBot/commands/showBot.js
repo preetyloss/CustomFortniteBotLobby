@@ -9,7 +9,7 @@ const secret = nconf.get('ACCOUNT1_SECRET')
 
 module.exports = {
     data: new SlashCommandBuilder()
-      .setName('show_bots')
+      .setName('show_bot')
       .setDescription('Show the bot\'s info'),
     async execute(interaction) {
       const embed = new EmbedBuilder()

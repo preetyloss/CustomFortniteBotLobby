@@ -72,3 +72,6 @@
 
 2.5.4 :
 - Fix a bugs related to the version of undici (unsuccessful...)
+
+2.5.4-5 :
+- Edit /show_bots => /show_bot

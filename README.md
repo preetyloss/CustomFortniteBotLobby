@@ -7,7 +7,7 @@ DarkDus is a free and open-source project, and you are welcome to contribute to 
 
 Chapiter 6 - Saison 1
 
-> Dark Dus -  version 2.5.4
+> Dark Dus -  version 2.5.4-5
 
 Made by Mr_Julus
 
@@ -16,7 +16,7 @@ Made by Mr_Julus
 -> then run : node ./client/createDeviceAuth.js
 
 ## Branches :
-=> [Default] main (version 2.5.4) 
+=> [Default] main (version 2.5.4-5) 
 
 => [Obsolete] DarkDus-v1 (version 1.3.6) 
 
@@ -37,7 +37,7 @@ Change .env with your webhook url
 - [✅] `/banned_player remove <username>` : Unban an username
 - [✅] `/banned_player liste` : List of the banned player
 - [✅] `/help` : Help command
-- [✅] `/show_bots` : Show the bot's info
+- [✅] `/show_bot` : Show the bot's info
 - [✅] `/logout` : Log out the bot
 
 ## Fortnite Client Commands
