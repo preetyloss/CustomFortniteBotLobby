@@ -3,9 +3,9 @@ const { EmbedBuilder } = require('discord.js');
 const nconf = require('nconf')
 nconf.file({ file: './config.json' });
 
-const accountId = nconf.get('ACCOUNT1_ID')
-const deviceId = nconf.get('ACCOUNT1_DEVICE_ID')
-const secret = nconf.get('ACCOUNT1_SECRET')
+const accountId = nconf.get('ACCOUNT_ID')
+const deviceId = nconf.get('DEVICE_ID')
+const secret = nconf.get('SECRET')
 
 module.exports = {
     data: new SlashCommandBuilder()
