@@ -24,9 +24,9 @@ Made by Mr_Julus
 Change .env with your webhook url
 
 ## New Features
+- When the client is banned from Fortnite matchmaking, the bot have a special status.
 - Add a verification if all device info is present
 - Add stopTimer custom command
-- Add discord bot with a lot of features
 
 ## Discord Bot Commands
 - [✅] `/restart` : Restart the bot
