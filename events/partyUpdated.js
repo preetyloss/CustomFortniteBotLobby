@@ -97,7 +97,7 @@ const handlePartyUpdated = async (botClient, updatedParty, webhookClient, logEna
         if (ticketResponse.status !== 200) {
           webhookClient.send(`\`\`\`diff\n- [Matchmaking] Error while obtaining ticket\`\`\``);
           if (ticketResponse.errorMessage === "Banned from matchmaking" && ticketResponse.errorCode === "'errors.com.epicgames.fortnite.player_banned_from_sub_game',") {
-            clientIsBanned(botClient)
+            await clientIsBanned(botClient)
             webhookClient.send(`\`\`\`diff\n- [Matchmaking] Player is banned from matchmaking for ${ticketResponse.banDaysRemaining} Days\`\`\``);
             showError(`Player is banned from matchmaking for ${ticketResponse.banDaysRemaining} Days`);
           }

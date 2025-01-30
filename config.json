@@ -10,7 +10,8 @@
     "reload": true,
     "xmpp": {
       "debug": true
-    }
+    },
+    "banned_from_matchmaking": false
   },
   "discord": {
     "discord_status_type": "WATCHING",
@@ -28,6 +29,7 @@
     "status": {
       "default": "[DarkDus] Invite ✅ - Fortnite Bot Lobby",
       "inUse": "[DarkDus] is use ❌",
+      "matchmaking_banned": "[DarkDus] 🚩 The bot is banned from matchmaking  🚩",
       "default_onlinetype": "online",
       "inuse_onlinetype": "xa"
     },

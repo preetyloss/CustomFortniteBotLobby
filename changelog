@@ -78,3 +78,6 @@
 
 2.5.5 :
 - Fix a bug related to the deviceAuth info checker
+
+2.5.6 :
+- When the client is banned from Fortnite matchmaking, the bot have a special status.
