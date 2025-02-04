@@ -90,10 +90,15 @@ Edit the `.env` file with your Discord Token.
 
 ## ⭐ Features
 ✔️ Automatically accepts friend requests.
+
 ✔️ Automatically accepts invitations and join requests.
+
 ✔️ Leaves the party when members enter a match.
+
 ✔️ Dynamic status based on player presence.
+
 ✔️ Integrated matchmaking system.
+
 ✔️ Advanced customization with custom commands.
 
 ## 📜 Disclaimer
