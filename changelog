@@ -84,3 +84,6 @@
 
 2.5.7 :
 - Fix bug related to the Disord bot command : /showBots
+
+2.5.8 :
+- Change the style of README file
