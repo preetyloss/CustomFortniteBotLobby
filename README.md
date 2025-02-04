@@ -35,10 +35,10 @@ node ./client/createDeviceAuth.js
 ### You can fully customize your Fortnite Bot and Discord Bot
 You can fully customize it by editing the config.json file
 
-### 3️⃣ Configure Discord Webhook
+### Configure Discord Webhook
 Edit the `.env` file with your webhook URL to receive logs.
 
-### 3️⃣ Configure Discord Bot
+### Configure Discord Bot
 Edit the `.env` file with your Discord Token.
 
 ## 🏷️ Branches
@@ -47,7 +47,9 @@ Edit the `.env` file with your Discord Token.
 
 ## 🚀 New Features
 ✅ Detection of Fortnite matchmaking ban with a special status.
+
 ✅ Automatic verification of device info.
+
 ✅ New custom command: `stopTimer`.
 
 ## 🛠️ Discord Bot Commands
