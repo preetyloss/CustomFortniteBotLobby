@@ -1,8 +1,8 @@
 # Dark Dus - A Custom Fortnite Bot Lobby
 
-Dark Dus is a custom Fortnite lobby bot designed to help manage your lobby.
+Dark Dus is a custom Fortnite lobby bot designed to help manage your Fortnite Bot Lobby.
 
-This project is open-source and free. Contributions are welcome!
+This project is open-source and free.
 
 ## 📌 Information
 - **Chapter 6 - Season 1**
