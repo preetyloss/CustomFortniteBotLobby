@@ -31,7 +31,7 @@ and then, run:
 node ./client/createDeviceAuth.js
 ```
 
-## Customize your bot
+## 🛠️ Customize your bot
 ### You can fully customize your Fortnite Bot and Discord Bot
 You can fully customize it by editing the config.json file
 
