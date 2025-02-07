@@ -6,14 +6,14 @@ This project is open-source and free.
 
 ## 📌 Information
 - **Chapter 6 - Season 1**
-- **Version: 2.5.8**
+- **Version: 2.5.9**
 - **Created by: Mr_Julus**
 
 ## 🔧 Installation and Setup
 ### 1️⃣ Requirements
 Make sure you have installed [Node.js](https://nodejs.org/) and the following dependencies:
 ```sh
-npm install colors discord.js dotenv fnbr axios fs nconf
+npm install colors discord.js dotenv fnbr axios fs nconf readline
 ```
 
 ### 2️⃣ Authentication
@@ -42,7 +42,7 @@ Edit the `.env` file with your webhook URL to receive logs.
 Edit the `.env` file with your Discord Token.
 
 ## 🏷️ Branches
-- **[Default] `main`** (version 2.5.8)
+- **[Default] `main`** (version 2.5.9)
 - **[Obsolete] `DarkDus-v1`** (version 1.3.6)
 
 ## 🚀 New Features

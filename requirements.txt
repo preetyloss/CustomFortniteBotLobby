@@ -5,3 +5,4 @@ fnbr
 axios
 fs
 nconf
+readline
