@@ -26,8 +26,11 @@ const handlePartyMemberLeft = require('../events/partyMemberLeft');
 const managePartySize = require('../client/utils/managePartySize');
 const reconnectClient = require('../client/utils/reconnectClient');
 const initializeDiscordBot = require('../discordBot/index');
+const postStatus = require('../client/postStatus')
+const handleExit = require('../events/handleExit')
 const logEnabled = true;
 let timerstatus = false;
+let data
 
 /**
  * @typedef {import('./utils/types').MMSTicket} MMSTicket
@@ -84,6 +87,15 @@ async function sleep(seconds) {
   await initClient(botClient);
   await partyInstance.setPrivacy(Enums.PartyPrivacy.PRIVATE);
 
+  data = {
+      username: botClient.user.self.displayName,
+      status: "Online",
+      party: "available",
+      matchmaking: "available",
+      timestamp: new Date().toISOString()
+  };
+  await postStatus(data)
+
   axiosInstance.interceptors.response.use(undefined, function (error) {
     if (error.response) {
       if (error.response.data.errorCode && botClient && botClient.party) {
@@ -103,6 +115,18 @@ async function sleep(seconds) {
   botClient.on('party:member:left', (member) => handlePartyMemberLeft(botClient, member, managePartySize));
   botClient.on('party:member:message', msg => handleCommands(msg, botClient));
   botClient.on('friend:message', msg => handleCommands(msg, botClient));
+  botClient.on('disconnected', async () => {
+    showInfo("❌ The client is disconnected !", 'client');
+
+    data = {
+        username: botClient.user.self.displayName,
+        status: "Offline",
+        party: "offline",
+        matchmaking: "offline",
+        timestamp: new Date().toISOString()
+    };
+    await postStatus(data)
+  });
 
   if (reload) {
     setTimeout(() => reconnectClient(botClient, webhookClient, initClient), reload_time * 1000);
@@ -110,4 +134,9 @@ async function sleep(seconds) {
 
   managePartySize(botClient, bot_invite_status, bot_invite_onlinetype, bot_use_status, bot_use_onlinetype, bot_join_message);
   initializeDiscordBot(botClient);
+
+  process.on('SIGINT', handleExit);
+  process.on('SIGTERM', handleExit);
+  process.on('SIGHUP', handleExit);
+  process.on('beforeExit', handleExit);
 })();

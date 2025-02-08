@@ -6,7 +6,7 @@ This project is open-source and free.
 
 ## 📌 Information
 - **Chapter 6 - Season 1**
-- **Version: 2.5.9**
+- **Version: 2.6.0**
 - **Created by: Mr_Julus**
 
 ## 🔧 Installation and Setup
@@ -42,15 +42,35 @@ Edit the `.env` file with your webhook URL to receive logs.
 Edit the `.env` file with your Discord Token.
 
 ## 🏷️ Branches
-- **[Default] `main`** (version 2.5.9)
+- **[Default] `main`** (version 2.6.0)
 - **[Obsolete] `DarkDus-v1`** (version 1.3.6)
 
+## Get the status and if the bot is avaible with a API
+```js
+const axios = require('axios');
+
+async function getUserStatus(username) {
+    try {
+        const response = await axios.get('https://darkdus-client-status.vercel.app/api/status', {
+            params: { username }
+        });
+        
+        console.log('Data retrieved:', response.data);
+    } catch (error) {
+        console.error('Error:', error.response ? error.response.data : error.message);
+    }
+}
+
+getUserStatus('testUsername');
+```
+⚠️ If you kill the terminal, this will not work (the status will not change to offline), you need to do the command bot@logout
+
 ## 🚀 New Features
+✅ A API that allow to get the status and if the bot is available
+
 ✅ Detection of Fortnite matchmaking ban with a special status.
 
 ✅ Automatic verification of device info.
-
-✅ New custom command: `stopTimer`.
 
 ## 🛠️ Discord Bot Commands
 | Command | Description |

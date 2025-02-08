@@ -90,3 +90,7 @@
 
 2.5.9 :
 - Fix bug related to the creation of deviceAuth
+
+2.6.0 :
+- Get the status and if the bot is avaible with a API
+- Fix bug related to the status

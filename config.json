@@ -1,6 +1,6 @@
 {
   "DarkDus": {
-    "version": "2.5.9",
+    "version": "2.6.0",
     "creator": "Mr_Julus"
   },
   "fortnite": {
@@ -15,7 +15,7 @@
   },
   "discord": {
     "discord_status_type": "WATCHING",
-    "discord_status": "DarkDus v2.5.9",
+    "discord_status": "DarkDus v2.6.0",
     "send_webhook": true,
     "run_discord_client": true
   },
@@ -68,7 +68,7 @@
     "inviteFriend": "everyone",
     "kick": "everyone",
     "level": "everyone",
-    "logout": "admin_only",
+    "logout": "everyone",
     "outfit": "everyone",
     "pickaxe": "everyone",
     "promote": "everyone",
