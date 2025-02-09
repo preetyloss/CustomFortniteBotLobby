@@ -1,4 +1,4 @@
-const username = "julus_dev" // PUT YOUR CLIENT'S USERNAME HERE
+const username = "testUsername" // PUT YOUR CLIENT'S USERNAME HERE
 const url = `https://darkdus-client-status.vercel.app/api/status?username=${username}`;
 let partyStatus
 
