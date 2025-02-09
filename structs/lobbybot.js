@@ -121,7 +121,7 @@ async function sleep(seconds) {
   botClient.on('friend:request', (request) => handleFriendRequest(botClient, request, webhookClient));
   botClient.on('party:invite', (request) => handlePartyInvite(botClient, request));
   botClient.on('party:joinrequest', (receivedRequest) => handlePartyJoinRequest(botClient, receivedRequest));
-  botClient.on('party:member:joined', (join) => handlePartyMemberJoined(botClient, join, eid, cid, managePartySize, bot_invite_status, bot_invite_onlinetype, bot_use_status, bot_use_onlinetype, bot_join_message, bot_leave_time));
+  botClient.on('party:member:joined', (join) => handlePartyMemberJoined(botClient, join, eid, cid, managePartySize, bot_invite_status, bot_invite_onlinetype, bot_use_status, bot_use_onlinetype, bot_join_message, bot_leave_time, webhookClient));
   botClient.on('party:member:left', (member) => handlePartyMemberLeft(botClient, member, managePartySize));
   botClient.on('party:member:message', msg => handleCommands(msg, botClient));
   botClient.on('friend:message', msg => handleCommands(msg, botClient));

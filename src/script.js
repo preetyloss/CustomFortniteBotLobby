@@ -1,5 +1,5 @@
 const username = "testUsername" // PUT YOUR CLIENT'S USERNAME HERE
-const url = `https://darkdus-client-status.vercel.app/api/beta?username=${username}`;
+const url = `https://darkdus-client-status.vercel.app/api/status?username=${username}`;
 let partyStatus
 
 if (username === "testUsername" || username === "") {
@@ -15,9 +15,12 @@ if (username === "testUsername" || username === "") {
         .then(data => {
             if (data.party === "alone") {
                 partyStatus = "avaible"
-            } else {
+            } else if (data.party === "in_party"){
                 partyStatus = "in use"
+            } else {
+                partyStatus = "something goes wrong..."
             }
+
             document.getElementById("username").innerHTML = `YourFortniteClient: ${data.username}`
             document.getElementById("status").innerHTML = `Status: ${data.status}`
             document.getElementById("friends").innerHTML = `Friends: ${data.friends}`

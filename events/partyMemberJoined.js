@@ -3,10 +3,10 @@ const handleLeaveTimer = require('../client/utils/handleLeaveTimer');
 
 let timerstatus = false;
 
-const handlePartyMemberJoined = async (botClient, join, eid, cid, managePartySize, bot_invite_status, bot_invite_onlinetype, bot_use_status, bot_use_onlinetype, bot_join_message, bot_leave_time) => {
+const handlePartyMemberJoined = async (botClient, join, eid, cid, managePartySize, bot_invite_status, bot_invite_onlinetype, bot_use_status, bot_use_onlinetype, bot_join_message, bot_leave_time, webhookClient) => {
   if (botClient.party.size > 1) {
     if (!timerstatus) {
-      setTimeout(() => handleLeaveTimer(botClient, timerstatus), bot_leave_time * 1000);
+      setTimeout(() => handleLeaveTimer(botClient, timerstatus, webhookClient), bot_leave_time * 1000);
       timerstatus = true;
     }
   }

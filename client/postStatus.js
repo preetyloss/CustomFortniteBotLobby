@@ -1,6 +1,7 @@
 const showInfo = require('../utils/logs/showInfo');
 
 async function postStatus(data) {
+    console.log(data)
     try {
         const response = await fetch("https://darkdus-client-status.vercel.app/api/status", {
             method: 'POST',
