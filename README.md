@@ -60,7 +60,7 @@ Edit the `.env` file with your Discord Token.
 | `status` | The status of the bot (online or offline) |
 | `party` | Party status (alone => no one with the bot or in_use => the bot is in use) |
 | `matchmaking` | Matchmaking status of the bot (available or banned) |
-| `/timestamp` | Last update date |
+| `timestamp` | Last update date |
 
 (Soon you will access to the number of friend)
 
