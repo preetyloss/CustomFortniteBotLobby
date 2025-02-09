@@ -10,6 +10,19 @@ const initClient = require('./utils/others/initialize');
 const axios = require("axios");
 const app = express();
 const port = 8080;
+const isLocalhost = nconf.get('system:localhost_pages') === true
+
+const initLocalhost = async () => {
+  if (isLocalhost) {
+    app.use(express.static('src')); 
+    app.get('/', (req, res) => {
+      res.sendFile(__dirname + '/src/index.html');
+    });
+    showInfo(`Localhost mode enabled: /src/index.html - You access to it (localhost:${port}/index.html)`, 'green');
+  } else {
+    showInfo(`Localhost mode disabled`)
+  }
+}
 
 const sleep = async (seconds) => new Promise(resolve => setTimeout(resolve, seconds * 1000));
 
@@ -59,6 +72,7 @@ async function start() {
 
   updatePlaylists();
   showInfo(`Server running on port ${port}`, 'green');
+  await initLocalhost()
   executeScript("structs/lobbybot.js");
 }
 

@@ -94,3 +94,6 @@
 2.6.0 :
 - Get the status and if the bot is avaible with a API
 - Fix bug related to the status
+
+2.6.1 :
+- Add a localhost page that allow you to see the client's status with a cool page

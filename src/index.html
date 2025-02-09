@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DarkDus - Fortnite Lobby Bot</title>
+    <link rel="shortcut icon" href="https://darkdus.is-a.dev/src/logo.png" type="image/x-icon">
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #0d1a33, #1b2945);
+            color: #fff;
+            line-height: 1.6;
+            font-size: 16px;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        header .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        header .logo .fn {
+            color: #fff;
+        }
+
+        header .logo .lb {
+            color: #00bfff;
+        }
+
+        /* Main Container */
+        main {
+            flex: 1;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .box {
+            background: #62B1F6; /* Bleu clair */
+            color: #000; /* Texte noir */
+            padding: 20px;
+            border-radius: 25px; /* Coins très arrondis */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Ombre douce */
+            width: 1000px; /* Nouvelle largeur */
+            height: 500px; /* Nouvelle hauteur */
+            text-align: left; /* Alignement du texte à gauche */
+            font-family: Arial, sans-serif;
+        }
+
+        .box h2 {
+            font-size: 64px;
+            margin-bottom: 10px;
+        }
+
+        .box p {
+            font-size: 48px;
+            line-height: 1.5;
+        }
+
+        /* Footer */
+        footer {
+            background: #0a1426; /* Bleu plus foncé */
+            color: #ccc;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: auto;
+        }
+
+        footer p {
+            font-size: 14px;
+            text-align: left;
+            margin-left: 50px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="/" style="text-decoration: none;">
+                <span class="fn">DarkDus </span>
+            </a>
+            <span class="lb">Custom Fortnite Bot Lobby</span>
+        </div>
+    </header>
+    <main>
+        <div id="container">
+            <div class="box">
+                <h2 id="username">YourFortniteClient: </h2>
+                <p id="status">Status: Online</p>
+                <p id="party">Client is available</p>
+                <p id="matchmaking">Matchmaking: Available</p>
+                <p id="timestamp">Last update: </p>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2025, DarkDus. All rights reserved. <br> Fortnite is a trademarks or registered trademark of Epic Games, Inc. in the United States of America and elsewhere. <br> DarkDus is not affiliated with, or sponsored or endorsed by, Epic Games, Inc.</p>
+    </footer>
+    <script src="./script.js"></script>
+</body>
+</html>

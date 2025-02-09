@@ -6,7 +6,7 @@ This project is open-source and free.
 
 ## 📌 Information
 - **Chapter 6 - Season 1**
-- **Version: 2.6.0**
+- **Version: 2.6.1**
 - **Created by: Mr_Julus**
 
 ## 🔧 Installation and Setup
@@ -17,6 +17,7 @@ npm install colors discord.js dotenv fnbr axios fs nconf readline
 ```
 
 ### 2️⃣ Authentication
+Rename the file env.example to .env
 You need to have a deviceAuth information !
 if you already have the deviceAuth of a new account, you can put them in .env and run:
 ```sh
@@ -42,10 +43,31 @@ Edit the `.env` file with your webhook URL to receive logs.
 Edit the `.env` file with your Discord Token.
 
 ## 🏷️ Branches
-- **[Default] `main`** (version 2.6.0)
+- **[Default] `main`** (version 2.6.1)
 - **[Obsolete] `DarkDus-v1`** (version 1.3.6)
-
+  data = {
+      username: botClient.user.self.displayName,
+      status: "Online",
+      party: "available",
+      matchmaking: "available",
+      timestamp: new Date().toISOString()
+  };
 ## Get the status and if the bot is avaible with a API
+### Client's info that you can get
+| Info | Description |
+|----------|-------------|
+| `username` | The username of the bot |
+| `status` | The status of the bot (online or offline) |
+| `party` | Party status (alone => no one with the bot or in_use => the bot is in use) |
+| `matchmaking` | Matchmaking status of the bot (available or banned) |
+| `/timestamp` | Last update date |
+
+(Soon you will access to the number of friend)
+
+### Localhost
+You can access to all of there info in localhost, if you active it on the config file
+
+### Example
 ```js
 const axios = require('axios');
 
