@@ -45,13 +45,7 @@ Edit the `.env` file with your Discord Token.
 ## 🏷️ Branches
 - **[Default] `main`** (version 2.6.1)
 - **[Obsolete] `DarkDus-v1`** (version 1.3.6)
-  data = {
-      username: botClient.user.self.displayName,
-      status: "Online",
-      party: "available",
-      matchmaking: "available",
-      timestamp: new Date().toISOString()
-  };
+
 ## Get the status and if the bot is avaible with a API
 ### Client's info that you can get
 | Info | Description |
