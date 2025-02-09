@@ -6,7 +6,7 @@ This project is open-source and free.
 
 ## 📌 Information
 - **Chapter 6 - Season 1**
-- **Version: 2.6.1**
+- **Version: 2.6.2**
 - **Created by: Mr_Julus**
 
 ## 🔧 Installation and Setup
@@ -43,7 +43,7 @@ Edit the `.env` file with your webhook URL to receive logs.
 Edit the `.env` file with your Discord Token.
 
 ## 🏷️ Branches
-- **[Default] `main`** (version 2.6.1)
+- **[Default] `main`** (version 2.6.2)
 - **[Obsolete] `DarkDus-v1`** (version 1.3.6)
 
 ## Get the status and if the bot is avaible with a API
@@ -52,28 +52,33 @@ Edit the `.env` file with your Discord Token.
 |----------|-------------|
 | `username` | The username of the bot |
 | `status` | The status of the bot (online or offline) |
+| `friends` | The number of friend |
 | `party` | Party status (alone => no one with the bot or in_use => the bot is in use) |
 | `matchmaking` | Matchmaking status of the bot (available or banned) |
 | `timestamp` | Last update date |
-
-(Soon you will access to the number of friend)
 
 ### Localhost
 You can access to all of there info in localhost, if you active it on the config file
 
 ### Example
 ```js
-const axios = require('axios');
-
 async function getUserStatus(username) {
     try {
-        const response = await axios.get('https://darkdus-client-status.vercel.app/api/status', {
-            params: { username }
+        const response = await fetch(`https://darkdus-client-status.vercel.app/api/status?username=${username}`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+            },
         });
-        
-        console.log('Data retrieved:', response.data);
+
+        if (response.ok) {
+            const data = await response.json();
+            console.log('Data retrieved:', data);
+        } else {
+            throw new Error(`HTTP Error: ${response.status} ${response.statusText}`);
+        }
     } catch (error) {
-        console.error('Error:', error.response ? error.response.data : error.message);
+        console.error('Error:', error.message);
     }
 }
 

@@ -28,14 +28,20 @@ const reconnectClient = require('../client/utils/reconnectClient');
 const initializeDiscordBot = require('../discordBot/index');
 const postStatus = require('../client/postStatus')
 const handleExit = require('../events/handleExit')
+const getUserData = require('../client/getData')
 const logEnabled = true;
 let timerstatus = false;
+let userData
 let data
 
 /**
  * @typedef {import('./utils/types').MMSTicket} MMSTicket
  * @typedef {import('./utils/types').PartyMatchmakingInfo} PartyMatchmakingInfo
  */
+
+function cloneData(data) {
+  return { ...data };
+}
 
 async function sleep(seconds) {
   return new Promise((resolve) => setTimeout(resolve, seconds * 1000));
@@ -87,14 +93,18 @@ async function sleep(seconds) {
   await initClient(botClient);
   await partyInstance.setPrivacy(Enums.PartyPrivacy.PRIVATE);
 
+  const friendsList = Array.from(botClient.friend.list.values());
+  const friendNames = friendsList.map(friend => friend._displayName);
+
   data = {
       username: botClient.user.self.displayName,
       status: "Online",
-      party: "available",
+      friends: friendNames.length,
+      party: "alone",
       matchmaking: "available",
       timestamp: new Date().toISOString()
   };
-  await postStatus(data)
+  await postStatus(cloneData(data))
 
   axiosInstance.interceptors.response.use(undefined, function (error) {
     if (error.response) {
@@ -117,16 +127,49 @@ async function sleep(seconds) {
   botClient.on('friend:message', msg => handleCommands(msg, botClient));
   botClient.on('disconnected', async () => {
     showInfo("❌ The client is disconnected !", 'client');
+    const friendsList = Array.from(botClient.friend.list.values());
+    const friendNames = friendsList.map(friend => friend._displayName);
 
     data = {
         username: botClient.user.self.displayName,
         status: "Offline",
+        friends: friendNames.length,
         party: "offline",
         matchmaking: "offline",
         timestamp: new Date().toISOString()
     };
-    await postStatus(data)
+    await postStatus(cloneData(data))
   });
+  botClient.on('friend:added', async () => {
+    userData = getUserData(botClient.user.self.displayName)
+    const friendsList = Array.from(botClient.friend.list.values());
+    const friendNames = friendsList.map(friend => friend._displayName);
+
+    data = {
+      username: botClient.user.self.displayName,
+      status: userData.status,
+      friends: friendNames.length,
+      party: userData.party,
+      matchmaking: userData.matchmaking,
+      timestamp: new Date().toISOString()
+    };
+    await postStatus(cloneData(data))
+  })
+  botClient.on('friend:removed', async () => {
+    userData = getUserData(botClient.user.self.displayName)
+    const friendsList = Array.from(botClient.friend.list.values());
+    const friendNames = friendsList.map(friend => friend._displayName);
+
+    data = {
+      username: botClient.user.self.displayName,
+      status: userData.status,
+      friends: friendNames.length,
+      party: userData.party,
+      matchmaking: userData.matchmaking,
+      timestamp: new Date().toISOString()
+    };
+    await postStatus(cloneData(data))
+  })
 
   if (reload) {
     setTimeout(() => reconnectClient(botClient, webhookClient, initClient), reload_time * 1000);

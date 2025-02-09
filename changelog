@@ -97,3 +97,6 @@
 
 2.6.1 :
 - Add a localhost page that allow you to see the client's status with a cool page
+
+2.6.2 :
+- You can access to the friend list of the bot by API

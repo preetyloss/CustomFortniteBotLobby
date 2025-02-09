@@ -1,14 +1,21 @@
-const axios = require('axios');
-const showInfo = require('../utils/logs/showInfo')
-const showError = require('../utils/logs/showError')
+const showInfo = require('../utils/logs/showInfo');
 
 async function postStatus(data) {
     try {
-        const response = await axios.post("https://darkdus-client-status.vercel.app/api/status", data);
-        showInfo('Post request successfully', 'client')
-    } catch (error) {
-        showError("❌ Error sending request:", error.message);
-    }
+        const response = await fetch("https://darkdus-client-status.vercel.app/api/status", {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+        });
+
+        if (response.ok) {
+            showInfo('Post request successfully', 'client');
+        } else {
+            throw new Error(`HTTP Error: ${response.status} ${response.statusText}`);
+        }
+    } catch (error) {}
 }
 
-module.exports = postStatus
+module.exports = postStatus;
