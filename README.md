@@ -6,7 +6,7 @@ This project is open-source and free.
 
 ## 📌 Information
 - **Chapter 6 - Season 1**
-- **Version: 2.6.3**
+- **Version: 2.6.5**
 - **Created by: Mr_Julus**
 
 ## 🔧 Installation and Setup
@@ -43,7 +43,7 @@ Edit the `.env` file with your webhook URL to receive logs.
 Edit the `.env` file with your Discord Token.
 
 ## 🏷️ Branches
-- **[Default] `main`** (version 2.6.3)
+- **[Default] `main`** (version 2.6.5)
 - **[Obsolete] `DarkDus-v1`** (version 1.3.6)
 
 ## Get the status and if the bot is avaible with a API
@@ -61,6 +61,7 @@ Edit the `.env` file with your Discord Token.
 You can access to all of there info in localhost, if you active it on the config file
 
 ### Example
+You can find more example [here](https://darkdus-client-status.vercel.app)
 ```js
 async function getUserStatus(username) {
     try {
@@ -84,7 +85,9 @@ async function getUserStatus(username) {
 
 getUserStatus('testUsername');
 ```
-⚠️ If you kill the terminal, this will not work (the status will not change to offline), you need to do the command bot@logout
+
+### WARNING!
+⚠️ If you kill the terminal, this will not work (the status will not change to offline), you need to do the command bot@logout or /panel and then click on the button logout
 
 ## 🚀 New Features
 ✅ A API that allow to get the status and if the bot is available
@@ -96,7 +99,7 @@ getUserStatus('testUsername');
 ## 🛠️ Discord Bot Commands
 | Command | Description |
 |----------|-------------|
-| `/restart` | Restart the bot |
+| `/panel` | Manage the Fortnite bot (restart and logout) |
 | `/admin add <accountID>` | Add an admin |
 | `/admin delete <username>` | Remove an admin |
 | `/admin list` | Show the admin list |
@@ -105,7 +108,6 @@ getUserStatus('testUsername');
 | `/banned_player list` | List banned players |
 | `/help` | Display help |
 | `/show_bot` | Show bot information |
-| `/logout` | Log out the bot |
 
 ## 🎮 Fortnite Commands
 ### 🎭 Appearance

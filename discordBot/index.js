@@ -12,7 +12,7 @@ async function sleep(seconds) {
   return new Promise((resolve) => setTimeout(resolve, seconds * 1000));
 }
 
-function initializeDiscordBot() {
+function initializeDiscordBot(botClient) {
   if (!process.env.DISCORD_TOKEN) {
     showError("[DISCORD] DISCORD_TOKEN is not defined in environment variables.", 'sysError');
     return;
@@ -26,7 +26,7 @@ function initializeDiscordBot() {
 
   dclient.once('ready', async () => {
     showInfo(`[DISCORD] Bot online as ${dclient.user.tag}!`, 'green');
-    dclient.user.setActivity("discord_status", { type: "WATCHING" });
+    dclient.user.setActivity(discord_status, { type: discord_status_type });
 
     const commands = [];
     const commandsPath = path.join(__dirname, './commands');
@@ -46,39 +46,66 @@ function initializeDiscordBot() {
       }
     });
 
-    dclient.application.commands.set(commands)
-      .then(() => {
-        showInfo(`[DISCORD] ${commands.length} commands successfully registered!`, 'green');
-      })
-      .catch((error) => {
-        showError("[DISCORD] Error refreshing commands:");
-        console.error(error);
-      });
+    if (commands.length > 0) {
+      dclient.application.commands.set(commands)
+        .then(() => showInfo(`[DISCORD] ${commands.length} commands successfully registered!`, 'green'))
+        .catch((error) => {
+          showError("[DISCORD] Error refreshing commands:");
+          console.error(error);
+        });
+    } else {
+      showError("[DISCORD] No valid commands found!");
+    }
   });
 
   dclient.on('interactionCreate', async (interaction) => {
-    if (!interaction.isCommand()) return;
+    if (interaction.isButton()) {
+      if (interaction.customId === 'restart_bot') {
+        await interaction.deferUpdate();
+        botClient.restart();
 
-    const command = dclient.commands.get(interaction.commandName);
+        const restartEmbed = new EmbedBuilder()
+          .setColor('#FF0000')
+          .setTitle('Bot Restarted')
+          .setDescription('The bot is now restarting...')
+          .setTimestamp();
 
-    if (!command) {
-      const embed = new MessageEmbed()
-        .setColor('#FF0000')
-        .setTitle('Error')
-        .setDescription('Unknown command.');
-      return interaction.reply({ embeds: [embed] });
-    }
+        return interaction.editReply({ embeds: [restartEmbed] });
+      } else if (interaction.customId === 'logout_bot') {
+        await botClient.logout();
 
-    try {
-      await command.execute(interaction);
-    } catch (error) {
-      showError(`[DISCORD] Error executing command: ${interaction.commandName}`);
-      console.error(error);
-      const embed = new MessageEmbed()
-        .setColor('#FF0000')
-        .setTitle('Error')
-        .setDescription('There was an error executing the command.');
-      return interaction.reply({ embeds: [embed] });
+        const statusEmbed = new EmbedBuilder()
+          .setColor('#00FF00')
+          .setTitle('Bot Logout')
+          .setDescription('The bot is now logged out...')
+          .setTimestamp();
+
+        return interaction.reply({ embeds: [statusEmbed], ephemeral: true });
+      }
+    }  
+
+    if (interaction.isCommand()) {
+      const command = dclient.commands.get(interaction.commandName);
+
+      if (!command) {
+        const embed = new EmbedBuilder()
+          .setColor('#FF0000')
+          .setTitle('Error')
+          .setDescription('Unknown command.');
+        return interaction.reply({ embeds: [embed] });
+      }
+
+      try {
+        await command.execute(interaction, botClient);
+      } catch (error) {
+        showError(`[DISCORD] Error executing command: ${interaction.commandName}`);
+        console.error(error);
+        const embed = new EmbedBuilder()
+          .setColor('#FF0000')
+          .setTitle('Error')
+          .setDescription('There was an error executing the command.');
+        return interaction.reply({ embeds: [embed] });
+      }
     }
   });
 
