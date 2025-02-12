@@ -1,12 +1,12 @@
 const {
   discord_status_type, discord_status, run_discord_client
 } = require('../structs/config');
-
 const fs = require('fs');
 const path = require('path');
 const { Client: Dclient, GatewayIntentBits, EmbedBuilder } = require('discord.js');
 const showInfo = require('../utils/logs/showInfo');
 const showError = require('../utils/logs/showError');
+const handleDisconnected = require('../../events/disconnected')
 
 async function sleep(seconds) {
   return new Promise((resolve) => setTimeout(resolve, seconds * 1000));
@@ -60,18 +60,9 @@ function initializeDiscordBot(botClient) {
 
   dclient.on('interactionCreate', async (interaction) => {
     if (interaction.isButton()) {
-      if (interaction.customId === 'restart_bot') {
+      if (interaction.customId === 'logout_bot') {
         await interaction.deferUpdate();
-        botClient.restart();
-
-        const restartEmbed = new EmbedBuilder()
-          .setColor('#FF0000')
-          .setTitle('Bot Restarted')
-          .setDescription('The bot is now restarting...')
-          .setTimestamp();
-
-        return interaction.editReply({ embeds: [restartEmbed] });
-      } else if (interaction.customId === 'logout_bot') {
+        await handleDisconnected(botClient)
         await botClient.logout();
 
         const statusEmbed = new EmbedBuilder()
@@ -80,7 +71,7 @@ function initializeDiscordBot(botClient) {
           .setDescription('The bot is now logged out...')
           .setTimestamp();
 
-        return interaction.reply({ embeds: [statusEmbed], ephemeral: true });
+          return interaction.editReply({ embeds: [restartEmbed] })
       }
     }  
 

@@ -15,10 +15,6 @@ module.exports = {
         const row = new ActionRowBuilder()
             .addComponents(
                 new ButtonBuilder()
-                    .setCustomId('restart_bot')
-                    .setLabel('Restart')
-                    .setStyle(ButtonStyle.Primary),
-                new ButtonBuilder()
                     .setCustomId('logout_bot')
                     .setLabel('Logout')
                     .setStyle(ButtonStyle.Danger)
