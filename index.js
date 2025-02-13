@@ -9,7 +9,7 @@ const showInfo = require('./utils/logs/showInfo')
 const initClient = require('./utils/others/initialize');
 const axios = require("axios");
 const app = express();
-const port = 8080;
+const port = nconf.get('system:port') || 8080
 const isLocalhost = nconf.get('system:localhost_pages') === true
 
 const initLocalhost = async () => {

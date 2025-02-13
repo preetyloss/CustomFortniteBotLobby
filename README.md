@@ -6,7 +6,7 @@ This project is open-source and free.
 
 ## 📌 Information
 - **Chapter 6 - Season 1**
-- **Version: 2.6.6**
+- **Version: 2.6.7**
 - **Created by: Mr_Julus**
 
 ## 🔧 Installation and Setup
@@ -43,7 +43,7 @@ Edit the `.env` file with your webhook URL to receive logs.
 Edit the `.env` file with your Discord Token.
 
 ## 🏷️ Branches
-- **[Default] `main`** (version 2.6.6)
+- **[Default] `main`** (version 2.6.7)
 - **[Obsolete] `DarkDus-v1`** (version 1.3.6)
 
 ## Get the status and if the bot is avaible with a API
@@ -99,7 +99,7 @@ getUserStatus('testUsername');
 ## 🛠️ Discord Bot Commands
 | Command | Description |
 |----------|-------------|
-| `/panel` | Manage the Fortnite bot (restart and logout) |
+| `/panel` | Manage the Fortnite bot (logout) |
 | `/admin add <accountID>` | Add an admin |
 | `/admin delete <username>` | Remove an admin |
 | `/admin list` | Show the admin list |

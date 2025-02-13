@@ -1,11 +1,10 @@
 {
   "name": "darkdus",
-  "version": "2.6.6",
+  "version": "2.6.7",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js",
-    "dev": "node ./dev/scripts/clientStatus.js"
+    "start": "node index.js"
   },
   "keywords": [
     "javascipt",

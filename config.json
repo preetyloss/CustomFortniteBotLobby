@@ -1,6 +1,6 @@
 {
     "DarkDus": {
-      "version": "2.6.6",
+      "version": "2.6.7",
       "creator": "Mr_Julus"
     },
     "fortnite": {
@@ -15,7 +15,7 @@
     },
     "discord": {
       "discord_status_type": "WATCHING",
-      "discord_status": "DarkDus v2.6.6",
+      "discord_status": "DarkDus v2.6.7",
       "send_webhook": true,
       "run_discord_client": true
     },
@@ -82,7 +82,8 @@
     "system": {
       "bot_loading_message": "Bot is loading!",
       "web_message": "Bot is online",
-      "localhost_pages": true
+      "localhost_pages": true,
+      "port": 8080
     },
     "admins": [
       "Mr_Julus",

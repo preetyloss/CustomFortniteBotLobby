@@ -6,7 +6,7 @@ const path = require('path');
 const { Client: Dclient, GatewayIntentBits, EmbedBuilder } = require('discord.js');
 const showInfo = require('../utils/logs/showInfo');
 const showError = require('../utils/logs/showError');
-const handleDisconnected = require('../../events/disconnected')
+const handleDisconnected = require('../events/disconnected')
 
 async function sleep(seconds) {
   return new Promise((resolve) => setTimeout(resolve, seconds * 1000));
@@ -71,7 +71,7 @@ function initializeDiscordBot(botClient) {
           .setDescription('The bot is now logged out...')
           .setTimestamp();
 
-          return interaction.editReply({ embeds: [restartEmbed] })
+          return interaction.editReply({ embeds: [statusEmbed] })
       }
     }  
 
