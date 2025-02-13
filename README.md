@@ -77,7 +77,7 @@ Edit the `.env` file with your Discord Token.
 You can access to all of there info in localhost, if you active it on the config file
 
 ### Examples
-There are examples of the use of the API, here : ./exampleAPI/
+There are examples of the use of the API, here : [./exampleAPI](https://github.com/DarkDusOfficial/CustomFortniteBotLobby/tree/main/exampleAPI)
 
 ### Info
 If you have trouble with the API, you can check the status of the API here :    
