@@ -99,6 +99,7 @@ async function sleep(seconds) {
 
   data = {
       username: botClient.user.self.displayName,
+      id: botClient.user.self.id,
       status: "Online",
       friends: friendNames.length,
       party: "alone",

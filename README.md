@@ -6,7 +6,7 @@ This project is open-source and free.
 
 ## 📌 Information
 - **Chapter 6 - Season 1**
-- **Version: 2.6.7**
+- **Version: 2.6.8**
 - **Created by: Mr_Julus**
 
 ## 🔧 Installation and Setup
@@ -43,7 +43,7 @@ Edit the `.env` file with your webhook URL to receive logs.
 Edit the `.env` file with your Discord Token.
 
 ## 🏷️ Branches
-- **[Default] `main`** (version 2.6.7)
+- **[Default] `main`** (version 2.6.8)
 - **[Obsolete] `DarkDus-v1`** (version 1.3.6)
 
 ## Get the status and if the bot is avaible with a API
@@ -51,6 +51,7 @@ Edit the `.env` file with your Discord Token.
 | Info | Description |
 |----------|-------------|
 | `username` | The username of the bot |
+| `id` | The id of the bot |
 | `status` | The status of the bot (online or offline) |
 | `friends` | The number of friend |
 | `party` | Party status (alone => no one with the bot or in_use => the bot is in use) |
