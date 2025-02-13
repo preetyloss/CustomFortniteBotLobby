@@ -115,3 +115,6 @@
 
 2.6.8 :
 - Add the field id (client's id) accessible by API
+
+2.7.0 :
+- Fix bug related to the security of the API, add a field key to authenticate

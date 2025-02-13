@@ -6,7 +6,7 @@ This project is open-source and free.
 
 ## 📌 Information
 - **Chapter 6 - Season 1**
-- **Version: 2.6.8**
+- **Version: 2.7.0**
 - **Created by: Mr_Julus**
 
 ## 🔧 Installation and Setup
@@ -32,6 +32,10 @@ and then, run:
 node ./client/createDeviceAuth.js
 ```
 
+### 3️⃣ Create your API Key
+In the file .env, you need a API Key for the field DARKDUS_API_KEY (if you use it).    
+You can create our, for exemple: MySecretKey
+
 ## 🛠️ Customize your bot
 ### You can fully customize your Fortnite Bot and Discord Bot
 You can fully customize it by editing the config.json file
@@ -43,7 +47,7 @@ Edit the `.env` file with your webhook URL to receive logs.
 Edit the `.env` file with your Discord Token.
 
 ## 🏷️ Branches
-- **[Default] `main`** (version 2.6.8)
+- **[Default] `main`** (version 2.7.0)
 - **[Obsolete] `DarkDus-v1`** (version 1.3.6)
 
 ## Get the status and if the bot is avaible with a API
@@ -58,34 +62,26 @@ Edit the `.env` file with your Discord Token.
 | `matchmaking` | Matchmaking status of the bot (available or banned) |
 | `timestamp` | Last update date |
 
+### Parameter for the method GET
+| Info | Description |
+|----------|-------------|
+| `username` | The username of the bot |
+
+### Parameter for the method POST and DELETE
+| Info | Description |
+|----------|-------------|
+| `username` | The username of the bot |
+| `key` | You custom key |
+
 ### Localhost
 You can access to all of there info in localhost, if you active it on the config file
 
-### Example
-You can find more example [here](https://darkdus-client-status.vercel.app)
-```js
-async function getUserStatus(username) {
-    try {
-        const response = await fetch(`https://darkdus-client-status.vercel.app/api/status?username=${username}`, {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        });
+### Examples
+There are examples of the use of the API, here : ./exampleAPI/
 
-        if (response.ok) {
-            const data = await response.json();
-            console.log('Data retrieved:', data);
-        } else {
-            throw new Error(`HTTP Error: ${response.status} ${response.statusText}`);
-        }
-    } catch (error) {
-        console.error('Error:', error.message);
-    }
-}
-
-getUserStatus('testUsername');
-```
+### Info
+If you have trouble with the API, you can check the status of the API here :    
+[https://darkdus.is-a.dev/api/status](https://darkdus.is-a.dev/api/status)
 
 ### WARNING!
 ⚠️ If you kill the terminal, this will not work (the status will not change to offline), you need to do the command bot@logout or /panel and then click on the button logout

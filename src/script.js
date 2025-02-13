@@ -22,6 +22,7 @@ if (username === "testUsername" || username === "") {
             }
 
             document.getElementById("username").innerHTML = `YourFortniteClient: ${data.username}`
+            document.getElementById("id").innerHTML = `ID: ${data.id}`
             document.getElementById("status").innerHTML = `Status: ${data.status}`
             document.getElementById("friends").innerHTML = `Friends: ${data.friends}`
             document.getElementById("party").innerHTML = `Client is ${partyStatus}`
