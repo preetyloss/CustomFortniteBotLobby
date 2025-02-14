@@ -6,10 +6,12 @@ This project is open-source and free.
 
 ## 📌 Information
 - **Chapter 6 - Season 1**
-- **Version: 2.7.8**
+- **Version: 2.7.9**
 - **Created by: Mr_Julus**
 
 ## 🔧 Installation and Setup
+### ⚙️ A useful link
+A useful link for the outfit, emote, backpack and pickaxe [to find id](https://fortnite.gg/cosmetics)
 ### 1️⃣ Requirements
 Make sure you have installed [Node.js](https://nodejs.org/) and the following dependencies:
 ```sh
@@ -47,7 +49,7 @@ Edit the `.env` file with your webhook URL to receive logs.
 Edit the `.env` file with your Discord Token.
 
 ## 🏷️ Branches
-- **[Default] `main`** (version 2.7.8)
+- **[Default] `main`** (version 2.7.9)
 - **[Obsolete] `DarkDus-v1`** (version 1.3.6)
 
 ## Get the status and if the bot is avaible with a API

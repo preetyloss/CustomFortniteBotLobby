@@ -1,6 +1,6 @@
 {
   "DarkDus": {
-    "version": "2.7.8",
+    "version": "2.7.9",
     "creator": "Mr_Julus"
   },
   "fortnite": {
@@ -15,7 +15,7 @@
   },
   "discord": {
     "discord_status_type": "WATCHING",
-    "discord_status": "DarkDus v2.7.8",
+    "discord_status": "DarkDus v2.7.9",
     "send_webhook": true,
     "run_discord_client": true
   },
@@ -77,7 +77,9 @@
     "stopEmote": "everyone",
     "removeFriend": "everyone",
     "friendList": "everyone",
-    "clearFriends": "admin_only"
+    "clearFriends": "admin_only",
+    "crown": "everyone",
+    "showCrowns": "everyone"
   },
   "others": {
     "help_command": "disabled",
