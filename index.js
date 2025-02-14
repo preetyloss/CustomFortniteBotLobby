@@ -8,6 +8,7 @@ const initDarkDus = require('./structs/darkdus/init')
 const showInfo = require('./utils/logs/showInfo')
 const initClient = require('./utils/others/initialize');
 const axios = require("axios");
+const checkAPIStatus = require('./utils/others/checkAPI');
 const app = express();
 const port = nconf.get('system:port') || 8080
 const isLocalhost = nconf.get('system:localhost_pages') === true
@@ -71,6 +72,7 @@ async function start() {
   }
 
   updatePlaylists();
+  checkAPIStatus()
   showInfo(`Server running on port ${port}`, 'green');
   await initLocalhost()
   executeScript("structs/lobbybot.js");
