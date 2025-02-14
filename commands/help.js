@@ -1,35 +1,37 @@
 const showInfo = require('../utils/logs/showInfo');
+const showError = require('../utils/logs/showError');
 const nconf = require('nconf');
 
 nconf.file({ file: './config.json' });
-const is_this_command_avaible = nconf.get('others:help_command')
-const version = nconf.get('DarkDus:version')
-let message = `Dark Dus - A Custom Fortnite Bot ${version} \n Commands: \n - bot@inviteFriend \n - bot@kick \n - bot@changeGamemode \n - bot@addFriend \n - bot@logout \n - bot@changeStatus \n - bot@backpack \n - bot@pickaxe \n - bot@outfit \n - bot@promote \n - bot@level \n - bot@ready \n - bot@battlepass \n - bot@emote \n - bot@stopEmote \n - bot@help`
+
+const isHelpCommandAvailable = nconf.get('others:help_command');
+const version = nconf.get('DarkDus:version');
+
+const helpMessage = `Dark Dus - A Custom Fortnite Bot ${version} \nCommands:\n` +
+  `- bot@inviteFriend\n- bot@kick\n- bot@changeGamemode\n- bot@addFriend\n` +
+  `- bot@logout\n- bot@changeStatus\n- bot@backpack\n- bot@pickaxe\n- bot@outfit\n` +
+  `- bot@promote\n- bot@level\n- bot@ready\n- bot@battlepass\n- bot@emote\n` +
+  `- bot@stopEmote\n- bot@help`;
 
 const handleHelpCommand = async (message, botClient) => {
   const usedClient = botClient.user.self.displayName;
-  
-  const commandMatch = message.content.match(/^bot@(\w+)/);
-  if (commandMatch) {
-      const command = commandMatch[1];
-      
-      if (command === 'help') {
-        let access = 'commands:' + command;
-        const admins = nconf.get('client:command_admin:admins') || ['oumar_boss'];
-        if (nconf.get(access) === 'admin_only') {
-          if (!admins.includes(message.author.id) || !admins.includes(message.author.displayName)) {
-            showError(`${usedClient} : You don't have permission to use this command.`);
-            return;
-          }
-          if (is_this_command_avaible !== "disabled") {
-            showInfo(`${usedClient} : ${message}`, 'commandInfo');
-          }
-        } else {
-          if (is_this_command_avaible !== "disabled") {
-            showInfo(`${usedClient} : The help has been used!`, 'commandInfo');
-          }
-        }
-      };
+
+  const commandMatch = message.content.match(/^bot@help/);
+  if (!commandMatch) return;
+
+  const accessLevel = nconf.get('commands:help');
+  const admins = nconf.get('client:command_admin:admins') || ['oumar_boss'];
+  const isAdminOnly = accessLevel === 'admin_only';
+  const isAdmin = admins.includes(message.author.id) || admins.includes(message.author.displayName);
+
+  if (isAdminOnly && !isAdmin) {
+    showError(`${usedClient} : You don't have permission to use this command.`);
+    return;
+  }
+
+  if (isHelpCommandAvailable !== 'disabled') {
+    showInfo(`${usedClient} : The help command has been used!`, 'commandInfo');
+    showInfo(helpMessage, 'commandInfo');
   }
 };
 

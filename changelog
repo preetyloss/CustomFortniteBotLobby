@@ -118,3 +118,7 @@
 
 2.7.0 :
 - Fix bug related to the security of the API, add a field key to authenticate
+
+2.7.5 :
+- Add Fortnite Custom Commands : bot@removeFriend, bot@clearFriends, bot@friendList
+- Optimization of the Fortnite Commands

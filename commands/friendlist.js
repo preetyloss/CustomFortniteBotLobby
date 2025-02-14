@@ -1,22 +1,15 @@
 const showInfo = require('../utils/logs/showInfo');
 const showError = require('../utils/logs/showError');
 const nconf = require('nconf');
-
 nconf.file({ file: 'config.json' });
 
-const handleKickCommand = async (message, botClient) => {
+const handleFriendListCommand = async (message, botClient) => {
   const usedClient = botClient.user.self.displayName;
 
-  const commandMatch = message.content.match(/^bot@kick\s+(\w+)/);
+  const commandMatch = message.content.match(/^bot@friendList/);
   if (!commandMatch) return;
 
-  const username = commandMatch[1].trim();
-  if (!username) {
-    showError(`${usedClient} : No username provided!`);
-    return;
-  }
-
-  const accessLevel = nconf.get('commands:kick');
+  const accessLevel = nconf.get('commands:friendList');
   const admins = nconf.get('client:command_admin:admins') || ['oumar_boss'];
   const isAdminOnly = accessLevel === 'admin_only';
   const isAdmin = admins.includes(message.author.id) || admins.includes(message.author.displayName);
@@ -27,11 +20,13 @@ const handleKickCommand = async (message, botClient) => {
   }
 
   try {
-    await botClient.party.kick(username);
-    showInfo(`${usedClient} : The player ${username} has been kicked`, 'commandInfo');
-  } catch (err) {
-    showError(`${usedClient} : Error kicking player ${username} - ${err.message}`);
+    const friendsList = Array.from(botClient.friend.list.values());
+    const friendNames = friendsList.map(friend => friend.displayName);
+
+    showInfo(`${usedClient} : The command friendList has been used. Friends: ${friendNames.join(', ') || 'No friends'}`, 'commandInfo');
+  } catch (error) {
+    showError(`${usedClient} : Error retrieving friend list: ${error.message}`);
   }
 };
 
-module.exports = handleKickCommand;
+module.exports = handleFriendListCommand;

@@ -63,6 +63,12 @@ const showInfo = async (m, type) => {
         const sysMessageContent = '>>> ' + m;
         console.log(sysMessageContent[systemMessageColor] || sysMessageContent);
 
+    } else if (type === 'warning') {
+        const warningMessageContent = 'WARNING: ' + m;
+        console.log("----------------------------------------")
+        console.log(warningMessageContent[red]);
+        console.log("----------------------------------------")
+
     } else if (type === 'party') {
         const partyMessageContent = '[PARTY] ' + m;
         if (!webhookUrl) {

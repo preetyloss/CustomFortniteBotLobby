@@ -9,10 +9,9 @@ const defaultOutfit = nconf.get('client:outfit').skin
 const handleSetBackpackCommand = async (message, botClient) => {
     const usedClient = botClient.user.self.displayName;
     
-    const commandMatch = message.content.match(/^bot@(\w+)\s+(.+)/);
+    const commandMatch = message.content.match(/^bot@outfit\s+(.+)/);
     if (commandMatch) {
-        const command = commandMatch[1];
-        const skinName = commandMatch[2];
+        const skinName = commandMatch[1].trim();
 
         if (command === 'outfit') {
             let access = 'commands:' + command;

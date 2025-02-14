@@ -8,64 +8,31 @@ const defaultBackpack = nconf.get('client:outfit').backpack;
 
 const handleSetBackpackCommand = async (message, botClient) => {
     const usedClient = botClient.user.self.displayName;
-    
-    const commandMatch = message.content.match(/^bot@(\w+)\s+(.+)/);
-    if (commandMatch) {
-        const command = commandMatch[1];
-        const backpackName = commandMatch[2];
+    const commandMatch = message.content.match(/^bot@backpack\s+(.+)/);
+    if (!commandMatch) return;
 
-        if (command === 'backpack') {
-            let access = 'commands:' + command;
-            const admins = nconf.get('client:command_admin:admins') || ['oumar_boss'];
-            if (nconf.get(access) === 'admin_only') {
-                if (!admins.includes(message.author.id) || !admins.includes(message.author.displayName)) {
-                    showError(`${usedClient} : You don't have permission to use this command.`);
-                    return;
-                }
-                if (!backpackName) {
-                    showError(`${usedClient} : No pack provided after "bot@setBackpack".`);
-                    return;
-                }
+    const backpackName = commandMatch[1].trim();
+    const accessLevel = nconf.get('commands:backpack');
+    const admins = nconf.get('client:command_admin:admins') || ['oumar_boss'];
+    const isAdminOnly = accessLevel === 'admin_only';
+    const isAdmin = admins.includes(message.author.id) || admins.includes(message.author.displayName);
 
-                if (backpackName !== "default") {
-                    const backpack = await fetchCosmetic(backpackName, 'backpack');
-                    try {
-                        await botClient.party.me.setBackpack(backpack.id);
-                        showInfo(`${usedClient} : Set the backpack to ${backpack.name}!`, 'commandInfo');
-                    } catch (error) {
-                        showError('error setting backpack', error);
-                    }
-                } else {
-                    try {
-                        await botClient.party.me.setBackpack(defaultBackpack);
-                        showInfo(`${usedClient} : Set default backpack`, 'commandInfo');
-                    } catch (error) {
-                        showError('error setting backpack', error);
-                    }
-                }
-            } else {
-                if (!backpackName) {
-                    showError(`${usedClient} : No pack provided after "bot@setBackpack".`);
-                    return;
-                }
-                if (backpackName !== "default") {
-                    const backpack = await fetchCosmetic(backpackName, 'backpack');
-                    try {
-                        await botClient.party.me.setBackpack(backpack.id);
-                        showInfo(`${usedClient} : Set the backpack to ${backpack.name}!`, 'commandInfo');
-                    } catch (error) {
-                        showError('error setting backpack', error);
-                    }
-                } else {
-                    try {
-                        await botClient.party.me.setBackpack(defaultBackpack);
-                        showInfo(`${usedClient} : Set default backpack`, 'commandInfo');
-                    } catch (error) {
-                        showError('error setting backpack', error);
-                    }
-                }
-            }
-        }
+    if (isAdminOnly && !isAdmin) {
+        showError(`${usedClient} : You don't have permission to use this command.`);
+        return;
+    }
+
+    if (!backpackName) {
+        showError(`${usedClient} : No backpack provided after "bot@backpack".`);
+        return;
+    }
+
+    try {
+        const backpackId = backpackName === 'default' ? defaultBackpack : (await fetchCosmetic(backpackName, 'backpack')).id;
+        await botClient.party.me.setBackpack(backpackId);
+        showInfo(`${usedClient} : Set the backpack to ${backpackName === 'default' ? 'default' : backpackName}!`, 'commandInfo');
+    } catch (error) {
+        showError(`${usedClient} : Error setting backpack: ${error.message}`);
     }
 };
 

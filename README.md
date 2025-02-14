@@ -6,7 +6,7 @@ This project is open-source and free.
 
 ## 📌 Information
 - **Chapter 6 - Season 1**
-- **Version: 2.7.0**
+- **Version: 2.7.5**
 - **Created by: Mr_Julus**
 
 ## 🔧 Installation and Setup
@@ -47,7 +47,7 @@ Edit the `.env` file with your webhook URL to receive logs.
 Edit the `.env` file with your Discord Token.
 
 ## 🏷️ Branches
-- **[Default] `main`** (version 2.7.0)
+- **[Default] `main`** (version 2.7.5)
 - **[Obsolete] `DarkDus-v1`** (version 1.3.6)
 
 ## Get the status and if the bot is avaible with a API
@@ -112,12 +112,17 @@ If you have trouble with the API, you can check the status of the API here :
 - `bot@pickaxe <newPickaxe>`: Change the bot's pickaxe.
 - `bot@backpack <newBackpack>`: Change the bot's backpack.
 
-### 🏠 Party and Friends
+### 🏠 Party
 - `bot@changeGamemode <gamemode>`: Change the game mode.
 - `bot@kick <username>`: Kick a player from the party.
 - `bot@promote <username>`: Promote a player to party leader.
+
+### 👥 Friends
 - `bot@inviteFriend <username>`: Invite a friend.
 - `bot@addFriend <username>`: Add a friend.
+- `bot@removeFriend <username>`: Remove a friend
+- `bot@clearFriends`: Clear the friend list
+- `bot@friendList`: Show the friend list
 
 ### ⚙️ Others
 - `bot@emote <emote>`: Make the bot perform an emote.
@@ -142,7 +147,7 @@ If you have trouble with the API, you can check the status of the API here :
 ✔️ Advanced customization with custom commands.
 
 ## 📜 Disclaimer
-> **Fortnite** is a registered trademark of Epic Games, Inc. in the United States and elsewhere.
+> **Fortnite** is a registered trademark of Epic Games, Inc. in the United States and elsewhere.    
 > **DarkDus** is not affiliated with, sponsored, or endorsed by Epic Games, Inc.
 
 ## ❤️ Contributors
