@@ -17,14 +17,18 @@ const handleLeaveTimer = async (botClient, timerstatus, webhookClient) => {
   if (nconf.get('others:stopTimer_is_use') === 'yes') {
     return;
   }
-  const party = botClient.party;  
-  showInfo("Timer ended!", 'party');
-  await new Promise((resolve) => setTimeout(resolve, 1200));
-  botClient.party.leave(false);
-  await resetStopTimerCommand()
-  webhookClient.send(`${botClient.user.self.displayName} Time tracking has stopped!`);
-  timerstatus = false;
-  managePartySize(botClient);
+
+  if (botClient) {
+    showInfo("Timer ended!", 'party');
+    await new Promise((resolve) => setTimeout(resolve, 1200));
+    await botClient.leaveParty(false);
+    await resetStopTimerCommand()
+    webhookClient.send(`${botClient.user.self.displayName} Time tracking has stopped!`);
+    timerstatus = false;
+    managePartySize(botClient);
+  } else {
+    console.log('botClient is undefined...')
+  }
 };
 
 module.exports = handleLeaveTimer;

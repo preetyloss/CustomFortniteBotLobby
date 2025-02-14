@@ -20,12 +20,16 @@ const handleFriendListCommand = async (message, botClient) => {
   }
 
   try {
+    if (!botClient.friend || !botClient.friend.list || typeof botClient.friend.list.values !== 'function') {
+      throw new Error('Friend list is not available or not in the expected format.');
+    }
+
     const friendsList = Array.from(botClient.friend.list.values());
     const friendNames = friendsList.map(friend => friend.displayName);
 
     showInfo(`${usedClient} : The command friendList has been used. Friends: ${friendNames.join(', ') || 'No friends'}`, 'commandInfo');
   } catch (error) {
-    showError(`${usedClient} : Error retrieving friend list: ${error.message}`);
+    showError(`${usedClient} : Error retrieving friend list: ${error.message || error}`);
   }
 };
 

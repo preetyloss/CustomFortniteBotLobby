@@ -16,8 +16,15 @@ const managePartySize = async (botClient, bot_invite_status, bot_invite_onlinety
     return;
   }
   if (!botClient.party) {
-    console.error('botClient.party is undefined');
-    return;
+    data = {
+      username: botClient.user.self.displayName,
+      status: "Online",
+      friends: userData.friends,
+      party: "alone",
+      matchmaking: "available",
+      timestamp: new Date().toISOString()
+    };
+    await postStatus(data)
   }
 
   if (nconf.get('fortnite:banned_from_matchmaking')) {

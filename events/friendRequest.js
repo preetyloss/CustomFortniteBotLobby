@@ -1,4 +1,6 @@
 const showInfo = require('../utils/logs/showInfo');
+const nconf = require('nconf');
+const config = nconf.file({ file: 'config.json' });
 
 const handleFriendRequest = async (botClient, request, webhookClient) => {
   const bannedPlayer = nconf.get('client:banned_player') || [];

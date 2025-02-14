@@ -122,3 +122,6 @@
 2.7.5 :
 - Add Fortnite Custom Commands : bot@removeFriend, bot@clearFriends, bot@friendList
 - Optimization of the Fortnite Commands
+
+2.7.7 :
+- Fix bugs
