@@ -12,8 +12,9 @@ This project is open-source and free.
 ## 🔧 Installation and Setup
 ### ⚙️ A useful link
 A useful link for the outfit, emote, backpack and pickaxe [to find id](https://fortnite.gg/cosmetics)
+
 ### 1️⃣ Requirements
-Make sure you have installed [Node.js](https://nodejs.org/) and the following dependencies:
+Make sure you have installed [Node.js](https://nodejs.org/) v20.12.0 (minimum) and the following dependencies:
 ```sh
 npm install colors discord.js dotenv fnbr axios fs nconf readline
 ```
@@ -83,7 +84,7 @@ There are examples of the use of the API, here : [./exampleAPI](https://github.c
 
 ### Info
 If you have trouble with the API, you can check the status of the API here :    
-[https://darkdus.is-a.dev/api/status](https://darkdus.is-a.dev/api/status)
+[https://darkdus.is-a.dev/darkdus-api/status](https://darkdus.is-a.dev/darkdus-api/status)
 
 ### WARNING!
 ⚠️ If you kill the terminal, this will not work (the status will not change to offline), you need to do the command bot@logout or /panel and then click on the button logout
@@ -130,6 +131,8 @@ If you have trouble with the API, you can check the status of the API here :
 - `bot@emote <emote>`: Make the bot perform an emote.
 - `bot@stopEmote`: Stop the emote.
 - `bot@level <level>`: Set the bot's level.
+- `bot@crowns <level>`: Set the bot's crowns.
+- `bot@showCrown`: Show the crowns (emote).
 - `bot@battlepass <purchased> <level>`: Set battle pass status and level.
 - `bot@stopTimer`: Stop the party timer.
 - `bot@setStatus <newStatus>`: Change the bot's status.

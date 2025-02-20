@@ -9,7 +9,7 @@ async function postStatus(data) {
 
     data.key = key;
     try {
-        const response = await fetch("https://darkdus-client-status.vercel.app/api/status", {
+        const response = await fetch("https://darkdus.vercel.app/api/status", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

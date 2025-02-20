@@ -1,7 +1,7 @@
 (async () => {
     const username = 'player1';
 
-    const response = await fetch(`https://darkdus-client-status.vercel.app/api/status?username=${username}`, {
+    const response = await fetch(`https://darkdus.vercel.app/api/status?username=${username}`, {
         method: 'GET',
     });
 

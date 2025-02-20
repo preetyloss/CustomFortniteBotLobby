@@ -1,5 +1,5 @@
 const username = "julus_dev" // PUT YOUR CLIENT'S USERNAME HERE
-const url = `https://darkdus-client-status.vercel.app/api/status?username=${username}`;
+const url = `https://darkdus.vercel.app/api/status?username=${username}`;
 let partyStatus
 
 if (username === "testUsername" || username === "") {

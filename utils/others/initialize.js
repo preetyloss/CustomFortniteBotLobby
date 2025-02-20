@@ -6,9 +6,18 @@ nconf.argv().env().file({ file: 'config.json' });
 async function sleep(seconds) {
     return new Promise(resolve => setTimeout(resolve, seconds * 1000));
 }
+     
+const title = `
+____             _    ____            
+|  _ \  __ _ _ __| | _|  _ \ _   _ ___ 
+| | | |/ _  |  __| |/ / | | | | | / __|
+| |_| | (_| | |  |   <| |_| | |_| \__ \
+|____/ \__,_|_|  |_|\_\____/ \__,_|___/
+`
 
 async function InitWelcomMessage() {
     console.clear();
+    console.log('\x1b[36m%s\x1b[0m', title)
     console.log('\x1b[36m%s\x1b[0m', '------------------------------------------------------');
     console.log('\x1b[36m%s\x1b[0m', 'Thank you for using DarkDus!');
     console.log('\x1b[36m%s\x1b[0m', 'DarkDus is a Fortnite lobby bot that is designed to help you manage your Fortnite Bot Lobby.');

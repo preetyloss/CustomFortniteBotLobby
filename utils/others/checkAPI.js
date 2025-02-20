@@ -1,7 +1,7 @@
 const showInfo = require('../logs/showInfo')
 
 async function checkAPIStatus() {
-    const response = await fetch(`https://darkdus-client-status.vercel.app/api/internal`, {
+    const response = await fetch(`https://darkdus.vercel.app/api/internal`, {
         method: 'GET',
     });
 

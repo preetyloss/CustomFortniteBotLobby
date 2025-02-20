@@ -1,5 +1,5 @@
 (async () => {
-    const response = await fetch('https://darkdus-client-status.vercel.app/api/status', {
+    const response = await fetch('https://darkdus.vercel.app/api/status', {
         method: 'DELETE',
         headers: {
             'Content-Type': 'application/json',

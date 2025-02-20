@@ -2,7 +2,7 @@ const axios = require('axios');
 
 async function getUserData(username) {
     try {
-        const response = await axios.get('https://darkdus-client-status.vercel.app/api/status', {
+        const response = await axios.get('https://darkdus.vercel.app/api/status', {
             params: { username }
         });
         
