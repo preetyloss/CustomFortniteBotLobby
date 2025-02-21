@@ -143,3 +143,6 @@
     => add friend
     => friend list
     => accept a friend request
+
+2.8.6 :
+- Fix bug related to the version checker

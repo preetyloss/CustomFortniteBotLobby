@@ -30,7 +30,10 @@ const sleep = async (seconds) => new Promise(resolve => setTimeout(resolve, seco
 const executeScript = async (scriptName, scriptArgs = []) => {
   const initialized = await initDarkDus();
   if (!initialized) {
-    showInfo('[WARNING]: DarkDus\'s version could not be verified..., always use the latest version of DarkDus!', 'green');
+    await showInfo('DarkDus\'s version could not be verified..., always use the latest version of DarkDus!', 'red');
+    await showInfo('If you have the lastest version, try to edit to ./client/version.json', 'red');
+    await showInfo('BUT: be carefull!', 'red');
+    process.exit(1);
   } else {
     showInfo('DarkDus successfully init', 'green')
   }

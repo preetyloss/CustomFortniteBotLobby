@@ -38,7 +38,7 @@ async function init() {
         const remoteJson = JSON.parse(remoteData);
         const localJson = JSON.parse(localData);
 
-        if (remoteJson.version === localJson.version && remoteJson.CKey === localJson.CKey) {
+        if (remoteJson.DarkDus === localJson.DarkDus) {
             return true;
         } else {
             return false;

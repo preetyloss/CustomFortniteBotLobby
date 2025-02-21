@@ -10,7 +10,7 @@ dotenv.config();
 nconf.env();
 const webhookUrl = nconf.get('DISCORD_WEBHOOK');
 
-let systemMessageColor, partyInfoColor, clientInfoColor, commandInfoColor, defaultTextColor;
+let systemMessageColor, partyInfoColor, clientInfoColor, commandInfoColor, defaultTextColor, warningTextColor;
 let colorsInitialized = false;
 
 const initializeColors = async () => {
@@ -18,6 +18,7 @@ const initializeColors = async () => {
     try {
         const colors = await initColors();
         systemMessageColor = colors.systemMessageColor || 'green';
+        warningTextColor = 'red';
         partyInfoColor = colors.partyInfoColor || 'yellow';
         clientInfoColor = colors.clientInfoColor || 'cyan';
         commandInfoColor = colors.commandInfoColor || 'magenta';
@@ -63,12 +64,16 @@ const showInfo = async (m, type) => {
         const sysMessageContent = '>>> ' + m;
         console.log(sysMessageContent[systemMessageColor] || sysMessageContent);
 
-    } else if (type === 'warning') {
-        const warningMessageContent = 'WARNING: ' + m;
-        console.log("----------------------------------------")
-        console.log(warningMessageContent[red]);
-        console.log("----------------------------------------")
-
+    } else if (type === 'warning' || type === 'red') {
+        if (type === 'warning') {
+            const warningMessageContent = 'WARNING: ' + m;
+            console.log("----------------------------------------")
+            console.log(warningMessageContent[warningTextColor]);
+            console.log("----------------------------------------")
+        } else {
+            const warningMessageContent = m;
+            console.log(warningMessageContent[warningTextColor]);
+        }
     } else if (type === 'party') {
         const partyMessageContent = '[PARTY] ' + m;
         if (!webhookUrl) {
