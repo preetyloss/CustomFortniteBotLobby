@@ -134,3 +134,12 @@
 
 2.8.0 :
 - Add a Upcoming Features file
+
+2.8.5 :
+- Fix bugs
+- /friendManager
+    => clear friend list
+    => remove friend
+    => add friend
+    => friend list
+    => accept a friend request
