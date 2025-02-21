@@ -84,7 +84,7 @@ There are examples of the use of the API, here : [./exampleAPI](https://github.c
 
 ### Info
 If you have trouble with the API, you can check the status of the API here :    
-[https://darkdus.is-a.dev/darkdus-api/status](https://darkdus.is-a.dev/darkdus-api/status)
+[https://darkdus.is-a.dev/api/status](https://darkdus.is-a.dev/api/status)
 
 ### WARNING!
 ⚠️ If you kill the terminal, this will not work (the status will not change to offline), you need to do the command bot@logout or /panel and then click on the button logout
