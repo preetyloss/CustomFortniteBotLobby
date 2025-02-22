@@ -150,3 +150,7 @@
 2.8.7 :
 - Fix bug related to the party timer
 - Update the static page
+
+2.8.8 :
+- Add a new requirements; path
+- Update the initUsername.js

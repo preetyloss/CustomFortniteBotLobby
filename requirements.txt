@@ -6,3 +6,4 @@ axios
 fs
 nconf
 readline
+path

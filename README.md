@@ -6,7 +6,7 @@ This project is open-source and free.
 
 ## 📌 Information
 - **Chapter 6 - Season 1 and Season 2**
-- **Version: 2.8.7**
+- **Version: 2.8.8**
 - **Created by: Mr_Julus**
 
 ## 🔧 Installation and Setup
@@ -16,7 +16,7 @@ A useful link for the outfit, emote, backpack and pickaxe [to find id](https://f
 ### 1️⃣ Requirements
 Make sure you have installed [Node.js](https://nodejs.org/) v20.12.0 (minimum) and the following dependencies:
 ```sh
-npm install colors discord.js dotenv fnbr axios fs nconf readline
+npm install colors discord.js dotenv fnbr axios fs nconf readline path
 ```
 
 ### 2️⃣ Authentication
@@ -50,7 +50,7 @@ Edit the `.env` file with your webhook URL to receive logs.
 Edit the `.env` file with your Discord Token.
 
 ## 🏷️ Branches
-- **[Default] `main`** (version 2.8.7)
+- **[Default] `main`** (version 2.8.8)
 - **[Obsolete] `DarkDus-v1`** (version 1.3.6)
 
 ## Get the status and if the bot is avaible with a API
@@ -88,13 +88,6 @@ If you have trouble with the API, you can check the status of the API here :
 
 ### WARNING!
 ⚠️ If you kill the terminal, this will not work (the status will not change to offline), you need to do the command bot@logout or /panel and then click on the button logout
-
-## 🚀 New Features
-✅ A API that allow to get the status and if the bot is available
-
-✅ Detection of Fortnite matchmaking ban with a special status.
-
-✅ Automatic verification of device info.
 
 ## 🛠️ Discord Bot Commands
 | Command | Description |

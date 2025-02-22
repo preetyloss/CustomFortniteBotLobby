@@ -1,14 +1,23 @@
+const { error } = require("console");
+const path = require("path");
+const fs = require("fs").promises;
+
 async function init(username) {
     try {
-        const filePath = path.join(__dirname, "client", "config.json");
+        const filePath = path.join(__dirname, "..", "..", "client", "config.json");
 
-        fs.writeFile(filePath, JSON.stringify({ username }, null, 2), (err) => {
-            if (err) {
-                console.error(err);
-            }
-        });
+        let data = {};
+        try {
+            const fileContent = await fs.readFile(filePath, "utf-8");
+            data = JSON.parse(fileContent);
+        } catch (err) {
+            console.warn(err);
+        }
+
+        data.username = username;
+        await fs.writeFile(filePath, JSON.stringify(data, null, 2));
     } catch (error) {
-        console.log(error)
+        console.error(error);
     }
 }
 

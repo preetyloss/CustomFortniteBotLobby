@@ -1,4 +1,5 @@
 require('dotenv').config();
+const path = require('path')
 const nconf = require('nconf').argv().env().file({ file: './config/config.json' });
 const express = require("express");
 const { spawn } = require("child_process");
@@ -18,6 +19,9 @@ const initLocalhost = async () => {
     app.use(express.static('src')); 
     app.get('/', (req, res) => {
       res.sendFile(__dirname + '/src/index.html');
+    });
+    app.get('/client/config.json', (req, res) => {
+      res.sendFile(path.join(__dirname, 'client', 'config.json'));
     });
     showInfo(`Localhost mode enabled: /src/index.html - You access to it (localhost:${port}/index.html)`, 'green');
   } else {
@@ -82,3 +86,7 @@ async function start() {
 }
 
 start();
+
+app.listen(port, () => {
+  console.log(`Express listening on http://localhost:${port}`);
+});

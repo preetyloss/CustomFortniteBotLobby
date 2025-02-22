@@ -1,4 +1,4 @@
-fetch('../client/username.json')
+fetch('../client/config.json')
     .then(response => {
         if (!response.ok) {
             throw new Error(`Erreur HTTP: ${response.status}`);
