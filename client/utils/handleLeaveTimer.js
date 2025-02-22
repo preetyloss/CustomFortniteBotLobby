@@ -18,16 +18,14 @@ const handleLeaveTimer = async (botClient, timerstatus, webhookClient) => {
     return;
   }
 
-  if (botClient) {
+  if (botClient.party) {
     showInfo("Timer ended!", 'party');
     await new Promise((resolve) => setTimeout(resolve, 1200));
-    await botClient.leaveParty(false);
+    await botClient.party.leave(false);
     await resetStopTimerCommand()
     webhookClient.send(`${botClient.user.self.displayName} Time tracking has stopped!`);
     timerstatus = false;
     managePartySize(botClient);
-  } else {
-    console.log('botClient is undefined...')
   }
 };
 

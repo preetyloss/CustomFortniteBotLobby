@@ -146,3 +146,7 @@
 
 2.8.6 :
 - Fix bug related to the version checker
+
+2.8.7 :
+- Fix bug related to the party timer
+- Update the static page

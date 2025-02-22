@@ -10,6 +10,7 @@ const path = require('path');
 const showInfo = require('../utils/logs/showInfo');
 const showError = require('../utils/logs/showError')
 const initClient = require('../client/initClient');
+const initUsername = require('../structs/darkdus/initUsername')
 const { allowedPlaylists, websocketHeaders } = require('../utils/constants');
 const WebhookClientWrapper = require('../utils/webhookClient');
 const webhookClient = new WebhookClientWrapper();
@@ -89,7 +90,7 @@ async function sleep(seconds) {
   botClient.setMaxListeners(20);
   await botClient.login();
   showInfo(`Logged in as ${botClient.user.self.displayName}`, 'clientInfo');
-
+  await initUsername(botClient.user.self.displayName)
   const partyInstance = botClient.party;
   await initClient(botClient);
   await partyInstance.setPrivacy(Enums.PartyPrivacy.PRIVATE);
