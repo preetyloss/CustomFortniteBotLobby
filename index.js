@@ -1,14 +1,14 @@
 require('dotenv').config();
 const path = require('path')
+const axios = require("axios");
 const nconf = require('nconf').argv().env().file({ file: './config/config.json' });
 const express = require("express");
 const { spawn } = require("child_process");
 const WebhookClientWrapper = require('./utils/webhookClient');
 const updatePlaylists = require('./structs/playlist-updater');
-const initDarkDus = require('./structs/darkdus/init')
+const initDarkDus = require('./utils/others/darkdus/init')
 const showInfo = require('./utils/logs/showInfo')
 const initClient = require('./utils/others/initialize');
-const axios = require("axios");
 const checkAPIStatus = require('./utils/others/checkAPI');
 const app = express();
 const port = nconf.get('system:port') || 8080
@@ -87,6 +87,4 @@ async function start() {
 
 start();
 
-app.listen(port, () => {
-  console.log(`Express listening on http://localhost:${port}`);
-});
+app.listen(port, () => {});

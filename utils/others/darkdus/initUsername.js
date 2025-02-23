@@ -1,10 +1,9 @@
-const { error } = require("console");
 const path = require("path");
 const fs = require("fs").promises;
 
 async function init(username) {
     try {
-        const filePath = path.join(__dirname, "..", "..", "client", "config.json");
+        const filePath = path.join(__dirname, "..", "..", "..", "client", "config.json");
 
         let data = {};
         try {

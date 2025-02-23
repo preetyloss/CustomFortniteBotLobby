@@ -1,5 +1,5 @@
 const managePartySize = require('./managePartySize');
-const showInfo = require('../../utils/logs/showInfo');
+const showInfo = require('../utils/logs/showInfo');
 const nconf = require('nconf');
 const config = nconf.file({ file: './config.json' });
 

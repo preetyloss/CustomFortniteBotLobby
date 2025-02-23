@@ -154,3 +154,7 @@
 2.8.8 :
 - Add a new requirements; path
 - Update the initUsername.js
+
+2.8.9 :
+- Update the structure of the project
+- Fix bug related to the localhost page

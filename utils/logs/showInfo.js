@@ -1,6 +1,6 @@
 const axios = require('axios');
 const show = require('./show.js');
-const initColors = require('../../client/initColors.js');
+const initColors = require('../others/initColors.js');
 require('colors');
 const nconf = require('nconf');
 const dotenv = require('dotenv');

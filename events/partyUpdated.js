@@ -2,7 +2,7 @@ const { Enums } = require('fnbr');
 const { allowedPlaylists, websocketHeaders } = require('../utils/constants');
 const WebSocket = require('ws');
 const showError = require('../utils/logs/showError');
-const clientIsBanned = require('../client/utils/clientIsBanned');
+const clientIsBanned = require('../events/clientIsBanned');
 const axiosInstance = require('axios').default;
 
 async function handleMatchmakingError(request, response) {

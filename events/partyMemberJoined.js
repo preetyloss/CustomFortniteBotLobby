@@ -1,5 +1,5 @@
 const showInfo = require('../utils/logs/showInfo');
-const handleLeaveTimer = require('../client/utils/handleLeaveTimer');
+const handleLeaveTimer = require('../events/handleLeaveTimer');
 
 let timerstatus = false;
 

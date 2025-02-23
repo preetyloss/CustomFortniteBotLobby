@@ -1,7 +1,7 @@
 const { Enums } = require('fnbr');
 const nconf = require('nconf');
-const postStatus = require('../postStatus');
-const getUserData = require('../getData');
+const postStatus = require('../client/postStatus');
+const getUserData = require('../client/getData');
 nconf.file({ file: 'config.json' }).load();
 
 async function sleep(seconds) {

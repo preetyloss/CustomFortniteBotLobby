@@ -2,7 +2,6 @@ const { WebhookClient } = require('discord.js');
 const nconf = require('nconf');
 const showInfo = require('./logs/showInfo');
 const showError = require('./logs/showError');
-const e = require('express');
 
 class WebhookClientWrapper {
     constructor() {
