@@ -5,7 +5,7 @@ const commands = {
   battlepass: require('../commands/battlepass'),
   changegamemode: require('../commands/changegamemode'),
   clearfriends: require('../commands/clearfriends'),
-  crowns: require('../commands/crowns'),
+  crown: require('../commands/crowns'),
   emote: require('../commands/emote'),
   friendlist: require('../commands/friendlist'),
   help: require('../commands/help'),

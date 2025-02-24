@@ -17,7 +17,7 @@ const managePartySize = async (botClient, bot_invite_status, bot_invite_onlinety
     const userData = getUserData(botClient.user.self.displayName);
     await sleep(2);
 
-    if (!botClient.party) {
+    if (botClient.party.size === 1) {
         let data = {
             username: botClient.user.self.displayName,
             status: "Online",
@@ -27,7 +27,7 @@ const managePartySize = async (botClient, bot_invite_status, bot_invite_onlinety
             timestamp: new Date().toISOString()
         };
         await postStatus(data);
-        botClient.setStatus(bot_invite_status, bot_invite_onlinetype);
+        await botClient.setStatus(bot_invite_status, bot_invite_onlinetype);
     } else {
         let data = {
             username: botClient.user.self.displayName,
@@ -38,7 +38,7 @@ const managePartySize = async (botClient, bot_invite_status, bot_invite_onlinety
             timestamp: new Date().toISOString()
         };
         await postStatus(data);
-        botClient.setStatus(bot_use_status, bot_use_onlinetype);
+        await botClient.setStatus(bot_use_status, bot_use_onlinetype);
     }
 
     if (nconf.get('fortnite:banned_from_matchmaking')) {

@@ -16,7 +16,9 @@ const handlePartyMemberJoined = async (botClient, join, eid, cid, managePartySiz
   await botClient.party.me.setEmote(eid);
   managePartySize(botClient, bot_invite_status, bot_invite_onlinetype, bot_use_status, bot_use_onlinetype, bot_join_message);
   await botClient.party.me.setOutfit(cid);
-  showInfo(`Party member joined: ${join.displayName}`, 'party');
+  if (join.displayName !== botClient.user.self.displayName) {
+    showInfo(`Party member joined: ${join.displayName}`, 'party');
+  }
 };
 
 module.exports = handlePartyMemberJoined;

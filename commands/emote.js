@@ -1,4 +1,3 @@
-const { fetchCosmetic } = require('../utils/outfit/api');
 const showInfo = require('../utils/logs/showInfo');
 const showError = require('../utils/logs/showError');
 const nconf = require('nconf');
@@ -27,9 +26,8 @@ const handleSetEmoteCommand = async (message, botClient) => {
   }
 
   try {
-    const emote = await fetchCosmetic(emoteName, 'emote');
-    await botClient.party.me.setEmote(emote.id);
-    showInfo(`${usedClient} : Set the emote to ${emote.name}!`, 'commandInfo');
+    await botClient.party.me.setEmote(emoteName);
+    showInfo(`${usedClient} : Set the emote to ${emoteName}!`, 'commandInfo');
   } catch (error) {
     showError(`${usedClient} : Error setting emote - ${error.message}`);
   }

@@ -158,3 +158,6 @@
 2.8.9 :
 - Update the structure of the project
 - Fix bug related to the localhost page
+
+2.9.0 :
+- Fix bugs
