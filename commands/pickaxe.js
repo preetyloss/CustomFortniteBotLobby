@@ -1,4 +1,3 @@
-const { fetchCosmetic } = require('../utils/outfit/api');
 const showInfo = require('../utils/logs/showInfo');
 const showError = require('../utils/logs/showError');
 const nconf = require('nconf');
@@ -24,9 +23,8 @@ const handlePickaxeCommand = async (message, botClient) => {
   }
 
   try {
-    const pickaxe = await fetchCosmetic(pickaxeId, 'pickaxe');
-    await botClient.party.me.setPickaxe(pickaxe.id);
-    showInfo(`${usedClient} : Set the pickaxe to ${pickaxe.name}!`, 'commandInfo');
+    await botClient.party.me.setPickaxe(pickaxeId);
+    showInfo(`${usedClient} : Set the pickaxe to ${pickaxeId}!`, 'commandInfo');
   } catch (err) {
     showError('Error setting pickaxe', err);
   }
