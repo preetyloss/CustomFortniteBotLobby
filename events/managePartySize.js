@@ -14,6 +14,20 @@ const managePartySize = async (botClient, bot_invite_status, bot_invite_onlinety
         return;
     }
 
+    if (!botClient.party) {
+        let data = {
+            username: botClient.user.self.displayName,
+            status: "Online",
+            friends: userData?.friends || 0,
+            party: "alone",
+            matchmaking: "available",
+            timestamp: new Date().toISOString()
+        };
+        await postStatus(data);
+        await botClient.setStatus(bot_invite_status, bot_invite_onlinetype);
+        return
+    }
+
     const userData = getUserData(botClient.user.self.displayName);
     await sleep(2);
 

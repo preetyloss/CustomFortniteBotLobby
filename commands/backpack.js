@@ -1,4 +1,3 @@
-const { fetchCosmetic } = require('../utils/outfit/api');
 const showInfo = require('../utils/logs/showInfo');
 const showError = require('../utils/logs/showError');
 const nconf = require('nconf');
@@ -28,9 +27,13 @@ const handleSetBackpackCommand = async (message, botClient) => {
     }
 
     try {
-        const backpackId = backpackName === 'default' ? defaultBackpack : (await fetchCosmetic(backpackName, 'backpack')).id;
-        await botClient.party.me.setBackpack(backpackId);
-        showInfo(`${usedClient} : Set the backpack to ${backpackName === 'default' ? 'default' : backpackName}!`, 'commandInfo');
+        if (backpackName === 'default') {
+            await botClient.party.me.setBackpack(defaultBackpack);
+            showInfo(`${usedClient} : Set to the default backpack`, 'commandInfo');
+        } else {
+            await botClient.party.me.setBackpack(backpackName);
+            showInfo(`${usedClient} : Set the backpack to ${backpackName}!`, 'commandInfo');
+        }
     } catch (error) {
         showError(`${usedClient} : Error setting backpack: ${error.message}`);
     }
