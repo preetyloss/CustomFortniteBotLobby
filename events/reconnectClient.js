@@ -1,14 +1,17 @@
 const { Enums } = require('fnbr');
+const initClient = require('../client/initClient');
+const initUsername = require('../utils/others/darkdus/initUsername')
 
-const reconnectClient = async (botClient, webhookClient, initClient) => {
+const reconnectClient = async (botClient, webhookClient) => {
   console.log(`[LOGS] Reconnecting ${botClient.user.self.displayName}`);
-  await botClient.logout();
+  await botClient.restart();
   botClient.setMaxListeners(20);
-  await botClient.login();
-  console.log(`[LOGS] Reconnected as ${botClient.user.self.displayName}`);
+  showInfo(`Reconnected as ${botClient.user.self.displayName}`, 'clientInfo');
   webhookClient.send(`\`\`\`diff\n+ ${botClient.user.self.displayName} Reconnected.\`\`\``);
+  await initUsername(botClient.user.self.displayName)
+  const partyInstance = botClient.party;
   await initClient(botClient);
-  await botClient.party.setPrivacy(Enums.PartyPrivacy.PRIVATE);
+  await partyInstance.setPrivacy(Enums.PartyPrivacy.PRIVATE);
 };
 
 module.exports = reconnectClient;

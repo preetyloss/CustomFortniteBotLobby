@@ -1,95 +1,95 @@
 {
-  "DarkDus": {
-    "version": "2.9.2",
-    "creator": "Mr_Julus"
-  },
-  "fortnite": {
-    "add_users": true,
-    "join_users": true,
-    "leave_after_success": true,
-    "reload": true,
-    "xmpp": {
-      "debug": true
+    "DarkDus": {
+      "version": "2.9.5",
+      "creator": "Mr_Julus"
     },
-    "banned_from_matchmaking": false
-  },
-  "discord": {
-    "discord_status_type": "WATCHING",
-    "discord_status": "DarkDus v2.9.2",
-    "send_webhook": true,
-    "run_discord_client": true
-  },
-  "client": {
-    "command_admin": {
-      "admins": [
-        "Mr_Julus",
-        "oumar_boss",
-        "Theboss5057"
-      ]
+    "fortnite": {
+      "add_users": true,
+      "join_users": true,
+      "leave_after_success": true,
+      "reload": true,
+      "xmpp": {
+        "debug": true
+      },
+      "banned_from_matchmaking": false
     },
-    "status": {
-      "default": "[DarkDus] Invite ✅ - Fortnite Bot Lobby",
-      "inUse": "[DarkDus] is use ❌",
-      "matchmaking_banned": "[DarkDus] 🚩 The bot is banned from matchmaking  🚩",
-      "default_onlinetype": "online",
-      "inuse_onlinetype": "xa"
+    "discord": {
+      "discord_status_type": "WATCHING",
+      "discord_status": "DarkDus v2.9.5",
+      "send_webhook": true,
+      "run_discord_client": true
     },
-    "outfit": {
-      "backpack": "BID_004_BlackKnight",
-      "skin": "CID_035_Athena_Commando_M_Medieval"
+    "client": {
+      "command_admin": {
+        "admins": [
+          "Mr_Julus",
+          "oumar_boss",
+          "Theboss5057"
+        ]
+      },
+      "status": {
+        "default": "[DarkDus] Invite ✅ - Fortnite Bot Lobby",
+        "inUse": "[DarkDus] is use ❌",
+        "matchmaking_banned": "[DarkDus] 🚩 The bot is banned from matchmaking  🚩",
+        "default_onlinetype": "online",
+        "inuse_onlinetype": "xa"
+      },
+      "outfit": {
+        "backpack": "BID_004_BlackKnight",
+        "skin": "CID_035_Athena_Commando_M_Medieval"
+      },
+      "default": {
+        "level": "999",
+        "emote": "EID_HipHop01",
+        "banner": "InfluencerBanner22"
+      },
+      "banned_player": [
+        "anyone"
+      ],
+      "prefix": "bot@",
+      "leave_party_time_seconds": 180,
+      "reload_bot_time_seconds": 600,
+      "join_message": "You have 3 minutes to ready up and get in a lobby filled with bots!"
     },
-    "default": {
-      "level": "999",
-      "emote": "EID_HipHop01",
-      "banner": "InfluencerBanner22"
+    "logs": {
+      "defaultText": "white",
+      "systemMessage": "green",
+      "partyInfo": "yellow",
+      "clientInfo": "blue",
+      "commandInfo": "cyan"
     },
-    "banned_player": [
-      "anyone"
-    ],
-    "prefix": "bot@",
-    "leave_party_time_seconds": 180,
-    "reload_bot_time_seconds": 600,
-    "join_message": "You have 3 minutes to ready up and get in a lobby filled with bots!"
-  },
-  "logs": {
-    "defaultText": "white",
-    "systemMessage": "green",
-    "partyInfo": "yellow",
-    "clientInfo": "blue",
-    "commandInfo": "cyan"
-  },
-  "commands": {
-    "addFriend": "admin_only",
-    "stopTimer": "admin_only",
-    "backpack": "everyone",
-    "battlepass": "everyone",
-    "changeGamemode": "everyone",
-    "emote": "everyone",
-    "help": "everyone",
-    "inviteFriend": "everyone",
-    "kick": "everyone",
-    "level": "everyone",
-    "logout": "everyone",
-    "outfit": "everyone",
-    "pickaxe": "everyone",
-    "promote": "everyone",
-    "setStatus": "everyone",
-    "stopEmote": "everyone",
-    "removeFriend": "everyone",
-    "friendList": "everyone",
-    "clearFriends": "admin_only",
-    "crown": "everyone",
-    "showCrowns": "everyone"
-  },
-  "others": {
-    "help_command": "disabled",
-    "stopTimer_is_use": "no"
-  },
-  "system": {
-    "useStatusAPI": true,
-    "bot_loading_message": "Bot is loading!",
-    "web_message": "Bot is online",
-    "localhost_pages": true,
-    "port": 8080
+    "commands": {
+      "addFriend": "admin_only",
+      "stopTimer": "admin_only",
+      "backpack": "everyone",
+      "battlepass": "everyone",
+      "changeGamemode": "everyone",
+      "emote": "everyone",
+      "help": "everyone",
+      "inviteFriend": "everyone",
+      "kick": "everyone",
+      "level": "everyone",
+      "logout": "everyone",
+      "outfit": "everyone",
+      "pickaxe": "everyone",
+      "promote": "everyone",
+      "setStatus": "everyone",
+      "stopEmote": "everyone",
+      "removeFriend": "everyone",
+      "friendList": "everyone",
+      "clearFriends": "admin_only",
+      "crown": "everyone",
+      "showCrowns": "everyone"
+    },
+    "others": {
+      "help_command": "disabled",
+      "stopTimer_is_use": "no"
+    },
+    "system": {
+      "useStatusAPI": true,
+      "bot_loading_message": "Bot is loading!",
+      "web_message": "Bot is online",
+      "localhost_pages": true,
+      "port": 8080
+    }
   }
-}

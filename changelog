@@ -164,3 +164,9 @@
 
 2.9.2 :
 - Fix bot@pickaxe command
+
+2.9.5 :
+- Add an event when the bot/a player is kicked
+- Add an event when the bot/a player is promoted
+- Remove the useless command: bot@battlepass
+- Rework of commands: bot@changeGamemode, bot@friendList, bot@kick, bot@promote, bot@setStatus, bot@stopTimer

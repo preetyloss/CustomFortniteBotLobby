@@ -7,10 +7,10 @@ const config = nconf.file({ file: 'config.json' });
 const handleSetStatusCommand = async (message, botClient) => {
   const usedClient = botClient.user.self.displayName;
   
-  const commandMatch = message.content.match(/^bot@setStatus\s+(\d+)/);
+  const commandMatch = message.content.match(/^bot@setStatus\s+(\w+)/);
   if (!commandMatch) return;
 
-  const [_, status] = commandMatch;
+  const status = commandMatch[1];
 
   const admins = nconf.get('client:command_admin:admins') || ['oumar_boss'];
   const access = 'commands:setStatus';

@@ -7,7 +7,7 @@ nconf.file({ file: 'config.json' });
 const handlePromoteCommand = async (message, botClient) => {
   const usedClient = botClient.user.self.displayName;
   
-  const commandMatch = message.content.match(/^bot@promote\s+(\d+)/);
+  const commandMatch = message.content.match(/^bot@promote\s+(.+)/);
   if (!commandMatch) return;
   
   const username = commandMatch[1].trim();
@@ -28,8 +28,13 @@ const handlePromoteCommand = async (message, botClient) => {
     }
 
     try {
-      await botClient.party.me.promote(username);
-      showInfo(`${usedClient} : The player has been promoted`);
+      if (username === "me") {
+        await botClient.party.me.promote(message.author.displayName);
+        showInfo(`${usedClient} : The player ${message.author.displayName} has been promoted`, 'party');
+      } else {
+        await botClient.party.me.promote(username);
+        showInfo(`${usedClient} : The player ${username} has been promoted`, 'party');
+      }
     } catch (err) {
       showError('Error promoting player', err);
     }

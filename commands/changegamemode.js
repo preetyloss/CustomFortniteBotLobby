@@ -27,7 +27,7 @@ const handleChangeGameModeCommand = async (message, botClient) => {
   }
 
   try {
-    await botClient.party.me.setPlaylist(gamemode);
+    await botClient.party.setPlaylist(gamemode);
     showInfo(`${usedClient} : The gamemode has been updated to ${gamemode}`, 'commandInfo');
   } catch (error) {
     showError(`${usedClient} : Error changing gamemode: ${error.message}`);

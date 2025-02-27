@@ -31,6 +31,8 @@ const postStatus = require('../client/postStatus')
 const handleExit = require('../events/handleExit')
 const handleDisconnected = require('../events/disconnected');
 const handleFriendUpdated = require('../events/friendUpdated')
+const handleMemberKicked = require('../events/handleMemberKicked')
+const handleMemberPromoted = require('../events/handleMemberPromoted')
 const logEnabled = true;
 let timerstatus = false;
 let userData
@@ -58,9 +60,9 @@ async function sleep(seconds) {
   let message = "UserAgent set to" + axiosInstance.defaults.headers["user-agent"]
   showInfo(message, 'sysMessage');
 
-  const accountId = process.env.ACCOUNT_ID;
-  const deviceId = process.env.DEVICE_ID;
-  const secret = process.env.SECRET;
+  const accountId = process.env.A_ACCOUNT_ID;
+  const deviceId = process.env.A_DEVICE_ID;
+  const secret = process.env.A_SECRET;
 
   if (!accountId || !deviceId || !secret) {
     showError("Account information (ACCOUNT_ID, DEVICE_ID, SECRET) is missing or incomplete.");
@@ -126,14 +128,17 @@ async function sleep(seconds) {
   botClient.on('party:joinrequest', (receivedRequest) => handlePartyJoinRequest(botClient, receivedRequest));
   botClient.on('party:member:joined', (join) => handlePartyMemberJoined(botClient, join, eid, cid, managePartySize, bot_invite_status, bot_invite_onlinetype, bot_use_status, bot_use_onlinetype, bot_join_message, bot_leave_time, webhookClient));
   botClient.on('party:member:left', (member) => handlePartyMemberLeft(botClient, member, managePartySize));
+  botClient.on('party:member:kicked', (member) => handleMemberKicked(botClient, member))
+  botClient.on('party:member:promoted', (member) => handleMemberPromoted(botClient, member))
   botClient.on('party:member:message', msg => handleCommands(msg, botClient));
   botClient.on('friend:message', msg => handleCommands(msg, botClient));
   botClient.on('disconnected', async () => handleDisconnected(botClient));
   botClient.on('friend:added', async () => handleFriendUpdated(botClient))
   botClient.on('friend:removed', async () => handleFriendUpdated(botClient))
 
+
   if (reload) {
-    setTimeout(() => reconnectClient(botClient, webhookClient, initClient), reload_time * 1000);
+    setTimeout(() => reconnectClient(botClient, webhookClient), reload_time * 1000);
   }
 
   managePartySize(botClient, bot_invite_status, bot_invite_onlinetype, bot_use_status, bot_use_onlinetype, bot_join_message);

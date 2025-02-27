@@ -13,6 +13,7 @@ const managePartySize = async (botClient, bot_invite_status, bot_invite_onlinety
         console.error('botClient is undefined');
         return;
     }
+    const userData = getUserData(botClient.user.self.displayName);
 
     if (!botClient.party) {
         let data = {
@@ -28,7 +29,6 @@ const managePartySize = async (botClient, bot_invite_status, bot_invite_onlinety
         return
     }
 
-    const userData = getUserData(botClient.user.self.displayName);
     await sleep(2);
 
     if (botClient.party.size === 1) {

@@ -7,7 +7,7 @@ nconf.file({ file: 'config.json' });
 const handleRemoveFriendCommand = async (message, botClient) => {
     const usedClient = botClient.user.self.displayName;
     
-    const commandMatch = message.content.match(/^bot@removeFriend\s+(\d+)/);
+    const commandMatch = message.content.match(/^bot@removeFriend\s+(\w+)/);
     if (!commandMatch) return;
 
     const [_, friendId] = commandMatch;

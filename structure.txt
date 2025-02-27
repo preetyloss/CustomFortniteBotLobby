@@ -54,6 +54,8 @@
 │   ├── partyMemberJoined.js
 │   ├── partyMemberLeft.js
 │   ├── partyMemberUpdated.js
+│   ├── handleMemberKicked.js
+│   ├── handleMemberPromoted.js
 │   └── partyUpdated.js
 ├── exampleAPI
 │   ├── delete.js

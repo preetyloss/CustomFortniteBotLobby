@@ -2,7 +2,6 @@ const showInfo = require('../utils/logs/showInfo');
 const commands = {
   addFriend: require('../commands/addfriend'),
   backpack: require('../commands/backpack'),
-  battlepass: require('../commands/battlepass'),
   changeGamemode: require('../commands/changegamemode'),
   clearFriends: require('../commands/clearfriends'),
   crowns: require('../commands/crowns'),

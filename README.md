@@ -6,8 +6,11 @@ This project is open-source and free.
 
 ## 📌 Information
 - **Chapter 6 - Season 1 and Season 2**
-- **Version: 2.9.2**
+- **Version: 2.9.5**
 - **Created by: Mr_Julus**
+
+### BUG:
+- If you invite the client, then kick him, and then invite him again => this cause a crash
 
 ## 🔧 Installation and Setup
 ### ⚙️ A useful link
@@ -50,7 +53,7 @@ Edit the `.env` file with your webhook URL to receive logs.
 Edit the `.env` file with your Discord Token.
 
 ## 🏷️ Branches
-- **[Default] `main`** (version 2.9.2)
+- **[Default] `main`** (version 2.9.5)
 - **[Obsolete] `DarkDus-v1`** (version 1.3.6)
 
 ## Get the status and if the bot is avaible with a API
@@ -126,7 +129,6 @@ If you have trouble with the API, you can check the status of the API here :
 - `bot@level <level>`: Set the bot's level.
 - `bot@crowns <level>`: Set the bot's crowns.
 - `bot@showCrown`: Show the crowns (emote).
-- `bot@battlepass <purchased> <level>`: Set battle pass status and level.
 - `bot@stopTimer`: Stop the party timer.
 - `bot@setStatus <newStatus>`: Change the bot's status.
 - `bot@logout`: Log out the bot.
@@ -143,6 +145,8 @@ If you have trouble with the API, you can check the status of the API here :
 ✔️ Integrated matchmaking system.
 
 ✔️ Advanced customization with custom commands.
+
+✔️ And more...
 
 ## 📜 Disclaimer
 > **Fortnite** is a registered trademark of Epic Games, Inc. in the United States and elsewhere.    
