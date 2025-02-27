@@ -11,7 +11,6 @@
 ├── commands
 │   ├── addfriend.js
 │   ├── backpack.js
-│   ├── battlepass.js
 │   ├── changegamemode.js
 │   ├── clearfriends.js
 │   ├── crowns.js
