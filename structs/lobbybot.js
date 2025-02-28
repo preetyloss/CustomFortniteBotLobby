@@ -60,9 +60,9 @@ async function sleep(seconds) {
   let message = "UserAgent set to" + axiosInstance.defaults.headers["user-agent"]
   showInfo(message, 'sysMessage');
 
-  const accountId = process.env.A_ACCOUNT_ID;
-  const deviceId = process.env.A_DEVICE_ID;
-  const secret = process.env.A_SECRET;
+  const accountId = process.env.ACCOUNT_ID;
+  const deviceId = process.env.DEVICE_ID;
+  const secret = process.env.SECRET;
 
   if (!accountId || !deviceId || !secret) {
     showError("Account information (ACCOUNT_ID, DEVICE_ID, SECRET) is missing or incomplete.");
