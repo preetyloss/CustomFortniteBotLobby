@@ -6,7 +6,7 @@ This project is open-source and free.
 
 ## 📌 Information
 - **Chapter 6 - Season 1 and Season 2**
-- **Version: 2.9.8**
+- **Version: 2.9.9**
 - **Created by: Mr_Julus**
 
 ### BUG:
@@ -53,7 +53,7 @@ Edit the `.env` file with your webhook URL to receive logs.
 Edit the `.env` file with your Discord Token.
 
 ## 🏷️ Branches
-- **[Default] `main`** (version 2.9.8)
+- **[Default] `main`** (version 2.9.9)
 - **[Obsolete] `DarkDus-v1`** (version 1.3.6)
 
 ## Get the status and if the bot is avaible with a API
