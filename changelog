@@ -1,139 +1,40 @@
-1.2.9 :
-- Add a changelog file
-- Edit the bot, so when the bot is in a party, he decline any invitation
-- Update the file README 
-- Optimize index.js file by removing => require('fs')
+2.9.7 :
+- Change the style of changelog file
+- Small updates
+- Fix events/changeTimeStat.js and events/handleLeaverTimer.js
 
-1.2.9-5 :
-- Fix bug commands (bot@backpack and bot@outift), there were an error with the default backpack/outifit
-- Create a simple for test features
+2.9.6 :
+- Fix the structs/lobbybot file
 
-1.2.9-7 :
-- Fix some global things to structure the script
+2.9.5 :
+- Add an event when the bot/a player is kicked
+- Add an event when the bot/a player is promoted
+- Remove the useless command: bot@battlepass
+- Rework of commands: bot@changeGamemode, bot@friendList, bot@kick, bot@promote, bot@setStatus, bot@stopTimer
 
-1.3 :
-- Fix bugs related to api when the player use the command (bot@outfit, bot@pickaxe or bot@backpack)
+2.9.2 :
+- Fix bot@pickaxe command
 
-1.3.01 :
-- add a lign in the README file : "Features that come soon"
-
-1.3.02 :
-- edit of env.example to prepare for the next features
-- edit .gitignore
-
-1.3.03 :
-- add a custom prefix for the commands
-
-1.3.1 :
-- add reload time, after an amound of time, the client restart
-
-1.3.1-5 :
-- Fix a bug related to the party timer, if the player leaves the party before the timer finished, there was a confusing
-
-1.3.5 :
-- Add a Discord bot that allows running and stopping the client on Discord.
-
-2.0.0 :
-- Add elements related to the Fortnite matchmaking
-- Remove discord bot temporary
-
-2.1 :
-- Upgrade the system of custom commands
-- Admin commands
-
-2.2 :
-- Fix bugs related to the admins custom command
-
-2.3 :
-- Add a feature to ban a player from use the bot
-
-2.4 :
-- Add a discord bot with a lot of features
-
-2.4.2 :
-- Add a DarkDus's version checker
-
-2.4.5 :
+2.9.1 :
 - Fix bugs
 
-2.4.6 :
-- Fix a bug related to WebhookClientWrapper function
-
-2.5 :
-- Add loading menu
-- Add a stop timer party
-- Fix some bugs
-
-2.5.2 :
-- Fix bugs related to the news features and to the matchmaking
-
-2.5.3 :
-- Add a verification if all device info is present
-
-2.5.4 :
-- Fix a bug related to the version of undici (unsuccessful...)
-
-2.5.4-5 :
-- Edit /show_bots => /show_bot
-
-2.5.5 :
-- Fix a bug related to the deviceAuth info checker
-
-2.5.6 :
-- When the client is banned from Fortnite matchmaking, the bot have a special status.
-
-2.5.7 :
-- Fix bug related to the Disord bot command : /showBots
-
-2.5.8 :
-- Change the style of README file
-
-2.5.9 :
-- Fix bug related to the creation of deviceAuth
-
-2.6.0 :
-- Get the status and if the bot is avaible with a API
-- Fix bug related to the status
-
-2.6.1 :
-- Add a localhost page that allow you to see the client's status with a cool page
-
-2.6.2 :
-- You can access to the friend list of the bot by API
-
-2.6.3 :
+2.9.0 :
 - Fix bugs
 
-2.6.5 :
-- Edit the Discord bot to add button to manage the Fortnite client
+2.8.9 :
+- Update the structure of the project
+- Fix bug related to the localhost page
 
-2.6.6 :
-- Remove temporary the feature restart
+2.8.8 :
+- Add a new requirements; path
+- Update the initUsername.js
 
-2.6.7 :
-- Fix bugs related to the Discord bot
+2.8.7 :
+- Fix bug related to the party timer
+- Update the static page
 
-2.6.8 :
-- Add the field id (client's id) accessible by API
-
-2.7.0 :
-- Fix bug related to the security of the API, add a field key to authenticate
-
-2.7.5 :
-- Add Fortnite Custom Commands : bot@removeFriend, bot@clearFriends and bot@friendList
-- Optimization of the Fortnite Commands
-
-2.7.7 :
-- Fix bugs
-
-2.7.8 :
-- Check if the API is available
-
-2.7.9 :
-- Add Fortnite Custom Commands : bot@crowns and bot@showCrowns
-
-2.8.0 :
-- Add a Upcoming Features file
+2.8.6 :
+- Fix bug related to the version checker
 
 2.8.5 :
 - Fix bugs
@@ -144,32 +45,139 @@
     => friend list
     => accept a friend request
 
-2.8.6 :
-- Fix bug related to the version checker
+2.8.0 :
+- Add a Upcoming Features file
 
-2.8.7 :
-- Fix bug related to the party timer
-- Update the static page
+2.7.9 :
+- Add Fortnite Custom Commands : bot@crowns and bot@showCrowns
 
-2.8.8 :
-- Add a new requirements; path
-- Update the initUsername.js
+2.7.8 :
+- Check if the API is available
 
-2.8.9 :
-- Update the structure of the project
-- Fix bug related to the localhost page
-
-2.9.0 and 2.9.1 :
+2.7.7 :
 - Fix bugs
 
-2.9.2 :
-- Fix bot@pickaxe command
+2.7.5 :
+- Add Fortnite Custom Commands : bot@removeFriend, bot@clearFriends and bot@friendList
+- Optimization of the Fortnite Commands
 
-2.9.5 :
-- Add an event when the bot/a player is kicked
-- Add an event when the bot/a player is promoted
-- Remove the useless command: bot@battlepass
-- Rework of commands: bot@changeGamemode, bot@friendList, bot@kick, bot@promote, bot@setStatus, bot@stopTimer
+2.7.0 :
+- Fix bug related to the security of the API, add a field key to authenticate
 
-2.9.6 :
-- Fix the structs/lobbybot file
+2.6.8 :
+- Add the field id (client's id) accessible by API
+
+2.6.7 :
+- Fix bugs related to the Discord bot
+
+2.6.6 :
+- Remove temporary the feature restart
+
+2.6.5 :
+- Edit the Discord bot to add button to manage the Fortnite client
+
+2.6.3 :
+- Fix bugs
+
+2.6.2 :
+- You can access to the friend list of the bot by API
+
+2.6.1 :
+- Add a localhost page that allow you to see the client's status with a cool page
+
+2.6.0 :
+- Get the status and if the bot is avaible with a API
+- Fix bug related to the status
+
+2.5.9 :
+- Fix bug related to the creation of deviceAuth
+
+2.5.8 :
+- Change the style of README file
+
+2.5.7 :
+- Fix bug related to the Disord bot command : /showBots
+
+2.5.6 :
+- When the client is banned from Fortnite matchmaking, the bot have a special status.
+
+2.5.5 :
+- Fix a bug related to the deviceAuth info checker
+
+2.5.4-5 :
+- Edit /show_bots => /show_bot
+
+2.5.4 :
+- Fix a bug related to the version of undici (unsuccessful...)
+
+2.5.3 :
+- Add a verification if all device info is present
+
+2.5.2 :
+- Fix bugs related to the news features and to the matchmaking
+
+2.5 :
+- Add loading menu
+- Add a stop timer party
+- Fix some bugs
+
+2.4.6 :
+- Fix a bug related to WebhookClientWrapper function
+
+2.4.5 :
+- Fix bugs
+
+2.4.2 :
+- Add a DarkDus's version checker
+
+2.4 :
+- Add a discord bot with a lot of features
+
+2.3 :
+- Add a feature to ban a player from use the bot
+
+2.2 :
+- Fix bugs related to the admins custom command
+
+2.1 :
+- Upgrade the system of custom commands
+- Admin commands
+
+2.0.0 :
+- Add elements related to the Fortnite matchmaking
+- Remove discord bot temporary
+
+1.3.5 :
+- Add a Discord bot that allows running and stopping the client on Discord.
+
+1.3.1-5 :
+- Fix a bug related to the party timer, if the player leaves the party before the timer finished, there was a confusing
+
+1.3.1 :
+- add reload time, after an amound of time, the client restart
+
+1.3.03 :
+- add a custom prefix for the commands
+
+1.3.02 :
+- edit of env.example to prepare for the next features
+- edit .gitignore
+
+1.3.01 :
+- add a lign in the README file : "Features that come soon"
+
+1.3 :
+- Fix bugs related to api when the player use the command (bot@outfit, bot@pickaxe or bot@backpack)
+
+1.2.9-7 :
+- Fix some global things to structure the script
+
+1.2.9-5 :
+- Fix bug commands (bot@backpack and bot@outift), there were an error with the default backpack/outifit
+- Create a simple for test features
+
+1.2.9 :
+- Add a changelog file
+- Edit the bot, so when the bot is in a party, he decline any invitation
+- Update the file README 
+- Optimize index.js file by removing => require('fs')

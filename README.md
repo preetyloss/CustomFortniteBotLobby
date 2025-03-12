@@ -6,7 +6,7 @@ This project is open-source and free.
 
 ## 📌 Information
 - **Chapter 6 - Season 1 and Season 2**
-- **Version: 2.9.6**
+- **Version: 2.9.7**
 - **Created by: Mr_Julus**
 
 ### BUG:
@@ -19,7 +19,7 @@ A useful link for the outfit, emote, backpack and pickaxe [to find id](https://f
 ### 1️⃣ Requirements
 Make sure you have installed [Node.js](https://nodejs.org/) v20.12.0 (minimum) and the following dependencies:
 ```sh
-npm install colors discord.js dotenv fnbr axios fs nconf readline path child_process
+npm install colors discord.js dotenv fnbr axios fs nconf readline path child_process express
 ```
 
 ### 2️⃣ Authentication
@@ -53,7 +53,7 @@ Edit the `.env` file with your webhook URL to receive logs.
 Edit the `.env` file with your Discord Token.
 
 ## 🏷️ Branches
-- **[Default] `main`** (version 2.9.6)
+- **[Default] `main`** (version 2.9.7)
 - **[Obsolete] `DarkDus-v1`** (version 1.3.6)
 
 ## Get the status and if the bot is avaible with a API

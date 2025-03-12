@@ -4,6 +4,7 @@ const nconf = require('nconf');
 nconf.file({ file: './config.json' });
 
 const handleStopTimerCommand = async () => {
+  const usedClient = botClient.user.self.displayName;
   const stopTimer = nconf.get('others:stopTimer_is_use');
 
     if (stopTimer === 'yes') {
