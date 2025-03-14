@@ -26,6 +26,10 @@ const handleAddFriendCommand = async (message, botClient) => {
         return;
     }
 
+    if (nconf.get('fortnite:add_users') !== true) {
+        return
+    }
+
     try {
         if (botClient.friend?.add) {
             await botClient.friend.add(username);

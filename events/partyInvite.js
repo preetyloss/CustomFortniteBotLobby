@@ -18,8 +18,10 @@ const handlePartyInvite = async (botClient, request) => {
       await request.decline();
       showInfo(`Declined party invite from ${request.sender.displayName} ${request.sender.id} as the bot is already in a party`, 'party');
     } else {
-      await request.accept();
-      showInfo(`Accepted party invite from ${request.sender.displayName} ${request.sender.id}`, 'party');
+      if (nconf.get('fornite:join_users')) {
+        await request.accept();
+        showInfo(`Accepted party invite from ${request.sender.displayName} ${request.sender.id}`, 'party');
+      }
     }
   } catch (error) {
     showError(`Failed to handle party invite: ${error.message}`);

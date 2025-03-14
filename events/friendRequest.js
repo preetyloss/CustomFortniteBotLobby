@@ -8,10 +8,12 @@ const handleFriendRequest = async (botClient, request, webhookClient) => {
     showInfo(`${request.displayName} try to add the bot but he is banned...`)
     return
   }
-  showInfo(`Received a friend request from ${request.displayName} ${request.id}`, 'party');
-  await request.accept();
-  showInfo(`Accepted friend request from ${request.displayName} ${request.id}`, 'party');
-  webhookClient.send(`\`\`\`diff\n- [Bot] Accepted friend request from ${request.displayName} ${request.id}\`\`\``);
+  if (nconf.get("fortnite:add_users")) {
+    showInfo(`Received a friend request from ${request.displayName} ${request.id}`, 'party');
+    await request.accept();
+    showInfo(`Accepted friend request from ${request.displayName} ${request.id}`, 'party');
+    webhookClient.send(`\`\`\`diff\n- [Bot] Accepted friend request from ${request.displayName} ${request.id}\`\`\``);
+  }
 };
 
 module.exports = handleFriendRequest;

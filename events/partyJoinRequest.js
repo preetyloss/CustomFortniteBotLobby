@@ -9,12 +9,14 @@ const handlePartyJoinRequest = async (botClient, receivedRequest) => {
     showInfo(`${receivedRequest.displayName} try to join the bot but he is banned...`)
     return
   }
-  showInfo('Join request received.', 'party');
-  try {
-    await receivedRequest.accept();
-    showInfo('Join request accepted.', 'party');
-  } catch (error) {
-    showError('Error accepting join request:', error.stack || error);
+  if (nconf.get('fortnite:join_users')) {
+    showInfo('Join request received.', 'party');
+    try {
+      await receivedRequest.accept();
+      showInfo('Join request accepted.', 'party');
+    } catch (error) {
+      showError('Error accepting join request:', error.stack || error);
+    }
   }
 };
 
