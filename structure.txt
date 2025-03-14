@@ -33,29 +33,32 @@
 │   ├── commands
 │   │   ├── admin.js
 │   │   ├── banned-player.js
+│   │   ├── bot.js
 │   │   ├── friendmanager.js
 │   │   ├── help.js
 │   │   ├── panel.js
+│   │   ├── party.js
 │   │   └── showBot.js
 │   └── index.js
 ├── events
+|   ├── changeTimerStat.js
 |   ├── clientIsBanned.js
-│   ├── handleLeaveTimer.js
-│   ├── managePartySize.js
-│   ├── reconnectClient.js
 │   ├── disconnected.js
 │   ├── friendRequest.js
 │   ├── friendUpdated.js
 │   ├── handleCommands.js
 │   ├── handleExit.js
+│   ├── handleLeaveTimer.js
+│   ├── handleMemberKicked.js
+│   ├── handleMemberPromoted.js
+│   ├── managePartySize.js
 │   ├── partyInvite.js
 │   ├── partyJoinRequest.js
 │   ├── partyMemberJoined.js
 │   ├── partyMemberLeft.js
 │   ├── partyMemberUpdated.js
-│   ├── handleMemberKicked.js
-│   ├── handleMemberPromoted.js
-│   └── partyUpdated.js
+│   ├── partyUpdated.js
+│   └── reconnectClient.js
 ├── exampleAPI
 │   ├── delete.js
 │   ├── get.js
@@ -76,17 +79,16 @@
 │   │   ├── showError.js
 │   │   └── showInfo.js
 │   ├── others
-│   │   ├── initColors.js
+│   │   ├── darkdus
+│   │   │   ├── init.js
+│   │   │   └── initUsername.js
 │   │   ├── checkAPI.js
-│   │   ├── initialize.js
-│   │   ├── init.js
-│   │   ├── initUsername.js
-│   │   └── testDeviceAuth.js
-│   ├── outfit
-│   │   └── api.js
+│   │   ├── initColors.js
+│   │   └── initialize.js
 │   ├── types.d.ts
-│       ├── version.js
-│       └── webhookClient.js
+│   ├── version.js
+│   └── webhookClient.js
+├── .gitignore
 ├── env.example
 ├── README.md
 ├── changelog

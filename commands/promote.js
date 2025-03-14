@@ -27,6 +27,15 @@ const handlePromoteCommand = async (message, botClient) => {
       return;
     }
 
+    if (!botClient.party) {
+      showError(`${usedClient} : Is not in a party!`);
+      return;
+    }
+    if (botClient.party.leader.displayName !== botClient.user.self.displayName) {
+      showError(`${usedClient} : Is not the leader of the party!`);
+      return;
+    }
+
     try {
       if (username === "me") {
         await botClient.party.me.promote(message.author.displayName);

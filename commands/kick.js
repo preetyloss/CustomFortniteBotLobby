@@ -25,6 +25,14 @@ const handleKickCommand = async (message, botClient) => {
     showError(`${usedClient} : You don't have permission to use this command.`);
     return;
   }
+  if (!botClient.party) {
+    showError(`${usedClient} : Is not in a party!`);
+    return;
+  }
+  if (botClient.party.leader.displayName !== botClient.user.self.displayName) {
+    showError(`${usedClient} : Is not the leader of the party!`);
+    return;
+  }
 
   try {
     await botClient.party.kick(username);

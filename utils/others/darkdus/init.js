@@ -44,7 +44,6 @@ async function init() {
             return false;
         }
     } catch (error) {
-        console.log(error)
         return undefined;
     }
 }

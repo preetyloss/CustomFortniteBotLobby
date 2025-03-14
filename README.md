@@ -6,15 +6,17 @@ This project is open-source and free.
 
 ## 📌 Information
 - **Chapter 6 - Season 1 and Season 2**
-- **Version: 2.9.9**
+- **Version: 3.0.0**
 - **Created by: Mr_Julus**
-
-### BUG:
-- If you invite the client, then kick him, and then invite him again => this cause a crash
 
 ## 🔧 Installation and Setup
 ### ⚙️ A useful link
 A useful link for the outfit, emote, backpack and pickaxe [to find id](https://fortnite.gg/cosmetics)
+
+### Version Checker
+This repository has a version check, to notify you when a new version is available.
+
+If you don't want this check, change the config.json file and the DarkDus:skipVersionCheck field to true.
 
 ### 1️⃣ Requirements
 Make sure you have installed [Node.js](https://nodejs.org/) v20.12.0 (minimum) and the following dependencies:
@@ -53,8 +55,8 @@ Edit the `.env` file with your webhook URL to receive logs.
 Edit the `.env` file with your Discord Token.
 
 ## 🏷️ Branches
-- **[Default] `main`** (version 2.9.9)
-- **[Obsolete] `DarkDus-v1`** (version 1.3.6)
+- **[Default] `main`** (version 3.0.0)
+- **[Obsolete] `DarkDus-v1`** (version 1.3.6), This version has really less functionality, and doesn't support matchmaking 
 
 ## Get the status and if the bot is avaible with a API
 ### Client's info that you can get
@@ -93,17 +95,36 @@ If you have trouble with the API, you can check the status of the API here :
 ⚠️ If you kill the terminal, this will not work (the status will not change to offline), you need to do the command bot@logout or /panel and then click on the button logout
 
 ## 🛠️ Discord Bot Commands
-| Command | Description |
-|----------|-------------|
-| `/panel` | Manage the Fortnite bot (logout) |
-| `/admin add <accountID>` | Add an admin |
-| `/admin delete <username>` | Remove an admin |
-| `/admin list` | Show the admin list |
-| `/banned_player add <username>` | Ban a player |
-| `/banned_player remove <username>` | Unban a player |
-| `/banned_player list` | List banned players |
-| `/help` | Display help |
-| `/show_bot` | Show bot information |
+### 👥 Friends
+- `/friendmanager add <username>` : Ban a player 
+- `/friendmanager remove <username>` : Unban a player 
+- `/friendmanager list` : List banned players 
+
+### 🎭 Appearance
+- `/bot skin <id>` : Change the bot's skin 
+- `/bot backpack <id>` : Change the bot's backpack 
+- `/bot pickaxe <id>` :  Change the bot's pickaxe 
+- `/bot emote <id>` : Make the bot perform an emote 
+- `/bot level <level>` : Set the bot's level 
+
+### 🏠 Party
+- `/party kick <username>` : Kick a player from the party 
+- `/party promote <username>` : Promote a player to party leader 
+- `/party leave` : Leave the party 
+
+### ⚙️ DarkDus
+- `/admin add <username>` : Add an admin 
+- `/admin delete <username>` : Remove an admin 
+- `/admin list` : Show the admin list 
+
+- `/banned_player add <username>` : Ban a player 
+- `/banned_player remove <username>` : Unban a player 
+- `/banned_player list` : List banned players 
+
+### ⚙️ Others
+- `/panel` : Manage the Fortnite bot (logout) |
+- `/help` : Display help 
+- `/show_bot` : Show bot information 
 
 ## 🎮 Fortnite Commands
 ### 🎭 Appearance

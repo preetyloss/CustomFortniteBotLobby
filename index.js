@@ -6,7 +6,6 @@ const express = require("express");
 const { spawn } = require("child_process");
 const WebhookClientWrapper = require('./utils/webhookClient');
 const updatePlaylists = require('./structs/playlist-updater');
-const initDarkDus = require('./utils/others/darkdus/init')
 const showInfo = require('./utils/logs/showInfo')
 const initClient = require('./utils/others/initialize');
 const checkAPIStatus = require('./utils/others/checkAPI');
@@ -32,15 +31,6 @@ const initLocalhost = async () => {
 const sleep = async (seconds) => new Promise(resolve => setTimeout(resolve, seconds * 1000));
 
 const executeScript = async (scriptName, scriptArgs = []) => {
-  const initialized = await initDarkDus();
-  if (!initialized) {
-    await showInfo('DarkDus\'s version could not be verified..., always use the latest version of DarkDus!', 'red');
-    await showInfo('If you have the lastest version, try to edit to ./client/version.json', 'red');
-    await showInfo('BUT: be carefull!', 'red');
-    process.exit(1);
-  } else {
-    showInfo('DarkDus successfully init', 'green')
-  }
   const script = spawn("node", [scriptName, ...scriptArgs]);
 
   script.stdout.on("data", (data) => {
@@ -79,8 +69,8 @@ async function start() {
   }
 
   updatePlaylists();
-  checkAPIStatus()
-  showInfo(`Server running on port ${port}`, 'green');
+  await checkAPIStatus()
+  await showInfo(`Server running on port ${port}`, 'green');
   await initLocalhost()
   executeScript("structs/lobbybot.js");
 }

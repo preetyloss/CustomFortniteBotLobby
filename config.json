@@ -1,7 +1,8 @@
 {
   "DarkDus": {
-    "version": "2.9.9",
-    "creator": "Mr_Julus"
+    "version": "3.0.0",
+    "creator": "Mr_Julus",
+    "skipVersionCheck": false
   },
   "fortnite": {
     "add_users": true,
@@ -15,7 +16,7 @@
   },
   "discord": {
     "discord_status_type": "WATCHING",
-    "discord_status": "DarkDus v2.9.9",
+    "discord_status": "DarkDus v3.0.0",
     "send_webhook": true,
     "run_discord_client": true
   },
