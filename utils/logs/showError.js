@@ -11,12 +11,12 @@ nconf.env()
 const webhookUrl = nconf.get('DISCORD_WEBHOOK')
 
 const showError = async (m) => {
-    const message = '[ERR]' + m
+    const message = '[ERR] ' + m
     if (webhookUrl === "" || !webhookUrl) {
         show(message.red)
     } else {
         const embed = {
-            title: "[BLUCK]",
+            title: "[DarkDus]",
             description: message,
             color: 0xFF0000,
             timestamp: new Date().toISOString()

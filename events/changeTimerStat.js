@@ -14,11 +14,11 @@ const handleStopTimerCommand = async () => {
           showError(`${usedClient} : Failed to save configuration.`);
           console.error(err);
         } else {
-          showInfo(`${usedClient} : Stop party timer has been stopped.`);
+          showInfo(`${usedClient} : Stop party timer has been stopped.`, 'party');
         }
       });
     } else {
-      showError(`${usedClient} : Stop party timer is stopped.`);
+      showInfo(`${usedClient} : Stop party timer is stopped.`, 'party');
     }
 };
 

@@ -1,3 +1,7 @@
+3.0.2 :
+- Fix a small bug related to the party timer and the event when a player/bot is kicked
+- Small update of showError()
+
 3.0.1 :
 - Fix the possibility of not automatically accepting friend requests and party invitations
 

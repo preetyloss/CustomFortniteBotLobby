@@ -64,6 +64,9 @@ const showInfo = async (m, type) => {
         const sysMessageContent = '>>> ' + m;
         console.log(sysMessageContent[systemMessageColor] || sysMessageContent);
 
+    } else if (type === 'discord') {
+        const sysMessageContent = '[DISCORD] ' + m;
+        console.log(sysMessageContent[clientInfoColor] || sysMessageContent);
     } else if (type === 'warning' || type === 'red') {
         if (type === 'warning') {
             const warningMessageContent = 'WARNING: ' + m;

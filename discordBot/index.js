@@ -14,7 +14,7 @@ async function sleep(seconds) {
 
 function initializeDiscordBot(botClient) {
   if (!process.env.DISCORD_TOKEN) {
-    showError("[DISCORD] DISCORD_TOKEN is not defined in environment variables.", 'sysError');
+    showError("DISCORD_TOKEN is not defined in environment variables.", 'sysError');
     return;
   }
 
@@ -25,7 +25,7 @@ function initializeDiscordBot(botClient) {
   dclient.commands = new Map();
 
   dclient.once('ready', async () => {
-    showInfo(`[DISCORD] Bot online as ${dclient.user.tag}!`, 'green');
+    showInfo(`Bot online as ${dclient.user.tag}!`, 'discord');
     dclient.user.setActivity(discord_status, { type: discord_status_type });
 
     const commands = [];
@@ -38,23 +38,23 @@ function initializeDiscordBot(botClient) {
           dclient.commands.set(command.data.name, command);
           commands.push(command.data.toJSON());
         } else {
-          showError(`[DISCORD] Invalid command file skipped: ${file}`);
+          showError(`Invalid command file skipped: ${file}`);
         }
       } catch (error) {
-        showError(`[DISCORD] Error loading command file: ${file}`);
+        showError(`Error loading command file: ${file}`);
         console.error(error);
       }
     });
 
     if (commands.length > 0) {
       dclient.application.commands.set(commands)
-        .then(() => showInfo(`[DISCORD] ${commands.length} commands successfully registered!`, 'green'))
+        .then(() => showInfo(`${commands.length} commands successfully registered!`, 'discord'))
         .catch((error) => {
-          showError("[DISCORD] Error refreshing commands:");
+          showError("Error refreshing commands:");
           console.error(error);
         });
     } else {
-      showError("[DISCORD] No valid commands found!");
+      showError("No valid commands found!");
     }
   });
 
@@ -89,7 +89,7 @@ function initializeDiscordBot(botClient) {
       try {
         await command.execute(interaction, botClient);
       } catch (error) {
-        showError(`[DISCORD] Error executing command: ${interaction.commandName}`);
+        showError(`Error executing command: ${interaction.commandName}`);
         console.error(error);
         const embed = new EmbedBuilder()
           .setColor('#FF0000')
@@ -102,13 +102,13 @@ function initializeDiscordBot(botClient) {
 
   if (run_discord_client) {
     dclient.login(process.env.DISCORD_TOKEN)
-      .then(() => showInfo("[DISCORD] Client successfully logged in!", 'green'))
+      .then(() => showInfo("Client successfully logged in!", 'discord'))
       .catch((error) => {
         showError("[DISCORD] Error logging in:", 'sysError');
         console.error(error);
       });
   } else {
-    showInfo("[DISCORD] Client disabled.", 'green');
+    showInfo("Client disabled.", 'discord');
   }
 }
 

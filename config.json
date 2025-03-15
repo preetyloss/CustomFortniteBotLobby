@@ -1,6 +1,6 @@
 {
   "DarkDus": {
-    "version": "3.0.1",
+    "version": "3.0.2",
     "creator": "Mr_Julus",
     "skipVersionCheck": false
   },
@@ -16,7 +16,7 @@
   },
   "discord": {
     "discord_status_type": "WATCHING",
-    "discord_status": "DarkDus v3.0.1",
+    "discord_status": "DarkDus v3.0.2",
     "send_webhook": true,
     "run_discord_client": true
   },
