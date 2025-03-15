@@ -71,6 +71,13 @@ async function InitWelcomMessage() {
         console.log('\x1b[36m%s\x1b[0m', '------------------------------------------------------');
         console.log('\x1b[36m%s\x1b[0m', 'DarkDus : LOGS');
         console.log('\x1b[36m%s\x1b[0m', '------------------------------------------------------');
+        nconf.set('client:isKicked', false);
+        nconf.save((err) => {
+          if (err) {
+            showError(`${usedClient} : Failed to save configuration.`);
+            console.error(err);
+          }
+        });
     } else {
         console.clear();
         console.log('\x1b[36m%s\x1b[0m', '------------------------------------------------------');

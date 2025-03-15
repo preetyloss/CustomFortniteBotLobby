@@ -17,6 +17,10 @@ const handlePartyMemberJoined = async (botClient, join, eid, cid, managePartySiz
   managePartySize(botClient, bot_invite_status, bot_invite_onlinetype, bot_use_status, bot_use_onlinetype, bot_join_message);
   await botClient.party.me.setOutfit(cid);
   if (join.displayName !== botClient.user.self.displayName) {
+    if (botClient.user.self.displayName === botClient.party.leader.displayName) {
+      await botClient.party.promote(join.displayName);
+      showInfo(`${join.displayName} has been promoted`, 'party');
+    }
     showInfo(`Party member joined: ${join.displayName}`, 'party');
   }
 };

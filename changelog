@@ -1,3 +1,7 @@
+3.1.0 :
+- Add a new command to the Discord bot (/party invite)
+- Fix crash when reinviting a previously kicked client
+
 3.0.2 :
 - Fix a small bug related to the party timer and the event when a player/bot is kicked
 - Small update of showError()

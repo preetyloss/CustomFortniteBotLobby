@@ -12,6 +12,13 @@ module.exports = {
         )
     )
     .addSubcommand(subcommand =>
+      subcommand.setName('invite')
+        .setDescription('Invite a player to the party')
+        .addStringOption(option =>
+          option.setName('username').setDescription('Username to invite').setRequired(true)
+        )
+    )
+    .addSubcommand(subcommand =>
       subcommand.setName('promote')
         .setDescription('Promote a player to party leader')
         .addStringOption(option =>
@@ -50,6 +57,11 @@ module.exports = {
 
         await party.promote(username);
         return interaction.reply({ content: `✅ Player **${username}** has been promoted to party leader.`, ephemeral: true });
+
+      } else if (subcommand === 'invite') {
+
+        await party.invite(username);
+        return interaction.reply({ content: `✅ The bot has sent a party invitation to the player **${username}**.`, ephemeral: true });
 
       } else if (subcommand === 'leave') {
         await party.leave();

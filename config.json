@@ -1,6 +1,6 @@
 {
   "DarkDus": {
-    "version": "3.0.2",
+    "version": "3.1.0",
     "creator": "Mr_Julus",
     "skipVersionCheck": false
   },
@@ -16,7 +16,7 @@
   },
   "discord": {
     "discord_status_type": "WATCHING",
-    "discord_status": "DarkDus v3.0.2",
+    "discord_status": "DarkDus v3.1.0",
     "send_webhook": true,
     "run_discord_client": true
   },
@@ -47,6 +47,7 @@
     "banned_player": [
       "anyone"
     ],
+    "isKicked": true,
     "prefix": "bot@",
     "leave_party_time_seconds": 180,
     "reload_bot_time_seconds": 600,

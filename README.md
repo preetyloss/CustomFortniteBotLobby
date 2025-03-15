@@ -6,7 +6,7 @@ This project is open-source and free.
 
 ## 📌 Information
 - **Chapter 6 - Season 1 and Season 2**
-- **Version: 3.0.2**
+- **Version: 3.1.0**
 - **Created by: Mr_Julus**
 
 ## 🔧 Installation and Setup
@@ -55,7 +55,7 @@ Edit the `.env` file with your webhook URL to receive logs.
 Edit the `.env` file with your Discord Token.
 
 ## 🏷️ Branches
-- **[Default] `main`** (version 3.0.2)
+- **[Default] `main`** (version 3.1.0)
 - **[Obsolete] `DarkDus-v1`** (version 1.3.6), This version has really less functionality, and doesn't support matchmaking 
 
 ## Get the status and if the bot is avaible with a API
@@ -109,6 +109,7 @@ If you have trouble with the API, you can check the status of the API here :
 
 ### 🏠 Party
 - `/party kick <username>` : Kick a player from the party 
+- `/party invite <username>` : Invite a player to the party 
 - `/party promote <username>` : Promote a player to party leader 
 - `/party leave` : Leave the party 
 

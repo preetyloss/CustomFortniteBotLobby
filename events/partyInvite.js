@@ -12,14 +12,21 @@ const handlePartyInvite = async (botClient, request) => {
     }
 
     const party = botClient.party;
+    const username = request.sender.displayName;
     showInfo(`Received a party invite from ${request.sender.displayName} ${request.sender.id}`, 'party');
 
     if (party && party.size > 1) {
       await request.decline();
       showInfo(`Declined party invite from ${request.sender.displayName} ${request.sender.id} as the bot is already in a party`, 'party');
     } else {
+      if (nconf.get('client:isKicked')) {
+        await request.decline();
+        showInfo(`Sent a party invite to ${request.sender.displayName}`, 'party');
+        await botClient.party.invite(username);
+      } else {
         await request.accept();
         showInfo(`Accepted party invite from ${request.sender.displayName} ${request.sender.id}`, 'party');
+      }
     }
   } catch (error) {
     showError(`Failed to handle party invite: ${error.message}`);
