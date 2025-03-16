@@ -7,11 +7,28 @@ nconf.file({ file: './config.json' });
 const isHelpCommandAvailable = nconf.get('others:help_command');
 const version = nconf.get('DarkDus:version');
 
-const helpMessage = `Dark Dus - A Custom Fortnite Bot ${version} \nCommands:\n` +
-  `- bot@inviteFriend\n- bot@kick\n- bot@changeGamemode\n- bot@addFriend\n` +
-  `- bot@logout\n- bot@changeStatus\n- bot@backpack\n- bot@pickaxe\n- bot@outfit\n` +
-  `- bot@promote\n- bot@level\n- bot@ready\n- bot@battlepass\n- bot@emote\n` +
-  `- bot@stopEmote\n- bot@help`;
+const helpMessage = `DarkDus - A Custom Fortnite Bot ${version} \n
+Commands:\n
+- bot@outfit <newSkin>\n
+- bot@pickaxe <newPickaxe>\n
+- bot@backpack <newBackpack>\n
+- bot@changeGamemode <gamemode>\n
+- bot@kick <username>\n
+- bot@promote <username>\n
+- bot@inviteFriend <username>\n
+- bot@addFriend <username>\n
+- bot@removeFriend <username>\n
+- bot@clearFriends\n
+- bot@friendList\n
+- bot@emote <emote>\n
+- bot@stopEmote\n
+- bot@level <level>\n
+- bot@crown <level>\n
+- bot@showCrowns\n
+- bot@stopTimer\n
+- bot@setStatus <newStatus>\n
+- bot@logout\n
+- bot@help\n`;
 
 const handleHelpCommand = async (message, botClient) => {
   const usedClient = botClient.user.self.displayName;

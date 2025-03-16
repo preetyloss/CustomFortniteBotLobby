@@ -90,6 +90,8 @@ module.exports = {
         .setTimestamp();
 
       await interaction.reply({ embeds: [embed] });
+    } else {
+      await interaction.reply('Unknown subcommand!');
     }
   },
 };

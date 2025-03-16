@@ -1,6 +1,6 @@
 {
   "DarkDus": {
-    "version": "3.1.0",
+    "version": "3.2.0",
     "creator": "Mr_Julus",
     "skipVersionCheck": false
   },
@@ -16,7 +16,7 @@
   },
   "discord": {
     "discord_status_type": "WATCHING",
-    "discord_status": "DarkDus v3.1.0",
+    "discord_status": "DarkDus v3.2.0",
     "send_webhook": true,
     "run_discord_client": true
   },
@@ -37,7 +37,8 @@
     },
     "outfit": {
       "backpack": "BID_004_BlackKnight",
-      "skin": "CID_035_Athena_Commando_M_Medieval"
+      "skin": "CID_035_Athena_Commando_M_Medieval",
+      "pickaxe": "Pickaxe_ID_011_Medieval"
     },
     "default": {
       "level": "999",

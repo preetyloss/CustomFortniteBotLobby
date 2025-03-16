@@ -6,7 +6,7 @@ This project is open-source and free.
 
 ## 📌 Information
 - **Chapter 6 - Season 1 and Season 2**
-- **Version: 3.1.0**
+- **Version: 3.2.0**
 - **Created by: Mr_Julus**
 
 ## 🔧 Installation and Setup
@@ -55,7 +55,7 @@ Edit the `.env` file with your webhook URL to receive logs.
 Edit the `.env` file with your Discord Token.
 
 ## 🏷️ Branches
-- **[Default] `main`** (version 3.1.0)
+- **[Default] `main`** (version 3.2.0)
 - **[Obsolete] `DarkDus-v1`** (version 1.3.6), This version has really less functionality, and doesn't support matchmaking 
 
 ## Get the status and if the bot is avaible with a API
@@ -96,34 +96,52 @@ If you have trouble with the API, you can check the status of the API here :
 
 ## 🛠️ Discord Bot Commands
 ### 👥 Friends
-- `/friendmanager add <username>` : Ban a player 
-- `/friendmanager remove <username>` : Unban a player 
-- `/friendmanager list` : List banned players 
+- `/friend add <username>` : Add a friend
+- `/friend remove <username>` : Remove a friend 
+- `/friend list` : View your firend list
+- `/friend acceptrequest <username>` : Accept a friend request
+- `/friend count` : Count how many friends you have
+- `/friend clear` : Clear the friend's list.
 
-### 🎭 Appearance
+### 🎭 Bot
 - `/bot skin <id>` : Change the bot's skin 
 - `/bot backpack <id>` : Change the bot's backpack 
 - `/bot pickaxe <id>` :  Change the bot's pickaxe 
 - `/bot emote <id>` : Make the bot perform an emote 
-- `/bot level <level>` : Set the bot's level 
+- `/bot level <level>` : Set the bot's level
+- `/set status <status>` : Change the bot's status
+- `/set crowns <number>` : Set the bot's crowns
+- `/set gamemode <gamemode>` : Change the game mode
+
+### 🎭 Preset
+- `/preset show` : Show all preset
+- `/preset equip <id>` : Equip a preset
+- `/preset create` : Create a preset
+- `/preset remove <id>` : Remove a preset
+- `/preset clear` : Clear your presets
 
 ### 🏠 Party
 - `/party kick <username>` : Kick a player from the party 
 - `/party invite <username>` : Invite a player to the party 
 - `/party promote <username>` : Promote a player to party leader 
 - `/party leave` : Leave the party 
+- `/party hide <username>` : Hide a player in the party
+- `/party hide-all` : Hide all the players in the party
+- `/party unhide <username>` : Unhide a player in the party
+- `/party unhide-all` : Unhide all the players in the party
 
-### ⚙️ DarkDus
+### Admin
 - `/admin add <username>` : Add an admin 
 - `/admin delete <username>` : Remove an admin 
-- `/admin list` : Show the admin list 
+- `/admin list` : Show the admin list
 
-- `/banned_player add <username>` : Ban a player 
-- `/banned_player remove <username>` : Unban a player 
-- `/banned_player list` : List banned players 
+### Block
+- `/blockPlayer add <username>` : Ban a player 
+- `/blockPlayer remove <username>` : Unban a player 
+- `/blockPlayer list` : List banned players 
 
 ### ⚙️ Others
-- `/panel` : Manage the Fortnite bot (logout) |
+- `/panel` : Manage the Fortnite bot (logout)
 - `/help` : Display help 
 - `/show_bot` : Show bot information 
 
@@ -149,11 +167,12 @@ If you have trouble with the API, you can check the status of the API here :
 - `bot@emote <emote>`: Make the bot perform an emote.
 - `bot@stopEmote`: Stop the emote.
 - `bot@level <level>`: Set the bot's level.
-- `bot@crowns <level>`: Set the bot's crowns.
-- `bot@showCrown`: Show the crowns (emote).
+- `bot@crown <number>`: Set the bot's crowns.
+- `bot@showCrowns`: Show the crowns (emote).
 - `bot@stopTimer`: Stop the party timer.
 - `bot@setStatus <newStatus>`: Change the bot's status.
 - `bot@logout`: Log out the bot.
+- `bot@help`: Display help
 
 ## ⭐ Features
 ✔️ Automatically accepts friend requests.

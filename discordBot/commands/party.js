@@ -26,6 +26,28 @@ module.exports = {
         )
     )
     .addSubcommand(subcommand =>
+      subcommand.setName('hide')
+        .setDescription('Hide a player in the party')
+        .addStringOption(option =>
+          option.setName('username').setDescription('Username to hide').setRequired(true)
+        )
+    )
+    .addSubcommand(subcommand =>
+      subcommand.setName('hide-all')
+        .setDescription('Hide all the players in the party.')
+    )
+    .addSubcommand(subcommand =>
+      subcommand.setName('unhide')
+        .setDescription('Unhide a player in the party')
+        .addStringOption(option =>
+          option.setName('username').setDescription('Username to unhide').setRequired(true)
+        )
+    )
+    .addSubcommand(subcommand =>
+      subcommand.setName('unhide-all')
+        .setDescription('Unhide all the players in the party.')
+    )
+    .addSubcommand(subcommand =>
       subcommand.setName('leave')
         .setDescription('Make the bot leave the party')
     ),
@@ -59,13 +81,43 @@ module.exports = {
         return interaction.reply({ content: `✅ Player **${username}** has been promoted to party leader.`, ephemeral: true });
 
       } else if (subcommand === 'invite') {
-
         await party.invite(username);
         return interaction.reply({ content: `✅ The bot has sent a party invitation to the player **${username}**.`, ephemeral: true });
 
       } else if (subcommand === 'leave') {
         await party.leave();
         return interaction.reply({ content: '🚪 The bot has left the party.', ephemeral: true });
+
+      } else if (subcommand === 'hide') {
+        if (party.leader.displayName !== botName) {
+          return interaction.reply({ content: '⚠️ The bot must be the party leader to hide players.', ephemeral: true });
+        }
+
+        await party.hideMember(username, true);
+        return interaction.reply({ content: `✅ Player **${username}** has been hidden.`, ephemeral: true });
+      } else if (subcommand === 'hide-all') {
+        if (party.leader.displayName !== botName) {
+          return interaction.reply({ content: '⚠️ The bot must be the party leader to hide players.', ephemeral: true });
+        }
+
+        await party.hideMembers(true);
+        return interaction.reply({ content: '✅ All players have been hidden.', ephemeral: true });
+      } else if (subcommand === "unhide") {
+        if (party.leader.displayName !== botName) {
+          return interaction.reply({ content: '⚠️ The bot must be the party leader to unhide players.', ephemeral: true });
+        }
+
+        await party.hideMember(username, false);
+        return interaction.reply({ content: `✅ Player **${username}** has been unhidden.`, ephemeral: true });
+      } else if (subcommand === 'unhide-all') {
+        if (party.leader.displayName !== botName) {
+          return interaction.reply({ content: '⚠️ The bot must be the party leader to unhide players.', ephemeral: true });
+        }
+
+        await party.hideMembers(false);
+        return interaction.reply({ content: '✅ All players have been unhidden.', ephemeral: true });
+      } else {
+        return interaction.reply({ content: '❌ Invalid subcommand.', ephemeral: true });
       }
 
     } catch (error) {

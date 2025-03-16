@@ -5,7 +5,7 @@ const config = nconf.file({ file: 'config.json' });
 
 module.exports = {
   data: new SlashCommandBuilder()
-    .setName('banned_player')
+    .setName('blockPlayer')
     .setDescription('Manage the banned player\'s list')
     .addSubcommand(subcommand =>
       subcommand
@@ -91,6 +91,11 @@ module.exports = {
           .setTimestamp();
 
         await interaction.reply({ embeds: [embed] });
+      } else {
+        await interaction.reply({
+          content: 'Unknown subcommand.',
+          ephemeral: MessageFlags.Ephemeral,
+        });
       }
     } catch (error) {
       console.error('Error executing command:', error);

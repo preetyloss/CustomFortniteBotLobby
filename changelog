@@ -1,3 +1,9 @@
+3.2.0 :
+- Fix the Discord bot's presence
+- Add new commands to the Discord Bot
+- Update the command : bot@help
+- remove the structure file
+
 3.1.0 :
 - Add a new command to the Discord bot (/party invite)
 - Fix crash when reinviting a previously kicked client

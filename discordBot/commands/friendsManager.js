@@ -3,7 +3,7 @@ const { EmbedBuilder } = require('discord.js');
 
 module.exports = {
   data: new SlashCommandBuilder()
-    .setName('friendmanager')
+    .setName('friend')
     .setDescription('Manage your friend list')
     .addSubcommand(subcommand =>
       subcommand
@@ -38,6 +38,11 @@ module.exports = {
         .addStringOption(option =>
           option.setName('username').setDescription('Username to accept').setRequired(true)
         )
+    )
+    .addSubcommand(subcommand =>
+      subcommand
+        .setName('count')
+        .setDescription('Count how many friends you have')
     ),
 
   async execute(interaction) {
@@ -82,6 +87,10 @@ module.exports = {
         }
         await botClient.friend.add(username);
         return interaction.reply({ content: `${username} has been added to your friend list!` });
+      } else if (subcommand === 'count') {
+        return interaction.reply({ content: `You have ${friends.length} friends!` });
+      } else {
+        return interaction.reply({ content: 'Invalid subcommand.', ephemeral: true });
       }
 
     } catch (error) {
