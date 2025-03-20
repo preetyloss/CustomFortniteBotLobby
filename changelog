@@ -1,3 +1,6 @@
+3.2.1 :
+- Fix a bug that was crashing
+
 3.2.0 :
 - Fix the Discord bot's presence
 - Add new commands to the Discord Bot

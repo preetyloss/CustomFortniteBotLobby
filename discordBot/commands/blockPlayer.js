@@ -5,7 +5,7 @@ const config = nconf.file({ file: 'config.json' });
 
 module.exports = {
   data: new SlashCommandBuilder()
-    .setName('blockPlayer')
+    .setName('blockplayer')
     .setDescription('Manage the banned player\'s list')
     .addSubcommand(subcommand =>
       subcommand
