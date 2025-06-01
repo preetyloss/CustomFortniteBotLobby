@@ -1,3 +1,8 @@
+3.2.2 :
+- Remove the field battlepass, which is useless because the command bot@battlepass doesn't exist anymore
+- Update the checksum generation
+- Matchmaking isn't available anymore
+
 3.2.1 :
 - Fix a bug that was crashing
 

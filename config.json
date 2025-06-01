@@ -1,8 +1,8 @@
 {
   "DarkDus": {
-    "version": "3.2.1",
+    "version": "3.2.2",
     "creator": "Mr_Julus",
-    "skipVersionCheck": false
+    "skipVersionCheck": true
   },
   "fortnite": {
     "add_users": true,
@@ -16,7 +16,7 @@
   },
   "discord": {
     "discord_status_type": "WATCHING",
-    "discord_status": "DarkDus v3.2.1",
+    "discord_status": "DarkDus v3.2.2",
     "send_webhook": true,
     "run_discord_client": true
   },
@@ -48,7 +48,7 @@
     "banned_player": [
       "anyone"
     ],
-    "isKicked": true,
+    "isKicked": false,
     "prefix": "bot@",
     "leave_party_time_seconds": 180,
     "reload_bot_time_seconds": 600,
@@ -65,7 +65,6 @@
     "addFriend": "admin_only",
     "stopTimer": "admin_only",
     "backpack": "everyone",
-    "battlepass": "everyone",
     "changeGamemode": "everyone",
     "emote": "everyone",
     "help": "everyone",

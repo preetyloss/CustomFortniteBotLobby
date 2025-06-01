@@ -4,6 +4,12 @@ const WebSocket = require('ws');
 const showError = require('../utils/logs/showError');
 const clientIsBanned = require('../events/clientIsBanned');
 const axiosInstance = require('axios').default;
+const crypto = require('crypto');
+
+function generateChecksum(ticketType, payload, signature) {
+  const data = ticketType + payload + signature;
+  return crypto.createHash('sha256').update(data).digest('hex');
+}
 
 async function handleMatchmakingError(request, response) {
     let errorData = '';
@@ -106,15 +112,15 @@ const handlePartyUpdated = async (botClient, updatedParty, webhookClient, logEna
         }
 
         const ticketData = ticketResponse.data;
-        const hashResponse = await axiosInstance.post("https://api-xji1.onrender.com/generate-checksum", ticketData, {
-          headers: { Accept: 'application/json' }
-        });
 
-        if (!hashResponse || hashResponse.status !== 200) return;
+        const checksum = generateChecksum(
+          ticketData.ticketType,
+          ticketData.payload,
+          ticketData.signature
+        );
 
-        const checksum = hashResponse.data.checksum;
         if (!checksum) {
-          webhookClient.send(`\`\`\`diff\n- [Matchmaking] Error: No checksum returned from API (Support:dsc.gg/pulsarfn)\`\`\``);
+          webhookClient.send(`\`\`\`diff\n- [Matchmaking] Error: No checksum generated\`\`\``);
           botClient.party.me.setReadiness(true);
           return;
         }
